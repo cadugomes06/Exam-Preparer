@@ -22,7 +22,23 @@ const exames = [
         diet: false,
         time: false,
         blood: true,
-    }
+    },
+    {
+        name: "Ferritina",
+        nick: "fer",
+        fast: 0,
+        diet: false,
+        time: false,
+        blood: true,
+    },
+    {
+        name: "rotina de urina",
+        nick: "eas",
+        fast: 0,
+        diet: false,
+        time: false,
+        blood: false,
+    },
 ]
 
 export default exames

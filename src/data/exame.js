@@ -39,6 +39,14 @@ const exames = [
         time: false,
         blood: false,
     },
+    {
+        name: "parisotológico(epf)",
+        nick: "epf",
+        fast: 0,
+        diet: false,
+        time: false,
+        blood: false,
+    },
 ]
 
 export default exames

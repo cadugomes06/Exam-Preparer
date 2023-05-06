@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Header from "./Header";
 import exames from "../data/exame";
 import styles from "./Home.module.css";
@@ -9,6 +9,7 @@ const Home = () => {
   const [boxOptions, setBoxOptions] = useState(false); //on/off modal de opcoes
   const [examsSelectBox, setExamsSelectBox] = useState([]); //Array de exames selecionados do boxOptions
 
+  
   const allExames = exames;
 
   useEffect(() => {
@@ -16,28 +17,48 @@ const Home = () => {
       return (
         exam.name.toLowerCase().includes(search) ||
         exam.nick.toLowerCase().includes(search)
-      );
+        );
     });
     openModalBoxOptions();
     setListExame(examSelect);
+   
   }, [search]);
-
+  
   function openModalBoxOptions() {
     setBoxOptions(!boxOptions);
   }
 
-    //closeModel boxOptions
-    useEffect(() => { 
-      window.addEventListener('click', (event) => {
-        if(event.target != boxOptions) {
-          setBoxOptions(!boxOptions)
-        }
-      })
-    }, [])
+  function deleteExamFromList() {
+    console.log()
+  }
+  
+  //closeModel boxOptions
+  useEffect(() => { 
+    window.addEventListener('click', (event) => {
+      if(event.target != boxOptions) {
+        setBoxOptions(!boxOptions)
+      }
+    })
+  }, [])
+
 
   function handleClickOnBox(event) {
-    setExamsSelectBox((examsSelectBox) => [...examsSelectBox, event.innerHTML]);
+    if(examsSelectBox.includes(event.innerHTML)) {
+           window.alert(`Atenção!! o exame ${event.innerHTML}
+            já está na lista`)
+    } else {
+      setExamsSelectBox((examsSelectBox) => 
+      [...examsSelectBox, event.innerHTML]);
+    }
     setBoxOptions(!boxOptions);
+    cleanAndFocusField()
+  }
+
+  const inputRef = useRef()
+
+  function cleanAndFocusField() {
+    inputRef.current.focus()
+    inputRef.current.value = ''
   }
 
 
@@ -54,6 +75,7 @@ const Home = () => {
               name=""
               id=""
               onChange={(e) => setSearch(e.target.value)}
+              ref={inputRef}
             />
           </label>
           <button type="button" value="Enter" >
@@ -85,7 +107,13 @@ const Home = () => {
           ? 
           examsSelectBox.map((exam, index) => (
               <ul key={index} className={styles.resultExames}>
-                <li>{exam}</li>
+                <li>
+                  {exam}
+
+                  <div className={styles.lixo}
+                    />
+
+                  </li>
               </ul>
             ))  
             

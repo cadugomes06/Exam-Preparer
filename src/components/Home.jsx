@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Header from "./Header";
 import exames from "../data/exame";
 import styles from "./Home.module.css";
+import garbage from '../assets/garbage.svg'
 
 const Home = () => {
   const [search, setSearch] = useState(""); //input value
@@ -28,10 +29,6 @@ const Home = () => {
     setBoxOptions(!boxOptions);
   }
 
-  function deleteExamFromList() {
-    console.log()
-  }
-  
   //closeModel boxOptions
   useEffect(() => { 
     window.addEventListener('click', (event) => {
@@ -44,8 +41,7 @@ const Home = () => {
 
   function handleClickOnBox(event) {
     if(examsSelectBox.includes(event.innerHTML)) {
-           window.alert(`Atenção!! o exame ${event.innerHTML}
-            já está na lista`)
+           window.alert(`Atenção!! o exame ${event.innerHTML} já está na lista`)
     } else {
       setExamsSelectBox((examsSelectBox) => 
       [...examsSelectBox, event.innerHTML]);
@@ -53,6 +49,14 @@ const Home = () => {
     setBoxOptions(!boxOptions);
     cleanAndFocusField()
   }
+
+  function deleteExamFromList(e) {
+    let i = e.innerHTML
+    let newListExams = [...examsSelectBox]
+    newListExams.splice(i, 1)
+    setExamsSelectBox(newListExams)
+  }
+  
 
   const inputRef = useRef()
 
@@ -78,10 +82,11 @@ const Home = () => {
               ref={inputRef}
             />
           </label>
-          <button type="button" value="Enter" >
-            {" "}
-            Selecionar
+
+          <button className={styles.btn}>
+            Gerar PDF
           </button>
+         
         </div>
 
         {/*opcoes de exames clicaveis*/}
@@ -102,22 +107,28 @@ const Home = () => {
 
         <div className={styles.separator} />
 
-          
+        <h3 className={styles.titleList}> Lista de exames</h3>
         {examsSelectBox
           ? 
+          
           examsSelectBox.map((exam, index) => (
               <ul key={index} className={styles.resultExames}>
                 <li>
                   {exam}
-
                   <div className={styles.lixo}
-                    />
-
+                       value={index}
+                       onClick={(e) => deleteExamFromList(e.target)}
+                    >
+                      <img src={garbage} 
+                           alt="lixeira"
+                           className={styles.iconLixo}
+                            />
+                      <p>{index}</p>                    
+                      </div>
                   </li>
               </ul>
-            ))  
-            
-            : ""}
+          )) 
+             : "" }
       </section>
     </>
   );

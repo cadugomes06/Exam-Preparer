@@ -15,11 +15,12 @@
 }
 
 .searchArea label {
-    color: black;
+    color: teal;
     font-weight: 600;
     font-family: Helvetica, sans-serif, Arial;
     display: inline-block;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .searchArea input { 
@@ -104,9 +105,9 @@
     margin: 4rem 0;
 }
 
-.resultExames p{
+/*.resultExames p{
     display: none;
-}
+}*/
 
 .lixo {
     position: relative;

@@ -2,15 +2,15 @@ import React, { useEffect, useState, useRef } from "react";
 import Header from "./Header";
 import exames from "../data/exame";
 import styles from "./Home.module.css";
-import garbage from '../assets/garbage.svg'
+import garbage from "../assets/garbage.svg";
+import examsPDF from "../reports/examsPDF";
 
 const Home = () => {
   const [search, setSearch] = useState(""); //input value
   const [listExam, setListExame] = useState([]); //recebe exames filtrados
-  const [boxOptions, setBoxOptions] = useState(false); //on/off modal de opcoes
+  const [boxOptions, setBoxOptions] = useState(false); //on/off modal
   const [examsSelectBox, setExamsSelectBox] = useState([]); //Array de exames selecionados do boxOptions
 
-  
   const allExames = exames;
 
   useEffect(() => {
@@ -18,53 +18,51 @@ const Home = () => {
       return (
         exam.name.toLowerCase().includes(search) ||
         exam.nick.toLowerCase().includes(search)
-        );
+      );
     });
-    openModalBoxOptions();
+
     setListExame(examSelect);
-   
+
+    if (search.length >= 1) {
+      openModalBoxOptions();
+    }
   }, [search]);
-  
+
   function openModalBoxOptions() {
-    setBoxOptions(!boxOptions);
+    setBoxOptions(true);
   }
-
-  //closeModel boxOptions
-  useEffect(() => { 
-    window.addEventListener('click', (event) => {
-      if(event.target != boxOptions) {
-        setBoxOptions(!boxOptions)
-      }
-    })
-  }, [])
-
+  function closeModalBoxOptions() {
+    setBoxOptions(false);
+  }
 
   function handleClickOnBox(event) {
-    if(examsSelectBox.includes(event.innerHTML)) {
-           window.alert(`Atenção!! o exame ${event.innerHTML} já está na lista`)
+    const itemFilter = allExames.filter((exam) => {
+      return exam.name === event.innerHTML;
+    });
+
+    const isDuplicate = examsSelectBox.some(
+      (exam) => exam.name === itemFilter[0].name
+    );
+
+    if (isDuplicate) {
+      window.alert(`Atenção!! o exame ${event.innerHTML} já está na lista`);
     } else {
-      setExamsSelectBox((examsSelectBox) => 
-      [...examsSelectBox, event.innerHTML]);
+      setExamsSelectBox(() => [...examsSelectBox, ...itemFilter]);
     }
-    setBoxOptions(!boxOptions);
-    cleanAndFocusField()
+    closeModalBoxOptions();
+    cleanAndFocusField();
   }
 
-  function deleteExamFromList(e) {
-    let i = e.innerHTML
-    let newListExams = [...examsSelectBox]
-    newListExams.splice(i, 1)
-    setExamsSelectBox(newListExams)
+  function deleteExamFromList() {
+    console.log("funcionou");
   }
-  
 
-  const inputRef = useRef()
+  const inputRef = useRef();
 
   function cleanAndFocusField() {
-    inputRef.current.focus()
-    inputRef.current.value = ''
+    inputRef.current.focus();
+    inputRef.current.value = "";
   }
-
 
   return (
     <>
@@ -83,52 +81,51 @@ const Home = () => {
             />
           </label>
 
-          <button className={styles.btn}>
+          {/*Gerar documento dinamico com preparo*/}
+          <button className={styles.btn} onClick={deleteExamFromList}>
             Gerar PDF
           </button>
-         
         </div>
 
         {/*opcoes de exames clicaveis*/}
         {boxOptions ? (
-          ""
-        ) : (
           <div className={styles.examContainer}>
             <div className={styles.examList}>
               {listExam?.map((exam, index) => (
-                <li key={index} 
-                    onClick={(e) => handleClickOnBox(e.target)}>
+                <li key={index} onClick={(e) => handleClickOnBox(e.target)}>
                   {exam.name}
                 </li>
               ))}
             </div>
           </div>
+        ) : (
+          ""
         )}
 
         <div className={styles.separator} />
-
         <h3 className={styles.titleList}> Lista de exames</h3>
+
+        {/*Exames selecionados no boxOptions  */}
         {examsSelectBox
-          ? 
-          
-          examsSelectBox.map((exam, index) => (
-              <ul key={index} className={styles.resultExames}>
-                <li>
-                  {exam}
-                  <div className={styles.lixo}
-                       value={index}
-                       onClick={(e) => deleteExamFromList(e.target)}
-                    >
-                      <img src={garbage} 
-                           alt="lixeira"
-                           className={styles.iconLixo}
-                            />
-                      <p>{index}</p>                    
-                      </div>
+          ? examsSelectBox.map((exam, index) => {
+              return (
+                <ul key={exam.name} className={styles.resultExames}>
+                  <li>
+                    {exam.name}
+                    <div className={styles.lixo} onClick={() => {}}>
+                      <img
+                        src={garbage}
+                        alt="lixeira"
+                        className={styles.iconLixo}
+                        value={index}
+                      />
+                      {index}
+                    </div>
                   </li>
-              </ul>
-          )) 
-             : "" }
+                </ul>
+              );
+            })
+          : ""}
       </section>
     </>
   );

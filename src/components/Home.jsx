@@ -6,8 +6,10 @@ import garbage from "../assets/garbage.svg";
 import examsPDF from "../reports/examsPDF";
 
 const Home = () => {
+
+  const inputRef = useRef();
   const [search, setSearch] = useState(""); //input value
-  const [listExam, setListExame] = useState([]); //recebe exames filtrados
+  const [listExam, setListExame] = useState([]);// exames filtrados
   const [boxOptions, setBoxOptions] = useState(false); //on/off modal
   const [examsSelectBox, setExamsSelectBox] = useState([]); //Array de exames selecionados do boxOptions
 
@@ -39,7 +41,6 @@ const Home = () => {
     const itemFilter = allExames.filter((exam) => {
       return exam.name === event.innerHTML;
     });
-
     const isDuplicate = examsSelectBox.some(
       (exam) => exam.name === itemFilter[0].name
     );
@@ -53,11 +54,11 @@ const Home = () => {
     cleanAndFocusField();
   }
 
-  function deleteExamFromList() {
-    console.log("funcionou");
+  function deleteExamFromList(index) {
+    const updateExams = [...examsSelectBox]
+    updateExams.splice(index, 1);
+    setExamsSelectBox(updateExams)
   }
-
-  const inputRef = useRef();
 
   function cleanAndFocusField() {
     inputRef.current.focus();
@@ -82,7 +83,8 @@ const Home = () => {
           </label>
 
           {/*Gerar documento dinamico com preparo*/}
-          <button className={styles.btn} onClick={deleteExamFromList}>
+          <button className={styles.btn} 
+                  onClick={ () => examsPDF(examsSelectBox)}>
             Gerar PDF
           </button>
         </div>
@@ -112,15 +114,17 @@ const Home = () => {
                 <ul key={exam.name} className={styles.resultExames}>
                   <li>
                     {exam.name}
-                    <div className={styles.lixo} onClick={() => {}}>
+
+                    <div className={styles.lixo}
+                         onClick={() => deleteExamFromList(index)}>
+
                       <img
                         src={garbage}
                         alt="lixeira"
                         className={styles.iconLixo}
-                        value={index}
                       />
-                      {index}
                     </div>
+
                   </li>
                 </ul>
               );

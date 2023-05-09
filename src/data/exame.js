@@ -6,6 +6,7 @@ const exames = [
         diet: false,
         time: "7:20",
         material: 'blood',
+        instruction: 'chegar as 7:20'
     },
     {
         name: "Serotonina",
@@ -14,6 +15,7 @@ const exames = [
         diet: "Café, chá, baunilha, etc...",
         time: false,
         material: 'blood',
+        instruction: ''
     },
     {
         name: "Ferro",
@@ -22,6 +24,7 @@ const exames = [
         diet: false,
         time: false,
         material: 'blood',
+        instruction: 'colher no período matinal'
     },
     {
         name: "Ferritina",

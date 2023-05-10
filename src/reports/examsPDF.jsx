@@ -1,23 +1,39 @@
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import logo from '../assets/logoBradesco.png'
 
 function examsPDF(exames) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
     const reportTitle = [
         {
-            text: 'Exames',
-            fontSize: 15,
+            text: 'Preparo de exames!',
+            margin: [15, 20, 0, 45],   //left, top, right, bottom
             bold: true,
-            margin: [15, 40, 0, 45] //left top right bottom
-        },
+            fontSize: 15
+        }
     ]
 
+    const dados = exames.map((exam) => {
+        return [
+            {text: exam.name, style: 'header'},
+            {
+                ul: [
+                   exan.jejum,
+                   exam.instruction,
+                ],
+            },
+        ]
+    });
+
     const details = [
-        {
-         image: logo,   
-        }
+        {text: 'Cortisol', style: 'header'},
+		{
+			ul: [
+				'Chegar as 7:20',
+				'aguardar em repouso',
+				'Coletar as 8:00'
+			],
+		},
     ];
 
     function Rodape(currentPage, pageCount) {
@@ -31,7 +47,7 @@ function examsPDF(exames) {
     ]
     };
 
-    const docDefinitions = {
+    const docDefinition = {
         pageSize: 'A4',
         pageMargins: [15, 50, 15, 40],
         header: [reportTitle],
@@ -39,7 +55,7 @@ function examsPDF(exames) {
         footer: Rodape,
     }
     
-    pdfMake.createPdf(docDefinitions).open();
+    pdfMake.createPdf(docDefinition).open();
 }
 
 

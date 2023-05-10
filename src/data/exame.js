@@ -3,8 +3,7 @@ const exames = [
         name: "Cortisol",
         nick: "cort",
         jejum: 8,
-        diet: false,
-        time: "7:20",
+        diet: '',
         material: 'blood',
         instruction: 'chegar as 7:20'
     },
@@ -13,16 +12,14 @@ const exames = [
         nick: "ser",
         jejum: 8,
         diet: "Café, chá, baunilha, etc...",
-        time: false,
         material: 'blood',
-        instruction: ''
+        instruction: 'realiza a dienta nas últimas 24 horas'
     },
     {
         name: "Ferro",
         nick: "fe",
-        jejum: 6,
-        diet: false,
-        time: false,
+        jejum: 8,
+        diet: '',
         material: 'blood',
         instruction: 'colher no período matinal'
     },
@@ -30,33 +27,32 @@ const exames = [
         name: "Ferritina",
         nick: "fer",
         jejum: 0,
-        diet: false,
-        time: false,
+        diet: '',
         material: 'blood',
+        instruction: 'Coletar cedo'
     },
     {
         name: "rotina de urina",
         nick: "eas",
         jejum: 0,
-        diet: false,
-        time: false,
-        material: 'blood',
+        diet: '',
+        material: 'colher das ultimas 3 horas.',
     },
     {
         name: "parisotológico(epf)",
         nick: "epf",
         jejum: 0,
-        diet: false,
-        time: false,
+        diet: '',
         material: 'blood',
+        instruction: 'colher fezes.'
     },
     {
         name: "Glicose",
         nick: "epf",
-        jejum: 0,
+        jejum: 8,
         diet: false,
-        time: false,
         material: 'blood',
+        instruction: 'coletar em perído matinal'
     },
 ]
 

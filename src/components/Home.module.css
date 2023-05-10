@@ -105,10 +105,6 @@
     margin: 4rem 0;
 }
 
-/*.resultExames p{
-    display: none;
-}*/
-
 .lixo {
     position: relative;
 }
@@ -125,8 +121,38 @@
 }
 
 .titleList {
-    color: black;
-    font-family: Helvetica, sans-serif, Arial;
+    color: teal;
+    font-weight: 600;
+    font-family: Roboto;
     margin-left: 12px;
     margin-bottom: 12px;
+}
+
+.containerListExams {
+    width: 250px;
+    height: 310px;
+    /*max-height: fit-content;
+    border: 1px solid rgba(139, 139, 139, 0.4);
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);*/
+}
+
+.containerInfoExams {
+    width: 250px;
+    height: 310px;
+    position: absolute;
+    bottom: 0;
+    left: 250px;
+    max-height: fit-content;
+    /*border: 1px solid rgba(139, 139, 139, 0.4);
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.2);*/
+    font-size: 1rem;
+    color: teal;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.containerInfoExams p {
+    padding-bottom: 20px;
 }

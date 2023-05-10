@@ -65,6 +65,7 @@ const Home = () => {
     inputRef.current.value = "";
   }
 
+
   return (
     <>
       <Header />
@@ -107,6 +108,7 @@ const Home = () => {
         <div className={styles.separator} />
         <h3 className={styles.titleList}> Lista de exames</h3>
 
+          <div className={styles.containerListExams}>
         {/*Exames selecionados no boxOptions  */}
         {examsSelectBox
           ? examsSelectBox.map((exam, index) => {
@@ -130,6 +132,24 @@ const Home = () => {
               );
             })
           : ""}
+          </div>
+
+          {examsSelectBox ? 
+            <div className={styles.containerInfoExams}>
+              <p>
+              {examsSelectBox.some((exam) => exam.jejum >= 8) ? 
+              `Jejum de 8 a 12 horas para esses exames!`
+              : ''}
+              </p>
+              <p>
+              {examsSelectBox.some((exam) => exam.diet != '') ? 
+              'Atenção! Os exames selecionados possui dieta específica.' : ''}
+               </p>
+            </div>
+
+          
+          : ''}
+          
       </section>
     </>
   );

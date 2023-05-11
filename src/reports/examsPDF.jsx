@@ -1,8 +1,10 @@
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import logo from '../assets/logoBradesco.png'
 
 function examsPDF(exames) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 
     const reportTitle = [
         {
@@ -13,28 +15,8 @@ function examsPDF(exames) {
         }
     ]
 
-    const dados = exames.map((exam) => {
-        return [
-            {text: exam.name, style: 'header'},
-            {
-                ul: [
-                   exan.jejum,
-                   exam.instruction,
-                ],
-            },
-        ]
-    });
 
-    const details = [
-        {text: 'Cortisol', style: 'header'},
-		{
-			ul: [
-				'Chegar as 7:20',
-				'aguardar em repouso',
-				'Coletar as 8:00'
-			],
-		},
-    ];
+    const details = []
 
     function Rodape(currentPage, pageCount) {
         return [
@@ -44,6 +26,7 @@ function examsPDF(exames) {
             alignment: 'right',
             margin: [0, 0, 20, 20] //left top right bottom
         },
+        ...dados
     ]
     };
 
@@ -52,7 +35,7 @@ function examsPDF(exames) {
         pageMargins: [15, 50, 15, 40],
         header: [reportTitle],
         content: [details],
-        footer: Rodape,
+        footer: Rodape, 
     }
     
     pdfMake.createPdf(docDefinition).open();

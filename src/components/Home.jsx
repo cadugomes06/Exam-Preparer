@@ -3,13 +3,14 @@ import Header from "./Header";
 import exames from "../data/exame";
 import styles from "./Home.module.css";
 import garbage from "../assets/garbage.svg";
+import loupe from "../assets/loupe.svg";
+import pdf from "../assets/pdf.svg";
 import examsPDF from "../reports/examsPDF";
 
 const Home = () => {
-
   const inputRef = useRef();
   const [search, setSearch] = useState(""); //input value
-  const [listExam, setListExame] = useState([]);// exames filtrados
+  const [listExam, setListExame] = useState([]); // exames filtrados
   const [boxOptions, setBoxOptions] = useState(false); //on/off modal
   const [examsSelectBox, setExamsSelectBox] = useState([]); //Array de exames selecionados do boxOptions
 
@@ -55,9 +56,9 @@ const Home = () => {
   }
 
   function deleteExamFromList(index) {
-    const updateExams = [...examsSelectBox]
+    const updateExams = [...examsSelectBox];
     updateExams.splice(index, 1);
-    setExamsSelectBox(updateExams)
+    setExamsSelectBox(updateExams);
   }
 
   function cleanAndFocusField() {
@@ -65,15 +66,19 @@ const Home = () => {
     inputRef.current.value = "";
   }
 
-
   return (
     <>
       <Header />
 
       <section className={styles.wrapperHome}>
+        <div className={styles.titleH1}>
+          <h1>
+            Encontre seus exames!
+            </h1>
+        </div>
+
         <div className={styles.searchArea}>
-          <label>
-            Digite seus exames
+          <div className={styles.wrapperSearch}>
             <input
               type="search"
               name=""
@@ -81,13 +86,17 @@ const Home = () => {
               onChange={(e) => setSearch(e.target.value)}
               ref={inputRef}
             />
-          </label>
 
-          {/*Gerar documento dinamico com preparo*/}
-          <button className={styles.btn} 
-                  onClick={ () => examsPDF(examsSelectBox)}>
-            Gerar PDF
-          </button>
+            <img src={loupe} alt="loupe" className={styles.loupe} />
+
+            {/*Gerar documento dinamico com preparo*/}
+            <button
+              className={styles.btn}
+              onClick={() => examsPDF(examsSelectBox)}
+            >
+              <img src={pdf} alt="pdf-logo" />
+            </button>
+          </div>
         </div>
 
         {/*opcoes de exames clicaveis*/}
@@ -108,48 +117,48 @@ const Home = () => {
         <div className={styles.separator} />
         <h3 className={styles.titleList}> Lista de exames</h3>
 
-          <div className={styles.containerListExams}>
-        {/*Exames selecionados no boxOptions  */}
-        {examsSelectBox
-          ? examsSelectBox.map((exam, index) => {
-              return (
-                <ul key={exam.name} className={styles.resultExames}>
-                  <li>
-                    {exam.name}
+        <div className={styles.containerListExams}>
+          {/*Exames selecionados no boxOptions  */}
+          {examsSelectBox
+            ? examsSelectBox.map((exam, index) => {
+                return (
+                  <ul key={exam.name} className={styles.resultExames}>
+                    <li>
+                      {exam.name}
 
-                    <div className={styles.lixo}
-                         onClick={() => deleteExamFromList(index)}>
+                      <div
+                        className={styles.lixo}
+                        onClick={() => deleteExamFromList(index)}
+                      >
+                        <img
+                          src={garbage}
+                          alt="lixeira"
+                          className={styles.iconLixo}
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                );
+              })
+            : ""}
+        </div>
 
-                      <img
-                        src={garbage}
-                        alt="lixeira"
-                        className={styles.iconLixo}
-                      />
-                    </div>
-
-                  </li>
-                </ul>
-              );
-            })
-          : ""}
+        {examsSelectBox ? (
+          <div className={styles.containerInfoExams}>
+            <p>
+              {examsSelectBox.some((exam) => exam.jejum >= 8)
+                ? `Jejum de 8 a 12 horas para esses exames!`
+                : ""}
+            </p>
+            <p>
+              {examsSelectBox.some((exam) => exam.diet != "")
+                ? "Atenção! Os exames selecionados possui dieta específica."
+                : ""}
+            </p>
           </div>
-
-          {examsSelectBox ? 
-            <div className={styles.containerInfoExams}>
-              <p>
-              {examsSelectBox.some((exam) => exam.jejum >= 8) ? 
-              `Jejum de 8 a 12 horas para esses exames!`
-              : ''}
-              </p>
-              <p>
-              {examsSelectBox.some((exam) => exam.diet != '') ? 
-              'Atenção! Os exames selecionados possui dieta específica.' : ''}
-               </p>
-            </div>
-
-          
-          : ''}
-          
+        ) : (
+          ""
+        )}
       </section>
     </>
   );

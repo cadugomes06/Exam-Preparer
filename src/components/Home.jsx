@@ -5,7 +5,8 @@ import styles from "./Home.module.css";
 import garbage from "../assets/garbage.svg";
 import loupe from "../assets/loupe.svg";
 import pdf from "../assets/pdf.svg";
-import examsPDF from "../reports/examsPDF";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import ExamsPDF from "../reports/examsPDF";
 
 const Home = () => {
   const inputRef = useRef();
@@ -87,15 +88,28 @@ const Home = () => {
               ref={inputRef}
             />
 
-            <img src={loupe} alt="loupe" className={styles.loupe} />
+            <img src={loupe} 
+                 alt="loupe"
+                 className={styles.loupe} 
+             />
 
-            {/*Gerar documento dinamico com preparo*/}
-            <button
-              className={styles.btn}
-              onClick={() => examsPDF(examsSelectBox)}
-            >
-              <img src={pdf} alt="pdf-logo" />
-            </button>
+
+            {/*Gerar documento dinamico com preparo*/}    
+            {examsSelectBox.length > 0 ? 
+                  <PDFDownloadLink document={<ExamsPDF allExams={examsSelectBox} />}
+                  fileName="examsEmPDF">
+                    {({loading, error}) => (loading ? 
+                                      'Carregando exames...'  : 
+                           <button className={styles.btn}>
+                               <img src={pdf} alt="pdf-logo" />
+                           </button> )}           
+                  </PDFDownloadLink>
+
+
+              : ''
+            }        
+      
+
           </div>
         </div>
 

@@ -4,7 +4,7 @@ const exames = [
         nick: "cort",
         jejum: 8,
         diet: '',
-        material: 'blood',
+        type: 'blood',
         instruction: 'chegar as 7:20'
     },
     {
@@ -12,7 +12,7 @@ const exames = [
         nick: "ser",
         jejum: 8,
         diet: "Café, chá, baunilha, etc...",
-        material: 'blood',
+        type: 'blood',
         instruction: 'realiza a dienta nas últimas 24 horas'
     },
     {
@@ -20,7 +20,7 @@ const exames = [
         nick: "fe",
         jejum: 8,
         diet: '',
-        material: 'blood',
+        type: 'blood',
         instruction: 'colher no período matinal'
     },
     {
@@ -28,7 +28,7 @@ const exames = [
         nick: "fer",
         jejum: 0,
         diet: '',
-        material: 'blood',
+        type: 'blood',
         instruction: 'Coletar cedo'
     },
     {
@@ -36,6 +36,7 @@ const exames = [
         nick: "eas",
         jejum: 0,
         diet: '',
+        type: 'material',
         material: 'colher das ultimas 3 horas.',
     },
     {
@@ -43,7 +44,7 @@ const exames = [
         nick: "epf",
         jejum: 0,
         diet: '',
-        material: 'blood',
+        type: 'material',
         instruction: 'colher fezes.'
     },
     {
@@ -51,7 +52,7 @@ const exames = [
         nick: "epf",
         jejum: 8,
         diet: false,
-        material: 'blood',
+        type: 'blood',
         instruction: 'coletar em perído matinal'
     },
 ]

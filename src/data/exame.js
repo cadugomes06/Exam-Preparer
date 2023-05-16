@@ -24,6 +24,22 @@ const exames = [
         instruction: ''
     },
     {
+        name: "Insulina",
+        nick: "ins",
+        jejum: 8,
+        diet: '',
+        type: 'blood',
+        instruction: ''
+    },
+    {
+        name: "Urina (Coletor infantil)",
+        nick: "eas",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction:  '• Retirar o produto da embalagem somente na hora do uso e em condições assépticas.\n • Higienizar a genitália com auxílio de luvas.\n • Segurar uma extremidade do adesivo e retirar o protetor do mesmo.\n • Posicionar a abertura do coletor sobre o períneo e ao longo dos lábios genitais.\n • Pressione delicadamente para fixá-lo.\n • Aguardar a micção da criança, inspecionando em intervalos de 30 a 60 minutos.\n • Após a criança urinar, com luvas, descolar e retirar o dispositivo cuidadosamente.\n • Se necessário, transferir o material coletado para outro recipiente.'
+    },
+    {
         name: "Toxicológico",
         nick: "toxicologico",
         jejum: 0,
@@ -53,7 +69,7 @@ const exames = [
         jejum: 8,
         diet: '\n • Não é recomendado ingerir durante 5 dias antes da coleta:\n banana, laranja, abacaxi, queijo, café, chá, chocolate, caramelos, marmeladas, doces, sorvetes, nozes e bebidas alcoólicas.\n',
         type: 'blood',
-        instruction: '• Bebida alcoólica: A abstinência é desejável nos 5 dias que antecedem o exame teste.\n - Não fumar nas 4 horas que antecederem a coleta.'
+        instruction: '• Bebida alcoólica: A abstinência é desejável nos 5 dias que antecedem o exame teste.\n • Não fumar nas 4 horas que antecederem a coleta.'
     },
     {
         name: "PSA",
@@ -77,7 +93,23 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'material',
-        material: 'colher das ultimas 3 horas.',
+        material: '• Coletar uma amostra de urina recente.\n • Usar sempre o recipiente estéril fornecido pelo laboratório e abrir apenas na hora da coleta.\n • Lavar as mãos e região genital com água e sabão.\n • Iniciar a micção, desprezando o primeiro jato de urina.\n • Entregar ao laboratório em até 3 horas após a coleta.\n Obs: Período menstrual - Colher a urina 4 dias após o término\n • Aguardar 7 dias após o uso de antibióticos.',
+    },
+    {
+        name: "Cultura de urina",
+        nick: "culur",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        material: '• Colher a primeira urina da manhã\n • Usar sempre o recipiente estéril fornecido pelo laboratório e abrir apenas na hora da coleta.\n • Lavar as mãos e região genital com água e sabão.\n • Iniciar a micção, desprezando o primeiro jato de urina.\n • Entregar ao laboratório em até 3 horas após a coleta.\n Obs: Período menstrual - Colher a urina 4 dias após o término\n • Aguardar 7 dias após o uso de antibióticos.',
+    },
+    {
+        name: "Urina de 24 horas ",
+        nick: "uri24",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        material: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta.',
     },
     {
         name: "Parisotológico (EPF)",
@@ -85,7 +117,55 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'material',
-        instruction: 'colher fezes.'
+        instruction: '• Coletar uma pequena quantidade de fezes.\n • Entregar ao laboratório em até 3 horas em temperatura ambiente ou manter refrigerada e entregar em até 24 horas.'
+    },
+    {
+        name: "Parisotológico (MIF)",
+        nick: "mif",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• Pegar recipiente próprio no laboratório.\n • Colher 3 amostrar de fezes em dias alternados, no prazo máximo de 10 dias.\n • Coletar uma pequena quantidade a cada dias, colocando as 3 amostras juntas num mesmo recipiente.\n • Não coletar em dias seguidos.\n • Não é necessário refrigerar.'
+    },
+    {
+        name: "Oxiúrus",
+        nick: "poxi",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• Fazer coleta pela manhã antes do cliente defecar ou tomar banho (não fazer assepsia). Não usar nenhum medicamento no local.\n • Apoiar a tira de fita adesiva no fundo de um tubo de ensaio de vidro, com a parte adesiva para fora.\n • Encostar delicadamente na região anal, realizando um movimento lateral com o tubo, de modo a atingir toda a região do ânus.\n • Colher 2 (duas) amostragens. Colar as fitas adesivas em lâminas e colocá-las em tubetes de transporte devidamente identificados.\n • Enviar rapidamente ao laboratório. </p>'
+    },
+    {
+        name: "Escarro",
+        nick: "baar",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• Pela manhã, imediatamente após acordar eliminar o material de drenagem nasal que estiver presente\n • Escovar os dentes e lavar a boca com bastante água (não utilizar creme dental).\n • Respirar fundo umas 8 a 10 vezes e  tossir profundamente. Colher o escarro assim obtido no recipiente de boca larga entregue pelo laboratório.\n • Entregar imediatamente ao laboratório. \n • Não se deve misturar o escarro com a saliva pois este ficará impróprio para a realização do exame.\n • Obs: No caso de haver dificuldade de obter o escarro por falta de secreção, recomendamos fazer inalação com vapor de água quente ou vaporização com soro fisiológico para estimular a secreção.'
+    },
+    {
+        name: "Cortisol salivar",
+        nick: "corts",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• A coleta deve ser feita até duas horas após o horário habitual do paciente acordar ou conforme solicitação médica.\n • Não há necessidade de jejum após dieta leve.\n • Não pode fazer tratamento dentário nas 24 horas que antecedem ao exame.\n • Antes da coleta, é necessário ficar três horas sem escovar os dentes.\n • É necessário informar todos os medicamentos em uso.\n • Obs: Coletar na Matriz - Rua Conde de Araruama n°365 - Centro.'
+    },
+    {
+        name: "Testosterona salivar",
+        nick: "testl",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• Suspender medicamentos de uso oral, transdérmico ou injetável a critério clínico.\n • Realizar a coleta antes de escovar os dentes, comer ou beber;.\n • Obs: Coletar na Matriz - Rua Conde de Araruama n°365 - Centro.'
+    },
+    {
+        name: "IGA salivar",
+        nick: "igal",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• Suspender medicamentos de uso oral, transdérmico ou injetável a critério clínico.\n • Realizar a coleta antes de escovar os dentes, comer ou beber;.\n • Obs: Coletar na Matriz - Rua Conde de Araruama n°365 - Centro.'
     },
     {
         name: "Glicose",

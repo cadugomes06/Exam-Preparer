@@ -8,8 +8,6 @@
 }
 
 .titleH1 {
-    font-family: Roboto;
-    font-weight: bold;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -21,7 +19,7 @@
 }
 
 .titleH1 h1 {
-    background-image:  linear-gradient(0deg, rgba(24,160,163,1) 51%, rgba(9,247,231,1) 94%);
+    background-image: linear-gradient(0deg, rgba(24,160,163,1) 51%, rgba(9,247,231,1) 94%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -65,7 +63,7 @@
     border-radius: 12px;
     padding-left: 50px;
     font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
     font-size: 1rem;
     cursor: pointer;
 }
@@ -80,7 +78,7 @@
     border: none;
     border-radius: 0 8px 8px 0;
     font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
     font-size: 1rem;
     background-color: white;
     color: white;
@@ -103,7 +101,7 @@
 .examList {
     width: 500px;
     top: 170px;
-    padding: 20px 0 0 50px;
+    padding: 20px 0 0 10px;
     border-radius: 0px 0px 8px 8px;
     box-sizing: border-box;
     background: white;
@@ -112,15 +110,25 @@
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.4) ;
     z-index: 1;
     position: absolute;
+    max-height: 250px;
+    overflow-y: auto;
 }
 
 .examList li {
     list-style: none;
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
     font-weight: bold;
     padding-bottom: 4px;
     cursor: pointer;
+}
+
+.examList li:hover {
+    background: rgb(21, 134, 136);
+    border-radius: 8px;
+    padding: 2px;
+    transition: .5s;
+    color: white;
 }
 
 
@@ -130,6 +138,9 @@
     margin-left: 4px;
     padding: 4px 2px;
     border-radius: 8px;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
     background: white;
     border: 1px solid teal;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.4);
@@ -157,7 +168,7 @@
 .titleList {
     color: teal;
     font-weight: 600;
-    font-family: Roboto;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
     margin-left: 12px;
     margin-bottom: 12px;
 }
@@ -170,12 +181,13 @@
 
 .containerInfoExams {
     width: 250px;
-    height: 310px;
+    height: 280px;
     position: absolute;
     bottom: 0;
     left: 250px;
     max-height: fit-content;
-    font-size: 1rem;
+    font-size: 0.875rem;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
     color: teal;
     box-sizing: border-box;
     font-weight: 500;

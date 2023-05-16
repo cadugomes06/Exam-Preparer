@@ -104,11 +104,8 @@ const Home = () => {
                                <img src={pdf} alt="pdf-logo" />
                            </button> )}           
                   </PDFDownloadLink>
-
-
-              : ''
-            }        
-      
+                            : ''
+              }      
 
           </div>
         </div>
@@ -118,9 +115,9 @@ const Home = () => {
           <div className={styles.examContainer}>
             <div className={styles.examList}>
               {listExam?.map((exam, index) => (
-                <li key={index} onClick={(e) => handleClickOnBox(e.target)}>
-                  {exam.name}
-                </li>
+                      <li key={index}  onClick={(e) => handleClickOnBox(e.target)}>
+                        {exam.name}
+                     </li>
               ))}
             </div>
           </div>

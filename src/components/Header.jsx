@@ -3,8 +3,11 @@ import styles from './Header.module.css';
 
 const Header = () => {
   return (
-    <div className={styles.headerHome}>   
-      <h1>Navbar</h1>
+    <div className={styles.headerWrapper}>   
+      <div className={styles.headerContainer}>
+        <img src="logo" alt="logo" />
+      </div>
+      
     </div>
   )
 }

@@ -24,7 +24,6 @@ const Home = () => {
         exam.nick.toLowerCase().includes(search)
       );
     });
-
     setListExame(examSelect);
 
     if (search.length >= 1) {
@@ -67,6 +66,7 @@ const Home = () => {
     inputRef.current.value = "";
   }
 
+
   return (
     <>
       <Header />
@@ -106,16 +106,15 @@ const Home = () => {
                   </PDFDownloadLink>
                             : ''
               }      
-
           </div>
         </div>
 
         {/*opcoes de exames clicaveis*/}
         {boxOptions ? (
           <div className={styles.examContainer}>
-            <div className={styles.examList}>
+            <div className={styles.examList} >
               {listExam?.map((exam, index) => (
-                      <li key={index}  onClick={(e) => handleClickOnBox(e.target)}>
+                      <li key={index} onClick={(e) => handleClickOnBox(e.target)}>
                         {exam.name}
                      </li>
               ))}

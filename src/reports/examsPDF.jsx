@@ -153,7 +153,7 @@ const ExamsPDF = (allExams) => {
           </Text>
         </View>
 
-        {isDiet ? (
+        {isDiet.length > 0 ? (
           <View style={styles.sectionTwo}>
             <view style={styles.sectionTitle}>
               <Image style={styles.icon} src={icon3} />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Header from "./Header";
+import Menu from './Menu';
 import exames from "../data/exame";
 import styles from "./Home.module.css";
 import garbage from "../assets/garbage.svg";
@@ -86,6 +87,7 @@ const Home = () => {
   return (
     <>
       <Header />
+      <Menu /> 
 
       <section className={styles.wrapperHome}>
         <div className={styles.titleH1}>

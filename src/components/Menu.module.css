@@ -1,0 +1,106 @@
+.menuWrapper {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.menuContainer {
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    height: calc(100vh - 80px);
+    width: 220px;
+    background: rgb(229,248,255);
+    background: radial-gradient(circle, rgba(229,248,255,1) 26%, rgba(202,239,255,1) 42%, rgba(255,255,255,1) 84%);
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.3);
+    transition: 1s;
+}
+
+.menuContainerClose {
+    position: absolute;
+    right: -185px;
+    z-index: 100;
+    transition: 1s;
+    height: calc(100vh - 80px);
+    background: rgb(229,248,255);
+    background: radial-gradient(circle, rgba(229,248,255,1) 26%, rgba(202,239,255,1) 42%, rgba(255,255,255,1) 84%);
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+/*@keyframes openCloseMenu {
+    from {
+        right: 0px;
+    }
+    to {
+        right: -180px;
+    }
+}*/
+
+
+.titleMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    color: #c5c5c5;
+    font-weight: 400;
+}
+
+.titleMain {
+    background-image: linear-gradient(0deg, rgba(24,160,163,1) 51%, rgba(9,247,231,1) 94%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+}
+
+.documentList {
+   margin-top: 40px;
+   height: 400px;
+   display: flex;
+   justify-content: center;
+   overflow-x: hidden;
+}
+
+.documentList a {
+    padding: 12px 4px;
+}
+
+.documentList li{
+    list-style: none;
+    padding: 12px 4px;
+    margin: 8px 8px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: teal;
+    cursor: pointer;
+}
+
+.documentList a:link{
+    text-decoration: none;
+    color: teal;
+}
+
+.documentList a:visited  {
+    color: teal;
+}
+
+.documentList li:hover {
+    transition: .3s;
+    color:  rgb(6, 77, 78);
+    background-color: white;
+    border-radius: 8px;
+}
+
+.openCloseMenu {
+    font-size: 2rem;
+    position: absolute;
+    left: -16px;
+    top: 40%;
+    color: rgb(86, 131, 131);
+    cursor: pointer;
+}

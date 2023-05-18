@@ -11,7 +11,7 @@ const exames = [
         name: "Serotonina",
         nick: "ser",
         jejum: 8,
-        diet: " -- Não é recomendado ingerir 24 horas antes da coleta -- \n • Café, chá, chocolate, mate, refrigerante, abacate, abacaxi\n • Ameixa, banana, berinjela, picles, kiwi, manga, nozes, tomate\n • Alimentos aromatizados com baunilha.\n",
+        diet: " -- Não é recomendado ingerir 24 horas antes da coleta -- \n • Café, chá, chocolate, mate, refrigerante, abacate, abacaxi\n • Ameixa, banana, berinjela, picles, kiwi, manga, nozes, tomate\n • Alimentos aromatizados com baunilha.",
         type: 'special',
         instruction: ''
     },
@@ -75,7 +75,7 @@ const exames = [
         name: "Catecolaminas",
         nick: "catec",
         jejum: 8,
-        diet: '• Não é recomendado ingerir durante 5 dias antes da coleta:\n banana, laranja, abacaxi, queijo, café, chá, chocolate, caramelos, marmeladas, doces, sorvetes, nozes e bebidas alcoólicas.\n',
+        diet: ' -- Não é recomendado ingerir durante 5 dias antes da coleta --\n banana, laranja, abacaxi, queijo, café, chá, chocolate, caramelos, marmeladas, doces, sorvetes, nozes e bebidas alcoólicas.',
         type: 'special',
         instruction: '• Bebida alcoólica: A abstinência é desejável nos 5 dias que antecedem o exame teste.\n • Não fumar nas 4 horas que antecederem a coleta.'
     },

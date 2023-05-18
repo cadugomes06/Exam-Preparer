@@ -11,13 +11,21 @@ const exames = [
         name: "Serotonina",
         nick: "ser",
         jejum: 8,
-        diet: "-- Não é recomendado ingerir 24 horas antes da coleta -- \n • Café, chá, chocolate, mate, refrigerante, abacate, abacaxi\n • Ameixa, banana, berinjela, picles, kiwi, manga, nozes, tomate\n • Alimentos aromatizados com baunilha.\n",
+        diet: " -- Não é recomendado ingerir 24 horas antes da coleta -- \n • Café, chá, chocolate, mate, refrigerante, abacate, abacaxi\n • Ameixa, banana, berinjela, picles, kiwi, manga, nozes, tomate\n • Alimentos aromatizados com baunilha.\n",
         type: 'special',
         instruction: ''
     },
     {
         name: "Ferro",
         nick: "fe",
+        jejum: 8,
+        diet: '',
+        type: 'special',
+        instruction: ''
+    },
+    {
+        name: "Glicose",
+        nick: "gli",
         jejum: 8,
         diet: '',
         type: 'special',
@@ -166,14 +174,6 @@ const exames = [
         diet: '',
         type: 'material',
         instruction: '• Suspender medicamentos de uso oral, transdérmico ou injetável a critério clínico.\n • Realizar a coleta antes de escovar os dentes, comer ou beber;.\n • Obs: Coletar na Matriz - Rua Conde de Araruama n°365 - Centro.'
-    },
-    {
-        name: "Glicose",
-        nick: "epf",
-        jejum: 8,
-        diet: false,
-        type: 'special',
-        instruction: ''
     },
 ]
 

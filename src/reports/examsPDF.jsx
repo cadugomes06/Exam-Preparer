@@ -120,9 +120,11 @@ const ExamsPDF = (allExams) => {
   const isJejum = newArrayExams.filter((exam) => {
     return exam.jejum >= 8;
   });
+  //console.log(isJejum)
   const isDiet = newArrayExams.filter((exam) => {
-    return exam.diet != "";
+    return exam.diet != '';
   });
+  //console.log(isDiet)
   const specialExams = newArrayExams.filter((exam) => {
     return exam.type === "special" && exam.instruction != "";
   });
@@ -151,17 +153,17 @@ const ExamsPDF = (allExams) => {
           </Text>
         </View>
 
-        {isDiet.length > 0 ? (
+        {isDiet ? (
           <View style={styles.sectionTwo}>
             <view style={styles.sectionTitle}>
               <Image style={styles.icon} src={icon3} />
               <Text style={styles.title}>Dieta</Text>
             </view>
 
-            {isDiet
+            {isDiet 
               ? isDiet.map((exam, index) => (
                   <Text style={styles.subtitle} key={index}>
-                    {exam.diet}
+                    {exam.diet} {console.log(isDiet)}
                   </Text>
                 ))
               : " Não possui dieta para esses exames."}

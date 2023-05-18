@@ -5,6 +5,7 @@ import styles from "./Home.module.css";
 import garbage from "../assets/garbage.svg";
 import loupe from "../assets/loupe.svg";
 import pdf from "../assets/pdf.svg";
+
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ExamsPDF from "../reports/examsPDF";
 
@@ -17,11 +18,11 @@ const Home = () => {
 
   const allExames = exames;
 
-  useEffect(() => {
+  useEffect(() => {     //filtar valores para mostrar caixa de opcoes
     const examSelect = allExames.filter((exam) => {
       return (
-        exam.name.toLowerCase().includes(search) ||
-        exam.nick.toLowerCase().includes(search)
+        exam.name.toLowerCase().includes(search.toLocaleLowerCase()) ||
+        exam.nick.toLowerCase().includes(search.toLocaleLowerCase())
       );
     });
     setListExame(examSelect);
@@ -37,8 +38,23 @@ const Home = () => {
   function closeModalBoxOptions() {
     setBoxOptions(false);
   }
+ 
+  useEffect(() => {       //fechar o modal ao click externo
+    const handleClickOutbox = (e) => {
+      const modal = document.getElementById('boxOptions');
+      if (modal && !modal.contains(e.target)) {
+        setBoxOptions(false)
+        cleanAndFocusField()
+      }
+    }
+    window.addEventListener('click', handleClickOutbox)
 
-  function handleClickOnBox(event) {
+    return () => {
+      window.removeEventListener('click', handleClickOutbox)
+    }
+  }, [])
+
+  function handleClickOnBox(event) { //Add exame na lista de exames
     const itemFilter = allExames.filter((exam) => {
       return exam.name === event.innerHTML;
     });
@@ -111,7 +127,7 @@ const Home = () => {
 
         {/*opcoes de exames clicaveis*/}
         {boxOptions ? (
-          <div className={styles.examContainer}>
+          <div className={styles.examContainer} id="boxOptions">
             <div className={styles.examList} >
               {listExam?.map((exam, index) => (
                       <li key={index} onClick={(e) => handleClickOnBox(e.target)}>

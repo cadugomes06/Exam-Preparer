@@ -114,21 +114,20 @@ const styles = StyleSheet.create({
   },
 });
 
-const ExamsPDF = (allExams) => {
-  const newArrayExams = allExams.allExams;
-
-  const isJejum = newArrayExams.filter((exam) => {
+const ExamsPDF = ({allExams, status}) => {
+  
+  const isMaterialPD = status
+  console.log(isMaterialPD)
+  const isJejum = allExams.filter((exam) => {
     return exam.jejum >= 8;
   });
-  //console.log(isJejum)
-  const isDiet = newArrayExams.filter((exam) => {
+  const isDiet = allExams.filter((exam) => {
     return exam.diet != '';
   });
-  //console.log(isDiet)
-  const specialExams = newArrayExams.filter((exam) => {
+  const specialExams = allExams.filter((exam) => {
     return exam.type === "special" && exam.instruction != "";
   });
-  const isMaterial = newArrayExams.filter((exam) => {
+  const isMaterial = allExams.filter((exam) => {
     return exam.type === "material";
   });
 
@@ -163,7 +162,7 @@ const ExamsPDF = (allExams) => {
             {isDiet 
               ? isDiet.map((exam, index) => (
                   <Text style={styles.subtitle} key={index}>
-                    {exam.diet} {console.log(isDiet)}
+                    {exam.diet} 
                   </Text>
                 ))
               : " Não possui dieta para esses exames."}

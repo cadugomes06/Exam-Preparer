@@ -47,6 +47,32 @@
     width: 100%;
 }
 
+.materialPD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 26px;
+    gap: 4px;
+    margin-top: 8px;
+}
+.materialPD p {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: teal;
+}
+
+.materialPD input {
+    max-width: 14px;
+    max-height: 14px;
+}
+
+.materialPD input {
+   width: 20px;
+   height: 20px;
+}
+
 .wrapperSearch {
     width: 500px;
     height: 60px;

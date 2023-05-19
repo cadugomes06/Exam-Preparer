@@ -16,9 +16,10 @@ const Home = () => {
   const [listExam, setListExame] = useState([]); // exames filtrados
   const [boxOptions, setBoxOptions] = useState(false); //on/off modal
   const [examsSelectBox, setExamsSelectBox] = useState([]); //Array de exames selecionados do boxOptions
+  const [ checkPD, setCheckPD ] = useState(false)
+  //console.log(checkPD)
 
   const allExames = exames;
-
   useEffect(() => {     //filtar valores para mostrar caixa de opcoes
     const examSelect = allExames.filter((exam) => {
       return (
@@ -114,8 +115,8 @@ const Home = () => {
 
             {/*Gerar documento dinamico com preparo*/}    
             {examsSelectBox.length > 0 ? 
-                  <PDFDownloadLink document={<ExamsPDF allExams={examsSelectBox} />}
-                  fileName="examsEmPDF">
+                  <PDFDownloadLink document={<ExamsPDF allExams={examsSelectBox} status={checkPD} />}
+                  fileName="exameEmPDF">
                     {({loading, error}) => (loading ? 
                                       'Carregando exames...'  : 
                            <button className={styles.btn}>
@@ -126,6 +127,22 @@ const Home = () => {
               }      
           </div>
         </div>
+
+            {/* Material PD ?*/}
+            {examsSelectBox.length > 0 ? (
+                    <div className={styles.materialPD}>
+                    <p>Material PD</p>
+                   <input 
+                      type="checkbox"
+                      name="pd"
+                      id=""
+                      checked={checkPD}
+                      onChange={(e) => setCheckPD(e.target.checked)}
+                       />
+                  </div>
+            ): ''}
+      
+     
 
         {/*opcoes de exames clicaveis*/}
         {boxOptions ? (

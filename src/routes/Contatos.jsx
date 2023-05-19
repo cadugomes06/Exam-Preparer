@@ -71,7 +71,7 @@ const Contatos = () => {
                 <a href="mailto:suporte@hemolabes.com">suporte@hemolabes.com</a>
               </li>
 
-              <h2 class="dataHoje">Ramal</h2>
+              <h2>Ramal</h2>
 
               <li>
                 <strong>2000 | 2001</strong> Recepção ADM{" "}

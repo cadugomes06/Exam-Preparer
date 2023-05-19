@@ -5,21 +5,6 @@ import { Link } from "react-router-dom";
 const Menu = () => {
   const [toggleMenu, setToggleMenu] = useState(true);
 
-  /*useEffect(() => {
-    const handleClickOutside = (e) => {
-      const menu = document.getElementById("menu");
-      const links = document.querySelectorAll(".link");
-
-      if (menu && !menu.contains(e.target)) {
-        setToggleMenu(false);
-      }
-    };
-    window.addEventListener("click", handleClickOutside);
-    return () => {
-      window.removeEventListener("click", handleClickOutside);
-    };
-  }, []);*/
-
   return (
     <div className={styles.menuWrapper}>
       <div

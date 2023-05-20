@@ -12,7 +12,6 @@ import logo2 from "../assets/logo-hemo2.png";
 
 import icon1 from "../assets/icon1.png";
 import icon5 from "../assets/icon5.png";
-import icon6 from "../assets/icon6.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
 import icon4 from "../assets/icon4.png";
@@ -117,7 +116,7 @@ const styles = StyleSheet.create({
 const ExamsPDF = ({allExams, status}) => {
   
   const isMaterialPD = status
-  console.log(isMaterialPD)
+  
   const isJejum = allExams.filter((exam) => {
     return exam.jejum >= 8;
   });
@@ -147,7 +146,7 @@ const ExamsPDF = ({allExams, status}) => {
 
           <Text style={styles.subtitle}>
             {isJejum.length > 0
-              ? "• Entre 8 a 12 horas de jejum \n • não realizar atividade física \n • Manter hidratação habitual"
+              ? `• Entre 8 a 12 horas de jejum \n • não realizar atividade física \n • Manter hidratação habitual`
               : "• Não possui jejum para esses exames."}
           </Text>
         </View>
@@ -165,10 +164,10 @@ const ExamsPDF = ({allExams, status}) => {
                     {exam.diet} 
                   </Text>
                 ))
-              : " Não possui dieta para esses exames."}
+              : <Text></Text>}
           </View>
         ) : (
-          ""
+          <Text></Text>
         )}
 
         {specialExams.length > 0 ? (
@@ -186,11 +185,11 @@ const ExamsPDF = ({allExams, status}) => {
                       <Text style={styles.badyExam}>{exam.instruction} </Text>
                     </View>
                   ))
-                : ""}
+                : <Text></Text>}
             </View>
           </View>
         ) : (
-          ""
+          <text></text>
         )}
 
         {isMaterial.length > 0 ? (
@@ -208,12 +207,22 @@ const ExamsPDF = ({allExams, status}) => {
                       <Text style={styles.badyExam}>{exam.instruction} </Text>
                     </View>
                   ))
-                : ""}
+                : <Text></Text>}
             </View>
           </View>
         ) : (
-          ""
+          <Text></Text>
         )}
+
+        {/*Material Pendente  */}
+        {isMaterialPD ? (
+          <View>
+             <Text style={styles.titleExam}>Material Pendente</Text>
+             <Text style={styles.badyExam}>- Retirar a senha de Material Pendente ao chegar no laboratório para agilizar o seu atendimento.</Text>
+             <Text style={styles.badyExam}>- Senha exclusiva para exames já cadastrados anteriormente.</Text>
+          </View>
+        ): <text></text>} 
+
 
         {/* Footer */}
         <View style={styles.footerWrapper}>

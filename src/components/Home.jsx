@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Header from "./Header";
-import Menu from './Menu';
+import Menu from "./Menu";
 import exames from "../data/exame";
 import styles from "./Home.module.css";
 import garbage from "../assets/garbage.svg";
@@ -16,11 +16,12 @@ const Home = () => {
   const [listExam, setListExame] = useState([]); // exames filtrados
   const [boxOptions, setBoxOptions] = useState(false); //on/off modal
   const [examsSelectBox, setExamsSelectBox] = useState([]); //Array de exames selecionados do boxOptions
-  const [ checkPD, setCheckPD ] = useState(false)
-  //console.log(checkPD)
+  const [checkPD, setCheckPD] = useState(false); //checkbox material pendente
+  const [modal, setModal ] = useState(false)
 
   const allExames = exames;
-  useEffect(() => {     //filtar valores para mostrar caixa de opcoes
+  useEffect(() => {
+    //filtar valores para mostrar caixa de opcoes
     const examSelect = allExames.filter((exam) => {
       return (
         exam.name.toLowerCase().includes(search.toLocaleLowerCase()) ||
@@ -28,7 +29,6 @@ const Home = () => {
       );
     });
     setListExame(examSelect);
-
     if (search.length >= 1) {
       openModalBoxOptions();
     }
@@ -40,23 +40,25 @@ const Home = () => {
   function closeModalBoxOptions() {
     setBoxOptions(false);
   }
- 
-  useEffect(() => {       //fechar o modal ao click externo
+
+  useEffect(() => {
+    //fechar o modal ao click externo
     const handleClickOutbox = (e) => {
-      const modal = document.getElementById('boxOptions');
+      const modal = document.getElementById("boxOptions");
       if (modal && !modal.contains(e.target)) {
-        setBoxOptions(false)
-        cleanAndFocusField()
+        setBoxOptions(false);
+        cleanAndFocusField();
       }
-    }
-    window.addEventListener('click', handleClickOutbox)
+    };
+    window.addEventListener("click", handleClickOutbox);
 
     return () => {
-      window.removeEventListener('click', handleClickOutbox)
-    }
-  }, [])
+      window.removeEventListener("click", handleClickOutbox);
+    };
+  }, []);
 
-  function handleClickOnBox(event) { //Add exame na lista de exames
+  function handleClickOnBox(event) {
+    //Add exame na lista de exames
     const itemFilter = allExames.filter((exam) => {
       return exam.name === event.innerHTML;
     });
@@ -79,22 +81,26 @@ const Home = () => {
     setExamsSelectBox(updateExams);
   }
 
+  function handleClickModal() {
+    setModal(true)
+  }
+  function handleClickClosemodal() {
+    setModal(false)
+  }
+
   function cleanAndFocusField() {
     inputRef.current.focus();
     inputRef.current.value = "";
   }
 
-
   return (
     <>
       <Header />
-      <Menu /> 
+      <Menu />
 
       <section className={styles.wrapperHome}>
         <div className={styles.titleH1}>
-          <h1>
-            Encontre seus exames!
-            </h1>
+          <h1>Encontre seus exames!</h1>
         </div>
 
         <div className={styles.searchArea}>
@@ -107,51 +113,108 @@ const Home = () => {
               ref={inputRef}
             />
 
-            <img src={loupe} 
-                 alt="loupe"
-                 className={styles.loupe} 
-             />
+            <img src={loupe} alt="loupe" className={styles.loupe} />
 
-
-            {/*Gerar documento dinamico com preparo*/}    
-            {examsSelectBox.length > 0 ? 
-                  <PDFDownloadLink document={<ExamsPDF allExams={examsSelectBox} status={checkPD} />}
-                  fileName="exameEmPDF">
-                    {({loading, error}) => (loading ? 
-                                      'Carregando exames...'  : 
-                           <button className={styles.btn}>
-                               <img src={pdf} alt="pdf-logo" />
-                           </button> )}           
-                  </PDFDownloadLink>
-                            : ''
-              }      
+            {/*Gerar documento dinamico com preparo*/}
+            {examsSelectBox.length > 0 ? (
+              <PDFDownloadLink
+                document={
+                  <ExamsPDF allExams={examsSelectBox} status={checkPD} />
+                }
+                fileName="exameEmPDF"
+              >
+                {({ loading, error }) =>
+                  loading ? (
+                    "Carregando exames..."
+                  ) : (
+                    <button className={styles.btn}>
+                      <img src={pdf} alt="pdf-logo" />
+                    </button>
+                  )
+                }
+              </PDFDownloadLink>
+            ) : (
+              ""
+            )}
           </div>
         </div>
 
-            {/* Material PD ?*/}
-            {examsSelectBox.length > 0 ? (
-                    <div className={styles.materialPD}>
-                    <p>Material PD</p>
-                   <input 
-                      type="checkbox"
-                      name="pd"
-                      id=""
-                      checked={checkPD}
-                      onChange={(e) => setCheckPD(e.target.checked)}
-                       />
-                  </div>
-            ): ''}
-      
-     
+        {/* Material PD ?*/}
+        {examsSelectBox.length > 0 ? (
+          <>
+            <div className={styles.materialPD}>
+              <div>
+              <p>Material PD</p>
+              <input
+                type="checkbox"
+                name="pd"
+                id=""
+                checked={checkPD}
+                onChange={(e) => setCheckPD(e.target.checked)}
+              />
+              </div>
+                      {/* open/close modal */}
+              <div>
+                 <p>Enviar por e-mail</p>
+                 <button className={styles.btnOpenModal} 
+                         onClick={() => handleClickModal()}>
+
+                 </button>
+            </div>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+
+
+        {/* Modal para enviar por e-mail */}
+        <div className={modal ? styles.modalWrapper :styles.modalWrapperClose}>
+
+          <div className={styles.modalContainer}>
+            <div className={styles.titleModal}>
+              <h3>Enviar preparo por<br />E-MAIL</h3>
+            </div>
+
+            <div className={styles.closeModal}
+                 onClick={() => handleClickClosemodal()}>
+                  X
+            </div>
+
+            <form>
+              <div className={styles.formContainer}>
+                <label form="email">E-mail</label>
+                <input
+                  type="email"
+                  name="email"
+                  id=""
+                  placeholder="exemplo@email.com"
+                />
+
+                <label form="file"></label>
+                <input type="file" name="file" id="" />
+
+                <button
+                  type="submit"
+                  value="Enviar"
+                  className={styles.btnModal}
+                  disabled
+                >
+                  Enviar{" "}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
 
         {/*opcoes de exames clicaveis*/}
         {boxOptions ? (
           <div className={styles.examContainer} id="boxOptions">
-            <div className={styles.examList} >
+            <div className={styles.examList}>
               {listExam?.map((exam, index) => (
-                      <li key={index} onClick={(e) => handleClickOnBox(e.target)}>
-                        {exam.name}
-                     </li>
+                <li key={index} onClick={(e) => handleClickOnBox(e.target)}>
+                  {exam.name}
+                </li>
               ))}
             </div>
           </div>

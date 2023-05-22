@@ -9,12 +9,12 @@ import {
   Font,
 } from "@react-pdf/renderer";
 import logo2 from "../assets/logo-hemo2.png";
+import imgSUS from '../assets/sus.png'
 
 import icon1 from "../assets/icon1.png";
 import icon5 from "../assets/icon5.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
-import icon4 from "../assets/icon4.png";
 
 import MycustomFont from "../fonts/Poppins-SemiBold.ttf";
 import MycustomFont2 from "../fonts/Poppins-Regular.ttf";
@@ -105,17 +105,44 @@ const styles = StyleSheet.create({
     border: 2,
     borderColor: "#e3e3e3",
   },
+  wrapperSUS: {
+    width: "100%",
+    height: 80,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingLeft: 15,
+    paddingRight: 15,
+    fontSize: 10,
+    border: 1,
+    borderColor: '#eee',
+    marginBottom: 4
+  },
+  sectionsSUS: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  imageSUS: {
+    width: 40,
+    height: 60
+  },
   fontMedium: {
     fontFamily: "Medium",
   },
   fontRegular: {
     fontFamily: "Regular",
   },
+  fontSemibold: {
+    fontFamily: "SemiBold",
+    marginBottom: 10
+  },
 });
 
-const ExamsPDF = ({allExams, status}) => {
-  
+const ExamsPDF = ({allExams, status, sus}) => {
+
   const isMaterialPD = status
+  const isSUS = sus
   
   const isJejum = allExams.filter((exam) => {
     return exam.jejum >= 8;
@@ -223,6 +250,27 @@ const ExamsPDF = ({allExams, status}) => {
           </View>
         ): <text></text>} 
 
+
+      {isSUS ? (
+        <View style={styles.wrapperSUS}>
+          <Image style={styles.imageSUS} src={imgSUS} />
+
+          <View style={styles.sectionsSUS}>
+             <Text style={styles.fontSemibold}> Agendamento</Text>
+            <Text style={styles.fontRegular}>• toda sexta-feira a partir das 10:00 horas.</Text>
+            <Text style={styles.fontRegular}>• telefones: (22)2762-5213 (22)2772-0050</Text>
+            <Text style={styles.fontRegular}>• (22)98851-7091 (22)2762-0088</Text>
+          </View>
+
+          <View style={styles.sectionsSUS}>
+             <Text style={styles.fontSemibold}> Unidade com atendimento na hora</Text>
+            <Text style={styles.fontRegular}>• De segunda a sexta-feira as 6:30h.</Text>
+            <Text style={styles.fontRegular}>• End.: Rua velho campos n°642 - Centro</Text>
+            <Text style={styles.fontRegular}>• Vagas limitadas.</Text>
+          </View>
+
+        </View>
+      ): ''}
 
         {/* Footer */}
         <View style={styles.footerWrapper}>

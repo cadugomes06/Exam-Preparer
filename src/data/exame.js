@@ -24,6 +24,14 @@ const exames = [
         instruction: ''
     },
     {
+        name: "Hepatograma",
+        nick: "hep",
+        jejum: 8,
+        diet: '',
+        type: 'special',
+        instruction: ''
+    },
+    {
         name: "Glicose",
         nick: "gli",
         jejum: 8,
@@ -38,6 +46,14 @@ const exames = [
         diet: '',
         type: 'special',
         instruction: ''
+    },
+    {
+        name: "Rotina de urina",
+        nick: "eas",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• Coletar uma amostra de urina recente.\n • Usar sempre o recipiente estéril fornecido pelo laboratório e abrir apenas na hora da coleta.\n • Lavar as mãos e região genital com água e sabão.\n • Iniciar a micção, desprezando o primeiro jato de urina.\n • Entregar ao laboratório em até 3 horas após a coleta.\n • Período menstrual - Colher a urina 4 dias após o término\n  Aguardar 7 dias após o uso de antibióticos.',
     },
     {
         name: "Urina (Coletor infantil)",
@@ -96,14 +112,6 @@ const exames = [
         instruction: '• Manter a alimentação normal.\n • Anotar o horário do início do almoço (1º garfada).\n • Almoçar em até 20 minutos no máximo.\n • Não ingerir nenhum tipo de alimento após o almoço até o horário da coleta, apenas água é permitido.\n • Chegar ao laboratório 15 minutos antes da coleta para que o sangue seja colhido exatamente 2 horas após o início do almoço.\n • O atraso deixa o exame inválido.`'
     },
     {
-        name: "Rotina de urina",
-        nick: "eas",
-        jejum: 0,
-        diet: '',
-        type: 'material',
-        instruction: '• Coletar uma amostra de urina recente.\n • Usar sempre o recipiente estéril fornecido pelo laboratório e abrir apenas na hora da coleta.\n • Lavar as mãos e região genital com água e sabão.\n • Iniciar a micção, desprezando o primeiro jato de urina.\n • Entregar ao laboratório em até 3 horas após a coleta.\n Obs: Período menstrual - Colher a urina 4 dias após o término\n • Aguardar 7 dias após o uso de antibióticos.',
-    },
-    {
         name: "Cultura de urina",
         nick: "culur",
         jejum: 0,
@@ -112,8 +120,16 @@ const exames = [
         material: '• Colher a primeira urina da manhã\n • Usar sempre o recipiente estéril fornecido pelo laboratório e abrir apenas na hora da coleta.\n • Lavar as mãos e região genital com água e sabão.\n • Iniciar a micção, desprezando o primeiro jato de urina.\n • Entregar ao laboratório em até 3 horas após a coleta.\n Obs: Período menstrual - Colher a urina 4 dias após o término\n • Aguardar 7 dias após o uso de antibióticos.',
     },
     {
-        name: "Urina de 24 horas ",
+        name: "Urina de 24h",
         nick: "uri24",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        material: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta.',
+    },
+    {
+        name: "Urina de 24h (c/ácido) ",
+        nick: "acido",
         jejum: 0,
         diet: '',
         type: 'material',

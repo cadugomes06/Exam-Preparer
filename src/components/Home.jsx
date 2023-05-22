@@ -2,10 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import Header from "./Header";
 import Menu from "./Menu";
 import exames from "../data/exame";
+import { formAcido, esclaAcido } from "../documents/index";
 import styles from "./Home.module.css";
 import garbage from "../assets/garbage.svg";
 import loupe from "../assets/loupe.svg";
 import pdf from "../assets/pdf.svg";
+//import iconEmail from '../assets/email.svg'
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ExamsPDF from "../reports/examsPDF";
@@ -15,9 +17,11 @@ const Home = () => {
   const [search, setSearch] = useState(""); //input value
   const [listExam, setListExame] = useState([]); // exames filtrados
   const [boxOptions, setBoxOptions] = useState(false); //on/off modal
-  const [examsSelectBox, setExamsSelectBox] = useState([]); //Array de exames selecionados do boxOptions
+  const [examsSelectBox, setExamsSelectBox] = useState([]); //Exames selecionados boxOptions
   const [checkPD, setCheckPD] = useState(false); //checkbox material pendente
-  const [modal, setModal ] = useState(false)
+  const [checkSUS, setCheckSUS] = useState(false); //checkbox marcação do SUS
+
+  //const [modal, setModal ] = useState(false)//open/close modal de email
 
   const allExames = exames;
   useEffect(() => {
@@ -41,8 +45,8 @@ const Home = () => {
     setBoxOptions(false);
   }
 
+  //fechar o modal ao click externo
   useEffect(() => {
-    //fechar o modal ao click externo
     const handleClickOutbox = (e) => {
       const modal = document.getElementById("boxOptions");
       if (modal && !modal.contains(e.target)) {
@@ -57,8 +61,8 @@ const Home = () => {
     };
   }, []);
 
+  //Add exame na lista de exames
   function handleClickOnBox(event) {
-    //Add exame na lista de exames
     const itemFilter = allExames.filter((exam) => {
       return exam.name === event.innerHTML;
     });
@@ -79,13 +83,6 @@ const Home = () => {
     const updateExams = [...examsSelectBox];
     updateExams.splice(index, 1);
     setExamsSelectBox(updateExams);
-  }
-
-  function handleClickModal() {
-    setModal(true)
-  }
-  function handleClickClosemodal() {
-    setModal(false)
   }
 
   function cleanAndFocusField() {
@@ -119,7 +116,11 @@ const Home = () => {
             {examsSelectBox.length > 0 ? (
               <PDFDownloadLink
                 document={
-                  <ExamsPDF allExams={examsSelectBox} status={checkPD} />
+                  <ExamsPDF
+                    allExams={examsSelectBox}
+                    status={checkPD}
+                    sus={checkSUS}
+                  />
                 }
                 fileName="exameEmPDF"
               >
@@ -144,31 +145,42 @@ const Home = () => {
           <>
             <div className={styles.materialPD}>
               <div>
-              <p>Material PD</p>
-              <input
-                type="checkbox"
-                name="pd"
-                id=""
-                checked={checkPD}
-                onChange={(e) => setCheckPD(e.target.checked)}
-              />
+                <p>Material PD</p>
+                <input
+                  type="checkbox"
+                  name="pd"
+                  id=""
+                  checked={checkPD}
+                  onChange={(e) => setCheckPD(e.target.checked)}
+                />
               </div>
-                      {/* open/close modal */}
               <div>
-                 <p>Enviar por e-mail</p>
-                 <button className={styles.btnOpenModal} 
-                         onClick={() => handleClickModal()}>
+                <p>Marcação do sus</p>
+                <input
+                  type="checkbox"
+                  name=""
+                  id=""
+                  checked={checkSUS}
+                  onChange={(e) => setCheckSUS(e.target.checked)}
+                />
+              </div>
 
-                 </button>
-            </div>
+              <div>
+                {/* open/close modal */}
+                {/*<p>Enviar por e-mail</p>
+                 <img src={iconEmail}
+                      alt="icon-letter"
+                      className={styles.iconEmail}
+                      onClick={() => handleClickModal()}
+                />*/}
+              </div>
             </div>
           </>
         ) : (
           ""
         )}
 
-
-        {/* Modal para enviar por e-mail */}
+        {/* Modal para enviar por e-mail
         <div className={modal ? styles.modalWrapper :styles.modalWrapperClose}>
 
           <div className={styles.modalContainer}>
@@ -181,7 +193,7 @@ const Home = () => {
                   X
             </div>
 
-            <form>
+            <form >
               <div className={styles.formContainer}>
                 <label form="email">E-mail</label>
                 <input
@@ -189,23 +201,28 @@ const Home = () => {
                   name="email"
                   id=""
                   placeholder="exemplo@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
 
                 <label form="file"></label>
-                <input type="file" name="file" id="" />
+                <input type="file"
+                       name="file" 
+                       value={file}
+                       id=""
+                       onChange={(e) => setFile(e.target.value)} />
 
                 <button
                   type="submit"
                   value="Enviar"
                   className={styles.btnModal}
-                  disabled
                 >
                   Enviar{" "}
                 </button>
               </div>
             </form>
           </div>
-        </div>
+        </div>*/}
 
         {/*opcoes de exames clicaveis*/}
         {boxOptions ? (
@@ -263,6 +280,25 @@ const Home = () => {
                 ? "Atenção! Os exames selecionados possui dieta específica."
                 : ""}
             </p>
+            <div>
+              {examsSelectBox.some((exam) => exam.nick == "acido") ? (
+                <ul>
+                  <li>Imprima esses formulários</li>
+                  <li>
+                    <a href={formAcido} target="_blank">
+                      Formulário para urina de 24h com ácido
+                    </a>
+                  </li>
+                  <li>
+                    <a href={esclaAcido} target="_blank">
+                      Instrução para urina de 24h com ácido
+                    </a>
+                  </li>
+                </ul>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
         ) : (
           ""

@@ -88,6 +88,7 @@
 .materialPD input {
     max-width: 14px;
     max-height: 14px;
+    cursor: pointer;
 }
 
 .materialPD input {
@@ -129,7 +130,7 @@
     height: 60px;
     width: 500px;
     outline: white;
-    border: white;
+    border: none;
     border-radius: 12px;
     padding-left: 50px;
     font-weight: 500;
@@ -184,7 +185,6 @@
     max-height: 250px;
     overflow-y: auto;   
     scroll-behavior: smooth;
-
 }
 
 .examList li {
@@ -203,16 +203,25 @@
     transition: .5s;
     color: white;
 }
+.examList li:focus {
+    background: rgb(21, 134, 136);
+    border-radius: 8px;
+    padding: 2px;
+    transition: .5s;
+    color: white;
+}
+
 
 
 .resultExames {
     width: 200px;
     margin-top: 4px;
     margin-left: 4px;
-    padding: 4px 2px;
+    padding: 4px 4px;
     border-radius: 8px;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    font-weight: 400;
+    font-family: Popins, sans-serif;
+    font-weight: 500;
+    color: rgba(0, 49, 49, 0.973);
     font-size: 14px;
     background: white;
     border: 1px solid teal;
@@ -252,17 +261,27 @@
 }
 
 .containerInfoExams {
-    width: 250px;
+    width: 100%;
+    max-width: fit-content;
     height: 280px;
+    max-height: fit-content;
+    max-height:min-content;
     position: absolute;
     bottom: 0;
-    left: 250px;
-    max-height: fit-content;
+    left: 260px;
     font-size: 0.875rem;
+    padding-top: 20px;
     font-family: Poppins, Arial, Helvetica, sans-serif;
     color: teal;
     box-sizing: border-box;
     font-weight: 500;
+}
+.containerInfoExams li {
+    list-style: none;
+    margin-bottom: 4px;
+}
+.containerInfoExams a:visited {
+    color: rgb(0, 75, 75);
 }
 
 .containerInfoExams p {
@@ -375,4 +394,9 @@
 .btnModal:hover {
     background: rgb(0, 88, 88);
     transition: 0.5s;
+}
+.iconEmail {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }

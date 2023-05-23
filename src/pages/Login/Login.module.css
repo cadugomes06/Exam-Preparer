@@ -1,0 +1,144 @@
+.loginWrapper {
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    font-family: Poppins, sans-serif;
+}
+.loginContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+.heroLogin {
+    height: 100vh; 
+    display: grid;
+    grid-column: 1; 
+    object-fit: contain;
+
+}
+.heroLogin img {
+    width: 100%; 
+    height: 100%;
+}
+
+.formWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    background: #eee;
+}
+.formContainer {
+    height: 500px;
+    width: 100%;
+    padding-left: 80px;
+    /* background: #e3e3e3; */
+}
+.formContainer div:nth-child(1) {
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.5rem;
+    color: rgb(185, 185, 185);
+}
+
+.formContainer div:nth-child(1) span {
+    background-image: linear-gradient(0deg, rgba(24,160,163,1) 51%, rgba(9,247,231,1) 94%);
+    background-clip: text;
+    font-size: 2.5rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 280px;
+}
+
+.formulario label{
+    font-size: 1rem;
+    display: block;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+}
+.formulario input {
+    width: 400px;
+    height: 44px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    padding-left: 1rem;
+    margin-bottom: 12px;
+    color: rgb(102, 102, 102);
+    font-size: 1rem;
+    
+}
+.formulario input:hover, input:focus {
+    box-shadow: 1px 1px 6px 2px rgba(79, 176, 221, 0.8);
+}
+
+.btnLogin {
+    display: block;
+    width: 400px;
+    height: 44px;
+    background: teal;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding: 0 26px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 6px 1px rgba(95, 193, 218, 0.8);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btnLogin:hover {
+   background: rgb(0, 65, 65);
+   transition: 0.8s;
+}
+
+.register {
+    height: 150px;
+}
+.register p {
+    text-decoration: underline;
+    color: teal;
+    cursor: pointer;
+}
+.register p:hover { 
+    color: rgb(1, 88, 88);
+}
+
+.register h4 {
+    font-size: 1rem;
+    color: rgb(102, 102, 102);
+    margin-top: 2rem;
+    font-weight: 400;
+}
+.register button{
+    display: block;
+    width: 240px;
+    height: 44px;
+    background: transparent;
+    color: teal;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 26px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid rgba(24,160,163,0.6);
+    cursor: pointer;    
+    position: relative;
+    z-index: 2;
+}
+
+.register button:hover {
+    background: teal;
+    color: white;
+    transition: 0.8s;    
+} 
+

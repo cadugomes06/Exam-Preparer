@@ -14,14 +14,12 @@ import ExamsPDF from "../reports/examsPDF";
 
 const Home = () => {
   const inputRef = useRef();
-  const [search, setSearch] = useState(""); //input value
+  const [search, setSearch] = useState(""); 
   const [listExam, setListExame] = useState([]); // exames filtrados
   const [boxOptions, setBoxOptions] = useState(false); //on/off modal
   const [examsSelectBox, setExamsSelectBox] = useState([]); //Exames selecionados boxOptions
-  const [checkPD, setCheckPD] = useState(false); //checkbox material pendente
-  const [checkSUS, setCheckSUS] = useState(false); //checkbox marcação do SUS
-
-  //const [modal, setModal ] = useState(false)//open/close modal de email
+  const [checkPD, setCheckPD] = useState(false); 
+  const [checkSUS, setCheckSUS] = useState(false); 
 
   const allExames = exames;
   useEffect(() => {
@@ -166,7 +164,6 @@ const Home = () => {
               </div>
 
               <div>
-                {/* open/close modal */}
                 {/*<p>Enviar por e-mail</p>
                  <img src={iconEmail}
                       alt="icon-letter"
@@ -281,7 +278,7 @@ const Home = () => {
                 : ""}
             </p>
             <div>
-              {examsSelectBox.some((exam) => exam.nick == "acido") ? (
+              {examsSelectBox.some((exam) => exam.nick === "acido") ? (
                 <ul>
                   <li>Imprima esses formulários</li>
                   <li>

@@ -125,7 +125,7 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'material',
-        material: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta.',
+        instruction: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta.',
     },
     {
         name: "Urina de 24h (c/ácido) ",
@@ -133,7 +133,7 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'material',
-        material: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta.',
+        instruction: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta.',
     },
     {
         name: "Parisotológico (EPF)",

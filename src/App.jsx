@@ -5,14 +5,17 @@ import Tiss from './routes/Tiss'
 import Links from './routes/Links'
 import Contatos from './routes/Contatos'
 import Login from './pages/Login/Login';
+import Register from './pages/register/Register';
+import { UserStorage } from './context/UserContext';
 
 const App = () =>  {
 
   return (
     <BrowserRouter>
+      <UserStorage>
       <Routes>
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={() => {}} />
+        <Route path='/register' element={ <Register /> } />
 
         <Route path='/' element={<Home />} />
         <Route path='/termos' element={<Termos />} />
@@ -20,6 +23,7 @@ const App = () =>  {
         <Route path='/links' element={<Links />} />
         <Route path='/contatos' element={<Contatos />} />
       </Routes>
+      </UserStorage>
     </BrowserRouter>
   )
 }

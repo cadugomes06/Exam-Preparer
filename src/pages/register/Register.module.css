@@ -73,7 +73,6 @@
     margin-bottom: 12px;
     color: rgb(102, 102, 102);
     font-size: 1rem;
-    
 }
 .formulario input:hover, input:focus {
     box-shadow: 1px 1px 6px 2px rgba(79, 176, 221, 0.8);
@@ -103,15 +102,6 @@
 .register {
     height: 150px;
 }
-.register p {
-    text-decoration: underline;
-    color: teal;
-    cursor: pointer;
-    font-size: 0.875rem;
-}
-.register p:hover { 
-    color: rgb(1, 88, 88);
-}
 
 .register h4 {
     font-size: 1rem;
@@ -135,8 +125,6 @@
     cursor: pointer;    
     position: relative;
     z-index: 2;
-    display: flex;
-    justify-content: center;
 }
 
 .register button:hover {
@@ -144,7 +132,8 @@
     color: white;
     transition: 0.8s;    
 } 
-.register a:nth-child(1) {
+
+.register a {
     text-decoration: none;
     text-transform: uppercase;
     color: teal;
@@ -156,11 +145,11 @@
     text-transform: uppercase;
     color: white;
 }
-
-.changePassword a{
-    font-size: 0.875rem;
-    color: teal;
+.error {
+    color: red;
+    font-weight: 500;
 }
-.changePassword a:hover {
-    color: rgb(0, 92, 92);
+.success {
+    color: green;
+    font-weight: 500;
 }

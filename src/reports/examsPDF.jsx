@@ -16,9 +16,9 @@ import icon5 from "../assets/icon5.png";
 import icon2 from "../assets/icon2.png";
 import icon3 from "../assets/icon3.png";
 
-import MycustomFont from "../fonts/Poppins-SemiBold.ttf";
-import MycustomFont2 from "../fonts/Poppins-Regular.ttf";
-import MycustomFont3 from "../fonts/Poppins-Medium.ttf";
+import MycustomFont from "../documents/fonts/Poppins-SemiBold.ttf";
+import MycustomFont2 from "../documents/fonts/Poppins-Regular.ttf";
+import MycustomFont3 from "../documents/fonts/Poppins-Medium.ttf";
 
 Font.register({ family: "SemiBold", src: MycustomFont });
 Font.register({ family: "Medium", src: MycustomFont3 });

@@ -1,6 +1,6 @@
 <h1> Exam Preparer</h1>
   
-<p>Exam Preparer ou Preparo de exames, é um poderoso sistema que armazena exames e suas informações,
+<p><strong>Exam Preparer ou Preparo de exames</strong>, é um poderoso sistema que armazena exames e suas informações,
   capaz de gerar informativos dinâmicos com base nos exames selecionados pela usuário</p> 
   
   <br />
@@ -13,10 +13,14 @@
   <li>Novas funcionalidade conforme a necessidade ☑️</li>
   <li>Centenas de preparos sendo criados toda semana ☑️</li>
   <li>Otimização do trabalho manual do laboratório ☑️</li>
-  <li><strong>Criado com React, Context hook, React-PDF, integração com Firebase, Javascript, CSS, HTML </strong> ☑️</li>
-  </u>
+  <li><h3><strong>Criado com React, Context hook, React-PDF, integração com Firebase, Javascript, CSS, HTML </strong></h3> ☑️</li>
+  <li> Função principal: Gerar arquivos dinâmicos sobre os exames em PDF ☑️</li>
+  </u>  
+  <br /> 
   
-  <br />
+  ![print'](https://github.com/cadugomes06/Exam-Preparer/assets/63760133/31471740-04a7-4b77-bcd2-76ddd07c7cc8)
+  
+  ![print2](https://github.com/cadugomes06/Exam-Preparer/assets/63760133/41b8f1ed-5ed1-4a62-ad56-78619260937f)
   
   <h3> Para testar o sistema basta segui as seguintes instruções </h3>
   <p> Ter o editor de texto (IDE) VS. Code em sua maquina</p>
@@ -38,12 +42,6 @@
   <p>Ao adicionar o primeiro exame, será liberado a biblioteca PDF 
   através do botão e opções adicionais, como material pendente ou marcação para o SUS </p>
   <p> Após adicionar os exames, basta gerar o preparo dinamico</p>
-  
-  <br /> 
-  
-  ![print'](https://github.com/cadugomes06/Exam-Preparer/assets/63760133/31471740-04a7-4b77-bcd2-76ddd07c7cc8)
-  
-  ![print2](https://github.com/cadugomes06/Exam-Preparer/assets/63760133/41b8f1ed-5ed1-4a62-ad56-78619260937f)
 
 
   

@@ -9,10 +9,11 @@
 <ul>
   <li>Dezenas de usuários ☑️</li>
   <li>Dezenas de exames ☑️</li>
+  <li>Autenticação e controle de rotas ☑️</li>
   <li>Novas funcionalidade conforme a necessidade ☑️</li>
   <li>Centenas de preparos sendo criados toda semana ☑️</li>
   <li>Otimização do trabalho manual do laboratório ☑️</li>
-  <li><strong>Criado com React, React hooks, React-PDF, Javascript, CSS, HTML </strong> ☑️</li>
+  <li><strong>Criado com React, Context hook, React-PDF, integração com Firebase, Javascript, CSS, HTML </strong> ☑️</li>
   </u>
   
   <br />
@@ -23,6 +24,7 @@
   <p>  <strong>NPM install </strong> - irá adicionar as depedências e pacotes desse projeto</p>
   <p> entre na pasta principal com o comando: <strong>cd new-preparo </strong></p>
   <p> E por último, de o comando  <strong>NPM RUN DEV</strong> para abir o projeto no seu navegador como servidor</p>
+  <p> Será necessário criar uma conta e logar, bem simples apenas com email e senha</p>
   <p> Para quem não tem conhecimento prévio sobre exames, recomendo utilizar uma combinação para teste como
     <ul>
       <li>Glicose</li>  

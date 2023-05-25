@@ -13,7 +13,7 @@
   <li>Novas funcionalidade conforme a necessidade ☑️</li>
   <li>Centenas de preparos sendo criados toda semana ☑️</li>
   <li>Otimização do trabalho manual do laboratório ☑️</li>
-  <li><h3><strong>Criado com React, Context hook, React-PDF, integração com Firebase, Javascript, CSS, HTML </strong></h3> ☑️</li>
+  <li><strong>Criado com React, Context hook, React-PDF, Firebase, Javascript, CSS, HTML </strong> ☑️</li>
   <li> Função principal: Gerar arquivos dinâmicos sobre os exames em PDF ☑️</li>
   </u>  
   <br /> 

@@ -7,7 +7,6 @@ import styles from "./Home.module.css";
 import garbage from "../assets/garbage.svg";
 import loupe from "../assets/loupe.svg";
 import pdf from "../assets/pdf.svg";
-//import iconEmail from '../assets/email.svg'
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ExamsPDF from "../reports/examsPDF";

@@ -164,3 +164,11 @@
 .changePassword a:hover {
     color: rgb(0, 92, 92);
 }
+.error {
+    color: red;
+    padding-top: 4px;
+}
+.success {
+    color: green;
+    padding-top: 4px;
+}

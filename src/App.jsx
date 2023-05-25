@@ -8,6 +8,7 @@ import Login from './pages/Login/Login';
 import Register from './pages/register/Register';
 import { UserStorage } from './context/UserContext';
 import ProtectedRoute from './routes/ProtectedRoute';
+import ChangePassword from './pages/changePassword/ChangePassword';
 
 const App = () =>  {
 
@@ -16,7 +17,8 @@ const App = () =>  {
       <UserStorage>
       <Routes>
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={ <Register /> } />
+        <Route path='/login/register' element={ <Register /> } />
+        <Route path='/login/changepassword' element={ <ChangePassword /> } />
 
         <Route path="/" element={<ProtectedRoute />}>
            <Route path="/" element={<Home />} />

@@ -4,56 +4,33 @@ import heroLogin from "../../assets/heroLogin.png";
 import styles from "./Register.module.css";
 
 import { UserContext } from "../../context/UserContext";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth } from "../../services/firebaseConfig";
 
 const Register = () => {
-  const { setEmail, setPassword } = useContext(UserContext);
-
-  const [emailValue, setEmailValue] = useState("");
-  const [passwordValue, setPasswordValue] = useState("");
-  const [errorRegister, setErrorRegister] = useState("");
-  const [success, setSuccess] = useState("");
-
-  const [createUserWithEmailAndPassword, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+  const {
+    setEmail,
+    setPassword,
+    email,
+    password,
+    handleCreateAccount,
+    loading,
+    errorRegister,
+    success,
+    setErrorRegister,
+  } = useContext(UserContext);
 
   const emailRef = useRef();
   const passwordRef = useRef();
-  const navigate = useNavigate();
 
-  async function handleCreateAccount(e) {
+  function handleActionCreate(e) {
     e.preventDefault();
-    setEmail(emailValue);
-    setPassword(passwordValue);
-    setErrorRegister("");
-    setSuccess("");
-
     if (emailRef.current.value === "" || passwordRef.current.value === "") {
       return setErrorRegister("Preencha os campos corretamente");
-    } else if (passwordValue.length < 6) {
+    } else if (password.length < 6) {
       return setErrorRegister("Sua senha deve conter no mínimo 6 dígitos");
-    }
-
-    try {
-      const res = await createUserWithEmailAndPassword(
-        emailValue,
-        passwordValue
-      );
-      if (res) {
-        setErrorRegister("");
-        setSuccess("Sua conta foi criada com sucesso ");
-        setTimeout(() => {
-          alert("Sua conta foi criado com sucesso! Faça seu login");
-          navigate("/login");
-        }, 1000);
-      } else {
-        throw new Error("Erro ao criar usuário!");
-      }
-    } catch (error) {
-      setErrorRegister(
-        "Ops.. Algo deu errado! Provavelmente esse e-mail ja está cadastrado."
-      );
+    } else {
+      emailRef.current.value = "";
+      passwordRef.current.value = "";
+      handleCreateAccount(email, password);
     }
   }
 
@@ -80,8 +57,7 @@ const Register = () => {
                   name="name"
                   placeholder="exemplo@email.com"
                   ref={emailRef}
-                  value={emailValue}
-                  onChange={(e) => setEmailValue(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
 
                 <label htmlFor="password">Senha</label>
@@ -90,8 +66,7 @@ const Register = () => {
                   name="password"
                   placeholder="*********"
                   ref={passwordRef}
-                  value={passwordValue}
-                  onChange={(e) => setPasswordValue(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
 
                 {loading ? (
@@ -102,7 +77,7 @@ const Register = () => {
                   <button
                     type="submit"
                     className={styles.btnLogin}
-                    onClick={handleCreateAccount}
+                    onClick={handleActionCreate}
                   >
                     Criar
                   </button>

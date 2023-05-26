@@ -10,8 +10,7 @@ export const ProtectedRoute = () => {
    useEffect(() => {
     if (!user) {
       navigate('/login');
-    } else {
-    }
+    } 
   }, [navigate, user]);
 
    return (

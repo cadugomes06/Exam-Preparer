@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useState, useRef } from "react";
 import styles from "./Login.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import heroLogin from "../../assets/heroLogin.png";
 
 import { UserContext } from "../../context/UserContext";
@@ -12,22 +12,13 @@ const Login = () => {
     setEmail,
     setPassword,
     handleSignInAccount,
-    loading,
     error,
     setErrorLogin,
     errorLogin,
     success,
-    setSuccess
   } = useContext(UserContext);
 
-  const navigate = useNavigate()
-
-  // useEffect(() => {
-  //   if (user) {
-  //     navigate('/')
-  //   }
-  // }, [user])
-
+  
   function handleActionSignIn(e) {
     e.preventDefault();
 
@@ -35,12 +26,10 @@ const Login = () => {
       return setErrorLogin("Preencha os campos corretamente");
     } else if (password.length < 6) {
       return setErrorLogin("Sua senha deve conter no mínimo 6 dígitos");
-    } else {
-      setSuccess("Login realizado com sucesso")
+    } 
       setTimeout(() => {
         handleSignInAccount(email, password);
-      }, 500)
-    }
+      }, 1000)
   }
 
   return (
@@ -75,16 +64,6 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
 
-                {loading ? (
-                  <button
-                    type="submit"
-                    className={styles.btnLogin}
-                    onClick={handleSignInAccount}
-                    disabled
-                  >
-                    Logando...
-                  </button>
-                ) : (
                   <button
                     type="submit"
                     className={styles.btnLogin}
@@ -92,13 +71,9 @@ const Login = () => {
                   >
                     Entrar
                   </button>
-                )}
               </form>
-              {error ? (
-                <p className={styles.error}>Login ou Senha incorretos!</p>
-              ) : (
-                ""
-              )}
+    
+              
               {errorLogin ? <p className={styles.error}>{errorLogin}</p> : ""}
               {success ? <p className={styles.success}>{success}</p> : ""}
             </div>

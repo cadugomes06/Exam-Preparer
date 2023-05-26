@@ -16,28 +16,27 @@ export const UserStorage = ({ children }) => {
 
   const navigate = useNavigate();
 
-  const [createUserWithEmailAndPassword, loading, error] =
+  const [createUserWithEmailAndPassword] =
     useCreateUserWithEmailAndPassword(auth);
 
-  const [signInWithEmailAndPassword ] =
-    useSignInWithEmailAndPassword(auth);
-
   async function handleCreateAccount() {
-    setEmail(email);
-    setPassword(password);
     setErrorRegister("");
     setSuccess("");
     try {
       const res = await createUserWithEmailAndPassword(email, password);
-      if (res) {
+      
+        if (res) {
         setUser(res)
-        setErrorRegister("");
         setSuccess("Sua conta foi criada com sucesso");
-        alert("Sua conta foi criado com sucesso!");
-        navigate("/login");
+        setErrorRegister("");
+        setErrorLogin("")
+        setTimeout(() => {
+          alert("Sua conta foi criado com sucesso!");
+          navigate("/login");
+        }, 1000)
       } else {
-        throw new setErrorRegister("Erro ao criar usuário!");
-      }
+        throw new setErrorRegister("Erro ao criar usuário!" + error);
+      } 
     } catch (error) {
       setErrorRegister(
         "Ops.. Algo deu errado! Provavelmente esse e-mail ja está cadastrado."
@@ -45,20 +44,26 @@ export const UserStorage = ({ children }) => {
     }
   }
 
+  const [signInWithEmailAndPassword, loading, error ] =
+  useSignInWithEmailAndPassword(auth);
+
   async function handleSignInAccount() {
-    setErrorLogin("")
-    setSuccess("")        
+    setErrorLogin('')
+    setSuccess('')
     try {
       const res = await signInWithEmailAndPassword(email, password)
-      if (error) {
-        return;
-      }
-      if (res) {
+       if (res) {
         setUser(res)
-        navigate("/")
-      }
+        setSuccess("Login realizado com sucesso!")
+        setTimeout(() => {
+          navigate("/");
+          setSuccess('')
+        }, 1000)
+      }  else {
+        throw new setErrorLogin("Houve um erro inesperado! " + error);
+      } 
     } catch (error) {
-      throw new Error("Houve um erro inesperado!")
+      setErrorLogin("Verifique seu login/senha e tente novamente.")
     }
   }
 
@@ -80,7 +85,7 @@ export const UserStorage = ({ children }) => {
         error,
         handleSignInAccount,
         setErrorLogin,
-        errorLogin
+        errorLogin,
       }}
     >
       {children}

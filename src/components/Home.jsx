@@ -10,6 +10,8 @@ import pdf from "../assets/pdf.svg";
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ExamsPDF from "../reports/examsPDF";
+import { UserContext } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const inputRef = useRef();
@@ -19,6 +21,16 @@ const Home = () => {
   const [examsSelectBox, setExamsSelectBox] = useState([]); //Exames selecionados boxOptions
   const [checkPD, setCheckPD] = useState(false); 
   const [checkSUS, setCheckSUS] = useState(false); 
+
+  const { user } = useContext(UserContext)
+  const navigate = useNavigate()
+
+  // useEffect(() => {
+  //   if(!user) {
+  //     console.log(user)
+  //     navigate("/login")
+  //   }
+  // }, [user])
 
   const allExames = exames;
   useEffect(() => {
@@ -123,7 +135,7 @@ const Home = () => {
               >
                 {({ loading, error }) =>
                   loading ? (
-                    "Carregando exames..."
+                    ""
                   ) : (
                     <button className={styles.btn}>
                       <img src={pdf} alt="pdf-logo" />

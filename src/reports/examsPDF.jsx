@@ -156,7 +156,6 @@ const ExamsPDF = ({allExams, status, sus}) => {
   const isMaterial = allExams.filter((exam) => {
     return exam.type === "material";
   });
-  console.log(isMaterial)
 
   return (
     <Document>
@@ -233,7 +232,6 @@ const ExamsPDF = ({allExams, status, sus}) => {
                     <View key={index}>
                       <Text style={styles.titleExam}>{exam.name}</Text>
                       <Text style={styles.badyExam}>{exam.instruction} </Text>
-                      {console.log(isMaterial)}
                     </View>
                   ))
                 : <Text></Text>}

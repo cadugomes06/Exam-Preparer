@@ -4,9 +4,31 @@ import { Link, useNavigate } from "react-router-dom";
 import heroLogin from  '../../assets/heroLogin.png';
 import { UserContext } from '../../context/UserContext';
 
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import { auth } from '../../services/firebaseConfig'
+
+
 const ChangePassword = () => {
 
-  const { email, loading, error, setEmail } = useContext(UserContext)
+  const { email, setEmail } = useContext(UserContext)
+
+  const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
+    auth
+  );
+
+  async function updatePasswordFromEmail(e) {
+    e.preventDefault()
+
+    try {
+      const success = await sendPasswordResetEmail(email);
+      if (success) {
+        console.log(success, 'Sent email');
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+ 
 
   return (
     <section className={styles.loginWrapper}>
@@ -33,23 +55,14 @@ const ChangePassword = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
 
-                {loading ? (
                   <button
                     type="submit"
                     className={styles.btnLogin}
-                    disabled
-                  >
-                    Logando...
-                  </button>
-                ) : (
-                  <button
-                    type="submit"
-                    className={styles.btnLogin}
-                    onClick={() => {}}
+                    onClick={updatePasswordFromEmail}
                   >
                     Solicitar
                   </button>
-                )}
+                
               </form>
               {error ? (
                 <p className={styles.error}>Login ou Senha incorretos!</p>

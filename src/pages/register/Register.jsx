@@ -1,5 +1,5 @@
-import React, { useState, useContext, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, {  useContext, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import heroLogin from "../../assets/heroLogin.png";
 import styles from "./Register.module.css";
 
@@ -23,6 +23,7 @@ const Register = () => {
 
   function handleActionCreate(e) {
     e.preventDefault();
+    
     if (emailRef.current.value === "" || passwordRef.current.value === "") {
       return setErrorRegister("Preencha os campos corretamente");
     } else if (password.length < 6) {
@@ -69,28 +70,14 @@ const Register = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
 
-                {loading ? (
-                  <button type="submit" className={styles.btnLogin} disabled>
-                    Cadastrando novo usuário
-                  </button>
-                ) : (
                   <button
                     type="submit"
                     className={styles.btnLogin}
-                    onClick={handleActionCreate}
-                  >
+                    onClick={handleActionCreate}>
                     Criar
                   </button>
-                )}
+                
               </form>
-              {/* {error ? 
-                // <p className={styles.error}>
-                //   Houve um erro... verifique se o email já está cadastrado
-                // </p>
-                {errorRegister}
-               : 
-                ""
-              } */}
               {errorRegister ? (
                 <p className={styles.error}>{errorRegister}</p>
               ) : (

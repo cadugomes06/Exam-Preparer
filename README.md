@@ -10,13 +10,16 @@
   <li>Dezenas de usuários ☑️</li>
   <li>Dezenas de exames ☑️</li>
   <li>Autenticação e controle de rotas ☑️</li>
-  <li>Novas funcionalidade conforme a necessidade ☑️</li>
   <li>Centenas de preparos sendo criados toda semana ☑️</li>
   <li>Otimização do trabalho manual do laboratório ☑️</li>
+  <li>Criação de conta, Autenticação e controle de senha. ☑️</li>
   <li><strong>Criado com React, Context hook, React-PDF, Firebase, Javascript, CSS, HTML </strong> ☑️</li>
   <li> Função principal: Gerar arquivos dinâmicos sobre os exames em PDF ☑️</li>
   </u>  
   <br /> 
+  
+  ![print3](https://github.com/cadugomes06/Exam-Preparer/assets/63760133/cb1255cd-f79c-48c5-b812-90b1e29df801)
+
   
   ![print'](https://github.com/cadugomes06/Exam-Preparer/assets/63760133/31471740-04a7-4b77-bcd2-76ddd07c7cc8)
   

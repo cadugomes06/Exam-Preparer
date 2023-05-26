@@ -55,6 +55,7 @@ export const UserStorage = ({ children }) => {
        if (res) {
         setUser(res)
         setSuccess("Login realizado com sucesso!")
+        window.localStorage.setItem("UserAccount", JSON.stringify(res.user.uid))
         setTimeout(() => {
           navigate("/");
           setSuccess('')

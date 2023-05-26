@@ -1,34 +1,31 @@
-import React, { useContext } from 'react'
-import styles from './ChangePassword.module.css'
-import { Link, useNavigate } from "react-router-dom";
-import heroLogin from  '../../assets/heroLogin.png';
-import { UserContext } from '../../context/UserContext';
+import React, { useContext, useState } from "react";
+import styles from "./ChangePassword.module.css";
+import { Link } from "react-router-dom";
+import heroLogin from "../../assets/heroLogin.png";
+import { UserContext } from "../../context/UserContext";
 
-import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
-import { auth } from '../../services/firebaseConfig'
-
+import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
+import { auth } from "../../services/firebaseConfig";
 
 const ChangePassword = () => {
+  const { email, setEmail } = useContext(UserContext);
 
-  const { email, setEmail } = useContext(UserContext)
+  const [ success, setSuccess ] = useState('')
 
-  const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
-    auth
-  );
+  const [sendPasswordResetEmail, sending, error] =
+    useSendPasswordResetEmail(auth);
 
   async function updatePasswordFromEmail(e) {
-    e.preventDefault()
-
+    e.preventDefault();
     try {
       const success = await sendPasswordResetEmail(email);
       if (success) {
-        console.log(success, 'Sent email');
+       setSuccess('Email enviado com sucesso!')
       }
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
- 
 
   return (
     <section className={styles.loginWrapper}>
@@ -55,20 +52,27 @@ const ChangePassword = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
 
+                {sending ? (
+                  <button type="submit" className={styles.btnLogin}>
+                    Enviando...
+                  </button>
+                ) : (
                   <button
                     type="submit"
                     className={styles.btnLogin}
                     onClick={updatePasswordFromEmail}
-                  >
+                  > 
                     Solicitar
                   </button>
-                
+                )}
+
               </form>
               {error ? (
                 <p className={styles.error}>Login ou Senha incorretos!</p>
               ) : (
                 ""
               )}
+              {success ? <p className={styles.success}>Enviado com sucesso</p> : ''}
             </div>
 
             <div className={styles.register}>
@@ -77,12 +81,11 @@ const ChangePassword = () => {
                 <Link to="/login">Voltar</Link>
               </button>
             </div>
-
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
-export default ChangePassword
+export default ChangePassword;

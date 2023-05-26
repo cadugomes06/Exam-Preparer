@@ -21,11 +21,11 @@
 
 .headerUser {
     position: absolute;
-    right: 80px;
+    right: 90px;
 }
 .headerUser img {
-    width: 48px;
-    height: 42px;
+    width: 38px;
+    height: 32px;
     opacity: 0.6;
     cursor: pointer;
 }
@@ -38,8 +38,8 @@
     background: rgb(132, 184, 184);
     z-index: 200;
     position: absolute;
-    top: 60px;
-    right: 36px;
+    top: 56px;
+    right: 42px;
     display: flex;
     justify-content: center;
     align-items: center;

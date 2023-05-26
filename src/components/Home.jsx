@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Header from "./Header";
 import Menu from "./Menu";
 import exames from "../data/exame";
@@ -10,8 +10,6 @@ import pdf from "../assets/pdf.svg";
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ExamsPDF from "../reports/examsPDF";
-import { UserContext } from "../context/UserContext";
-import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const inputRef = useRef();
@@ -22,19 +20,8 @@ const Home = () => {
   const [checkPD, setCheckPD] = useState(false); 
   const [checkSUS, setCheckSUS] = useState(false); 
 
-  const { user } = useContext(UserContext)
-  const navigate = useNavigate()
-
-  // useEffect(() => {
-  //   if(!user) {
-  //     console.log(user)
-  //     navigate("/login")
-  //   }
-  // }, [user])
-
   const allExames = exames;
   useEffect(() => {
-    //filtar valores para mostrar caixa de opcoes
     const examSelect = allExames.filter((exam) => {
       return (
         exam.name.toLowerCase().includes(search.toLocaleLowerCase()) ||
@@ -54,7 +41,6 @@ const Home = () => {
     setBoxOptions(false);
   }
 
-  //fechar o modal ao click externo
   useEffect(() => {
     const handleClickOutbox = (e) => {
       const modal = document.getElementById("boxOptions");
@@ -135,7 +121,7 @@ const Home = () => {
               >
                 {({ loading, error }) =>
                   loading ? (
-                    ""
+                    <p>Carregando...</p>
                   ) : (
                     <button className={styles.btn}>
                       <img src={pdf} alt="pdf-logo" />
@@ -248,7 +234,9 @@ const Home = () => {
         )}
 
         <div className={styles.separator} />
-        <h3 className={styles.titleList}> Lista de exames</h3>
+        {examsSelectBox.length > 0 ? (
+          <h3 className={styles.titleList}> Lista de exames</h3>
+        ) : ''}
 
         <div className={styles.containerListExams}>
           {/*Exames selecionados no boxOptions  */}

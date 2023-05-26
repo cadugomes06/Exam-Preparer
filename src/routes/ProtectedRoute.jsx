@@ -6,15 +6,18 @@ export const ProtectedRoute = () => {
    
    const { user } = useContext(UserContext)
    const navigate = useNavigate()
+   const uidUser = window.localStorage.getItem("UserAccount")
 
    useEffect(() => {
-    if (!user) {
+    if (!user && !uidUser) {
       navigate('/login');
-    } 
-  }, [navigate, user]);
+    } else {
+      return;
+    }
+  }, [navigate, user, uidUser]);
 
    return (
-       user ? <Outlet /> : null
+       uidUser ? <Outlet /> : null
     )
 }
 

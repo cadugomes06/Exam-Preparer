@@ -8,12 +8,13 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const [submenu, setSubmenu] = useState(false);
 
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   function handleSignOutAccount() {
     setUser(null);
     navigate("/login");
+    window.localStorage.clear()
   }
 
   function handleToggleSubmenu() {

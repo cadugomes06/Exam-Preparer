@@ -55,7 +55,8 @@ const Register = () => {
                 <label htmlFor="name">E-mail</label>
                 <input
                   type="email"
-                  name="name"
+                  name=""
+                  id="name"
                   placeholder="exemplo@email.com"
                   ref={emailRef}
                   onChange={(e) => setEmail(e.target.value)}
@@ -64,7 +65,8 @@ const Register = () => {
                 <label htmlFor="password">Senha</label>
                 <input
                   type="password"
-                  name="password"
+                  name=""
+                  id="passsword"
                   placeholder="*********"
                   ref={passwordRef}
                   onChange={(e) => setPassword(e.target.value)}

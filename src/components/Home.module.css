@@ -259,14 +259,13 @@
 .containerInfoExams {
     width: 100%;
     max-width: fit-content;
-    height: 280px;
+    height: 240px;
     max-height: fit-content;
     max-height:min-content;
     position: absolute;
     bottom: 0;
     left: 260px;
     font-size: 0.875rem;
-    padding-top: 20px;
     font-family: Poppins, Arial, Helvetica, sans-serif;
     color: teal;
     box-sizing: border-box;
@@ -291,7 +290,64 @@
     height: 22px;
     width: 22px;
 }
-.modalWrapperClose {
+
+@media (max-width: 950px) {
+    .searchArea,  .examContainer {
+       justify-content: start;
+       padding-left: 20px;
+    }    
+    .titleH1 {
+       justify-content: start;
+       padding-left: 40px;
+    } 
+    .wrapperSearch, .searchArea input {
+        width: 400px;
+    }    
+    .examList {
+        width: 400px;
+        height: max-content;
+        max-height: 160px;
+    }
+    .materialPD {
+        justify-content: start;
+        padding-left: 80px;
+    }
+    .separator {
+        margin: 8rem 0;
+    }
+    .containerInfoExams {
+        width: 220px;
+        height: 200px;
+        left: 240px;
+    }    
+}
+
+@media (max-width: 650px) {
+    .searchArea {
+        justify-content: center;
+        padding-top: 3rem;
+     }   
+     .titleH1 {
+        justify-content: center;
+        font-size: 1rem;
+        height: 96px;
+     } 
+     .examContainer, .materialPD {
+        justify-content: center;
+    }
+    .examList {
+        top: 140px;
+        width: 350px;
+    }
+   .wrapperSearch, .searchArea input {
+        width: 350px;
+    }    
+    .containerInfoExams {
+     display: none;
+    }  
+}
+
+/* .modalWrapperClose {
     display: none;
 }
 
@@ -395,4 +451,4 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
-}
+} */

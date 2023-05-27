@@ -13,6 +13,7 @@
   <li>Centenas de preparos sendo criados toda semana ☑️</li>
   <li>Otimização do trabalho manual do laboratório ☑️</li>
   <li>Criação de conta, Autenticação e controle de senha. ☑️</li>
+  <li>Totalmente responsivo ☑️</li>
   <li><strong>Criado com React, Context hook, React-PDF, Firebase, Javascript, CSS, HTML </strong> ☑️</li>
   <li> Função principal: Gerar arquivos dinâmicos sobre os exames em PDF ☑️</li>
   </u>  

@@ -139,7 +139,7 @@
         height: 42px;
         display: flex;
         justify-content: space-between;
-        padding: 0 30px;
+        padding: 0px;
         align-items: center;
         position: relative;
     }

@@ -71,7 +71,7 @@ const Menu = () => {
         </div>
 
           <div className={styles.menuMobile}>
-        {isMobile  ?     
+        {isMobile  && toggleMenu ?     
           imgs.map((img, index) => (
             <li key={index}>
               <Link to={pages[index]}><img src={img} alt="icon" /></Link>

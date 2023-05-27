@@ -69,11 +69,12 @@
     gap: 32px;
     margin-top: 8px;
 }
-.materialPD div:nth-child(1) {
+.materialPD div {
     height: 100%;
+    width: max-content;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 .materialPD p {
     font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -224,6 +225,9 @@
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.4);
     position: relative;
 }
+.resultExames li {
+    list-style: none;
+}
 .separator {
     margin: 4rem 0;
 }
@@ -292,10 +296,14 @@
 }
 
 @media (max-width: 950px) {
-    .searchArea,  .examContainer {
+    .searchArea {
        justify-content: start;
        padding-left: 20px;
     }    
+    .examContainer {
+        justify-content: start;
+        padding-left: 0px;
+    }
     .titleH1 {
        justify-content: start;
        padding-left: 40px;
@@ -310,7 +318,7 @@
     }
     .materialPD {
         justify-content: start;
-        padding-left: 80px;
+        padding-left: 20px;
     }
     .separator {
         margin: 8rem 0;
@@ -326,9 +334,11 @@
     .searchArea {
         justify-content: center;
         padding-top: 3rem;
+        padding-left: 0px;
      }   
      .titleH1 {
         justify-content: center;
+        padding-left: 1rem;
         font-size: 1rem;
         height: 96px;
      } 
@@ -345,6 +355,13 @@
     .containerInfoExams {
      display: none;
     }  
+    .materialPD {
+    justify-content: space-evenly;
+    gap: 8px;
+    margin-top: 8px;
+    padding-left: 0px;
+    }
+
 }
 
 /* .modalWrapperClose {

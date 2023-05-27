@@ -160,14 +160,6 @@ const Home = () => {
                 />
               </div>
 
-              <div>
-                {/*<p>Enviar por e-mail</p>
-                 <img src={iconEmail}
-                      alt="icon-letter"
-                      className={styles.iconEmail}
-                      onClick={() => handleClickModal()}
-                />*/}
-              </div>
             </div>
           </>
         ) : (

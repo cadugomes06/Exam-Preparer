@@ -151,4 +151,10 @@
         list-style: none;
         cursor: pointer;
     }
+    .menuMobile li:first-child {
+        padding-left: 30px;
+    }
+    .menuMobile li:last-child {
+        padding-right: 30px;
+    }
 }

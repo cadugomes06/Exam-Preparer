@@ -47,7 +47,6 @@
     -webkit-text-fill-color: transparent;
     font-size: 1.5rem;
 }
-
 .documentList {
    margin-top: 40px;
    height: 400px;
@@ -55,12 +54,9 @@
    justify-content: center;
    overflow-x: hidden;
 }
-
-
 .documentList a {
     padding: 12px 4px;
 }
-
 .documentList li{
     list-style: none;
     padding: 12px 4px;
@@ -88,34 +84,24 @@
     background-color: white;
     border-radius: 8px;
 }
-
 .openCloseMenu {
-    font-size: 2rem;
     position: absolute;
-    left: -16px;
-    top: 40%;
-    color: rgb(86, 131, 131);
+    left: -20px;
+    max-width: 32px;
+    height: 32px;
+}
+.openCloseMenu img {
+    width: 32px;
+    height: 32px;
     cursor: pointer;
 }
 .menuMobile {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
-    align-items: center;
-}
-.menuMobile img {
-    width: 20px;
-    height: 20px;
-}
-.menuMobile li {
-    list-style: none;
+   display: none;
 }
 
 @media (max-width: 700px) {
     .menuContainer {
-        width: 100%;
+        width: 98%;
         height: 40px;
         background: rgb(202,239,255);
         background: radial-gradient(circle, rgba(202,239,255,1) 0%, rgba(229,248,255,1) 31%, rgba(255,255,255,1) 63%);
@@ -138,12 +124,31 @@
        display: none;
      }   
      .openCloseMenu {
-        font-size: 1.5rem;
-        left: -12px;
+        position: absolute;
+        left: -26px;
         top: -2px;
-        color: rgb(216, 85, 61);
+    }
+    .openCloseMenu img {
+        width: 48px;
+        height: 44px;
         cursor: pointer;
-        padding: 4px;
     }
     
+    .menuMobile {
+        width: 100%;
+        height: 42px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+        align-items: center;
+        position: relative;
+    }
+    .menuMobile img {
+        width: 20px;
+        height: 20px;
+    }
+    .menuMobile li {
+        list-style: none;
+        cursor: pointer;
+    }
 }

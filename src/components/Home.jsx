@@ -121,7 +121,7 @@ const Home = () => {
               >
                 {({ loading, error }) =>
                   loading ? (
-                    <p>Carregando...</p>
+                    ''
                   ) : (
                     <button className={styles.btn}>
                       <img src={pdf} alt="pdf-logo" />

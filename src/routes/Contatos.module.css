@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     background: url('../assets//MessyDoodle.png');
-    background-size: contain repeat(none);
+    background-size: contain repeat(no-repeat);
 }
 
 .termosContainer {
@@ -52,4 +52,29 @@ h2 {
     text-align: center;
     margin-top: 30px;
     font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 700px) {
+    .titleTermos {
+        text-align: start;
+        padding: 20px 0 0 20px;
+    }
+    .termosContainer {
+        width: 400px;
+        margin-top: 3rem;
+    }
+    
+}
+
+@media (max-width: 450px) {
+    .titleTermos {
+        text-align: start;
+        padding: 20px 0 0 20px;
+        font-size: .9rem;
+    }
+    .termosContainer {
+        width: 350px;
+        margin-top: 3rem;
+        font-size: 0.875rem;
+    }    
 }

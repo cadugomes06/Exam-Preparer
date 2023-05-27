@@ -85,4 +85,11 @@
         background: rgb(202,239,255);
         background: radial-gradient(circle, rgba(202,239,255,1) 0%, rgba(229,248,255,1) 31%, rgba(255,255,255,1) 63%);
     }
+    .infoUserIcon {
+        width: 120px;
+        right: 0px;
+    }
+    .infoUserIcon::before {
+        right: 30px;
+    }
 }

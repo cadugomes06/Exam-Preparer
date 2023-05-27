@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Menu.module.css";
 import { Link } from "react-router-dom";
-import iconEmail from '../assets/email.svg'
-import iconForm from '../assets/forms.svg'
-import iconHome from '../assets/home.svg'
+import iconContact from '../assets/contact.svg'
+import iconFormcheck from '../assets/formcheck.svg'
+import iconDocument from '../assets/document.svg'
 import iconLinks from '../assets/link.svg'
 import iconLoupe from '../assets/loupe.svg'
+import iconArrow from '../assets/arrows.svg'
 
 
 const Menu = () => {
   const [toggleMenu, setToggleMenu] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
-  const imgs = [iconLoupe, iconForm, iconHome, iconLinks, iconEmail]
+  const imgs = [iconLoupe, iconFormcheck, iconDocument, iconLinks, iconContact]
+
+  const pages = ['/', '/termos', '/tiss', '/links', '/contatos']
 
   const { innerWidth: width } = window
   
  useEffect(() => {
   if(width < 700) {
     setIsMobile(true)
+    setToggleMenu(false)
   }
  }, [width])
 
@@ -43,7 +47,7 @@ const Menu = () => {
           className={styles.openCloseMenu}
           onClick={() => setToggleMenu(!toggleMenu)}
         >
-          🡘
+          <img src={iconArrow} alt="icon-open-close-menu" />
         </div>
 
         <div className={styles.documentList}>
@@ -67,11 +71,13 @@ const Menu = () => {
         </div>
 
           <div className={styles.menuMobile}>
-        {isMobile && toggleMenu ?     
-          imgs.map((img) => (
-            <li><img src={img} alt="icon" /></li>
+        {isMobile  ?     
+          imgs.map((img, index) => (
+            <li key={index}>
+              <Link to={pages[index]}><img src={img} alt="icon" /></Link>
+            </li>
             ))            
-            : <></>}
+            : ''}
             </div>
 
         </div>

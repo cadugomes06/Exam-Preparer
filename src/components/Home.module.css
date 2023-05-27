@@ -337,10 +337,10 @@
     }
     .examList {
         top: 140px;
-        width: 350px;
+        width: 300px;
     }
    .wrapperSearch, .searchArea input {
-        width: 350px;
+        width: 300px;
     }    
     .containerInfoExams {
      display: none;

@@ -52,7 +52,7 @@
     margin-bottom: 4px;
     box-shadow: 1px 1px 6px 1px rgba(112, 112, 112, 0.4);
     cursor: pointer;
-    font-size: 0.rem;
+    font-size: 1rem;
     color: gray;
 }
 
@@ -143,9 +143,6 @@
     .examSelector, .examSelector li,  .examSelector .btnAtivo {
         width: 80px;
     }
-    .examSelector {
-        justify-content: start;
-    }
     .sectionInfo {
         margin-left: 0.8rem;
         padding: 8px 2px 2px 8px;
@@ -155,11 +152,11 @@
         margin-bottom: 6px;
     }
     .sectionInfo h4 {
-        font-size: .875rem;
+        font-size: 1rem;
         margin-bottom: 0.4rem;
     }
     .sectionInfo h5 {
-        font-size: .7rem;
+        font-size: .8rem;
     }
     
 }

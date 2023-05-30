@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Header.module.css";
 import logoHemo from "../assets/logo-hemo.png";
 import userIcon from "../assets/user.svg";

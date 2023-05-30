@@ -7,22 +7,21 @@ import iconDocument from '../assets/document.svg'
 import iconLinks from '../assets/link.svg'
 import iconLoupe from '../assets/loupe.svg'
 import iconArrow from '../assets/arrows.svg'
+import iconExam from '../assets/exam.svg'
 
 
 const Menu = () => {
   const [toggleMenu, setToggleMenu] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
-  const imgs = [iconLoupe, iconFormcheck, iconDocument, iconLinks, iconContact]
-
-  const pages = ['/', '/termos', '/tiss', '/links', '/contatos']
+  const imgs = [iconLoupe, iconFormcheck, iconDocument, iconLinks, iconContact, iconExam];
+  const pages = ['/', '/termos', '/tiss', '/links', '/contatos', '/exames'];
 
   const { innerWidth: width } = window
   
  useEffect(() => {
   if(width < 700) {
     setIsMobile(true)
-    setToggleMenu(false)
   }
  }, [width])
 
@@ -66,6 +65,9 @@ const Menu = () => {
             </li>
             <li className="link">
               <Link to="/contatos"> E-mails e Ramal</Link>
+            </li>
+            <li className="link">
+              <Link to="/exames">Exames</Link>
             </li>
           </ul>
         </div>

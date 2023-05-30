@@ -9,6 +9,7 @@ import Register from './pages/register/Register';
 import { UserStorage } from './context/UserContext';
 import ProtectedRoute from './routes/ProtectedRoute';
 import ChangePassword from './pages/changePassword/ChangePassword';
+import { InfoExams } from './routes/InfoExams';
 
 const App = () =>  {
 
@@ -18,18 +19,16 @@ const App = () =>  {
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/login/register' element={ <Register /> } />
-        <Route path='/login/changepassword' element={ <ChangePassword /> } />
+        <Route path='/login/changepassword' element={<ChangePassword />} />
 
-        <Route path="/" element={<ProtectedRoute />}>
+         <Route path="/" element={<ProtectedRoute />}>
            <Route path="/" element={<Home />} />
+           <Route path="/exames" element={ <InfoExams />} />
            <Route path="/termos" element={<Termos />} />
            <Route path="/tiss" element={<Tiss />} />
            <Route path="/links" element={<Links />} />
            <Route path="/contatos" element={<Contatos />} />          
-       </Route>
-      
-        
-      
+         </Route>    
       </Routes>
       </UserStorage>
     </BrowserRouter>

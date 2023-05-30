@@ -104,6 +104,9 @@ const Contatos = () => {
                 <strong>2015</strong> Técnica
               </li>
               <li>
+                <strong>2017</strong> Solar das Clínicas
+              </li>
+              <li>
                 <strong>2020</strong> Cavaleiros
               </li>
               <li>

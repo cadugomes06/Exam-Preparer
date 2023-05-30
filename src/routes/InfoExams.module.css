@@ -1,0 +1,165 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../assets//MessyDoodle.png');
+    background-size: contain repeat(no-repeat);
+}
+
+.termosContainer {
+    width: 800px;
+    height: calc(100vh - 100px);
+    margin-top: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(50px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    -webkit-backdrop-filter: blur(25px);
+    overflow-y: auto;
+}
+
+.titleTermos {
+    text-align: center;
+    padding-top: 20px;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    color: rgb(1, 49, 49);
+    font-weight: 900;
+    font-size: 1rem;
+    margin-bottom: 4rem;
+}
+
+.sectionInfoExam {
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+
+.examSelector {
+    width: 150px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.examSelector li {
+    padding: 6px;
+    width: 100px;
+    background: whitesmoke;
+    border-radius: 0 20px 20px 0;
+    list-style: none;
+    margin-bottom: 4px;
+    box-shadow: 1px 1px 6px 1px rgba(112, 112, 112, 0.4);
+    cursor: pointer;
+    font-size: 0.rem;
+    color: gray;
+}
+
+.examSelector li:hover {
+    background: tomato;
+    transition: 0.5s;
+    color: white;
+}
+.examSelector .btnAtivo {
+    background: tomato;
+    transition: 0.3s;
+    width: 130px;
+    color: white;
+}
+
+.sectionInfo div {
+    display: none;
+}
+.sectionInfo {
+    width: 100%;
+    height: max-content;
+    padding: 8px 10px 8px 20px;
+    background: rgba(218, 218, 218, 0.2);
+    box-shadow: 1px 1px 6px 1px rgba(112, 112, 112, 0.3);
+    border-radius: 8px;
+    margin-left: 2rem;
+}
+.sectionInfo li {
+    font-size: 0.875rem;
+    list-style:circle;
+    margin-bottom: 4px;
+}
+.sectionInfo h4 {
+    color: rgb(0, 80, 80);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.sectionInfo h5 {
+    font-size: 1rem;
+    color: rgb(0, 85, 85);
+    margin: 4px 0;
+}
+
+.sectionInfo div.ativo {
+    display: block;
+}
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+    .titleTermos {
+        text-align: start;
+        padding: 20px 0 0 20px;
+    }
+    .termosContainer {
+        width: 600px;
+        margin-top: 3rem;
+    }
+    .examSelector .btnAtivo {
+        width: 100px;
+    }
+    .wrapper {
+        justify-content: start;
+        margin-left: 1rem;
+    }
+
+    
+}
+
+@media (max-width: 450px) {
+    .wrapper {
+        justify-content: center;
+        margin-left: 0rem;
+    }
+    .titleTermos {
+        text-align: start;
+        padding: 20px 0 0 20px;
+        font-size: .9rem;
+    }
+    .termosContainer {
+        width: 320px;
+        font-size: 0.675rem;
+    }    
+    .examSelector, .examSelector li,  .examSelector .btnAtivo {
+        width: 80px;
+    }
+    .examSelector {
+        justify-content: start;
+    }
+    .sectionInfo {
+        margin-left: 0.8rem;
+        padding: 8px 2px 2px 8px;
+    }
+    .sectionInfo li {
+        font-size: 0.675rem;
+        margin-bottom: 6px;
+    }
+    .sectionInfo h4 {
+        font-size: .875rem;
+        margin-bottom: 0.4rem;
+    }
+    .sectionInfo h5 {
+        font-size: .7rem;
+    }
+    
+}

@@ -302,7 +302,7 @@
     }    
     .examContainer {
         justify-content: start;
-        padding-left: 0px;
+        padding-left: 20px;
     }
     .titleH1 {
        justify-content: start;
@@ -342,7 +342,12 @@
         font-size: 1rem;
         height: 96px;
      } 
-     .examContainer, .materialPD {
+     .examContainer {
+        justify-content: center;
+        padding-left: 0px;
+     }
+     
+     .materialPD {
         justify-content: center;
     }
     .examList {

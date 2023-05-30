@@ -86,9 +86,10 @@
 }
 .openCloseMenu {
     position: absolute;
-    left: -20px;
+    left: -18px;
     max-width: 32px;
     height: 32px;
+    
 }
 .openCloseMenu img {
     width: 32px;
@@ -101,7 +102,7 @@
 
 @media (max-width: 700px) {
     .menuContainer {
-        width: 98%;
+        width: 96%;
         height: 40px;
         background: rgb(202,239,255);
         background: radial-gradient(circle, rgba(202,239,255,1) 0%, rgba(229,248,255,1) 31%, rgba(255,255,255,1) 63%);
@@ -125,8 +126,12 @@
      }   
      .openCloseMenu {
         position: absolute;
-        left: -26px;
+        height: 40px;
+        left: -16px;
         top: -2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .openCloseMenu img {
         width: 48px;

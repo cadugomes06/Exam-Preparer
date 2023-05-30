@@ -18,6 +18,20 @@
   <li> Função principal: Gerar arquivos dinâmicos sobre os exames em PDF ☑️</li>
   </u>  
   <br /> 
+  <h2><a href="https://dashboardhemo.netlify.app">Visitar agora</a></h2>
+  <p> Será necessário criar uma conta e logar, bem simples apenas com email e senha</p>
+  <p> Para quem não tem conhecimento prévio sobre exames, recomendo utilizar uma combinação para teste como
+    <ul>
+      <li>Glicose</li>  
+      <li>Serotonina</li>  
+      <li>Rotina de urina</li>  
+      <li>PSA</li>
+      <li>Toxocológico</li>
+      <li>Urina 24h (com ácido) </li>
+    </ul>
+  </p>
+  
+  <br />
   
   ![print3](https://github.com/cadugomes06/Exam-Preparer/assets/63760133/cb1255cd-f79c-48c5-b812-90b1e29df801)
 

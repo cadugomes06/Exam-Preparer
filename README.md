@@ -18,7 +18,7 @@
   <li> Função principal: Gerar arquivos dinâmicos sobre os exames em PDF ☑️</li>
   </u>  
   <br /> 
-  <h2><a href="https://dashboardhemo.netlify.app">Visitar agora</a></h2>
+  <h2><a href="https://dashboardhemo.netlify.app" target="_blank">Visitar agora</a></h2>
   <p> Será necessário criar uma conta e logar, bem simples apenas com email e senha</p>
   <p> Para quem não tem conhecimento prévio sobre exames, recomendo utilizar uma combinação para teste como
     <ul>

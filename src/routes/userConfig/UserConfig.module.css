@@ -4,7 +4,9 @@
     align-items: center;
     justify-content: center;
     background: white;
-    background-size: contain repeat(no-repeat);
+    background-image: url('../../assets/webLab.png');
+    background-size: contain;
+
 }
 .termosContainer {
     width: 800px;
@@ -21,7 +23,7 @@
     text-align: center;
     padding-top: 20px;
     font-family: Poppins, Arial, Helvetica, sans-serif;
-    color: rgb(1, 49, 49);
+    color: rgb(72, 175, 175);
     font-weight: 900;
     font-size: 1rem;
     margin-bottom: 4rem;

@@ -2,8 +2,8 @@ import React from 'react'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import styles from './Termos.module.css'
-import { xFragil, sexa, particular, termoEscla, comparecimento, comprometimento, cario, apbio,
-formAcido, esclaAcido, anuencia} from '../documents/index';
+import { xFragil, sexa, termoEscla, comparecimento, comprometimento, cario, apbio,
+formAcido, esclaAcido, anuencia, qrcode, marcacaoSus, contatosHemo, fichaCovid} from '../documents/index';
 
 const Termos = () => {
   return (
@@ -30,6 +30,10 @@ const Termos = () => {
               <li><a href={termoEscla} target='_blank'>Termos de Esclarecimento</a></li>
               <li><a href={formAcido} target='_blank'>Formulário urina 24h com ácido </a></li>
               <li><a href={esclaAcido} target='_blank'>Instrução urina 24 horas </a></li>
+              <li><a href={qrcode} target='_blank'>QRcode Unimed </a></li>
+              <li><a href={marcacaoSus} target='_blank'>Cartão de marcação-SUS </a></li>
+              <li><a href={contatosHemo} target='_blank'>Cartão contatos Hemolabes </a></li>
+              <li><a href={fichaCovid} target='_blank'>Formulário para Covid </a></li>
    
             </ul>
           </div>

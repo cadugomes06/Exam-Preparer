@@ -17,23 +17,15 @@ import termoEscla from '../documents/termos/termo-esclarecimento.pdf';
 import particular from '../documents/termos/termo-exame-particular.pdf';
 import sexa from '../documents/termos/termo-sexagemfetal.pdf';
 import xFragil from '../documents/termos/x-fragil.pdf';
+import qrcode from '../documents/termos/QRcode-unimed.pdf';
+import marcacaoSus from '../documents/termos/marcacao-sus.pdf';
+import contatosHemo from '../documents/termos/contatos-hemo.pdf';
+import fichaCovid from '../documents/termos/ficha-covid.pdf';
 
 
 export {
-    assim,
-    caberj,
-    cac,
-    gama,
-    golden,
-    interNotre,
-    sulAmerica,
-    xFragil,
-    sexa,
-    particular,
-    termoEscla,
-    comparecimento,
-    comprometimento,
-    cario, apbio,
-    formAcido, esclaAcido,
-    anuencia
+    assim, caberj, cac, gama, golden, interNotre, sulAmerica,
+    xFragil, sexa, particular, termoEscla, comparecimento,
+    comprometimento, cario, apbio, formAcido, esclaAcido,
+    anuencia, qrcode, marcacaoSus, contatosHemo, fichaCovid
 }

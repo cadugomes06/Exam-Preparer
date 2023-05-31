@@ -157,6 +157,10 @@ const ExamsPDF = ({allExams, status, sus}) => {
   const isMaterial = allExams.filter((exam) => {
     return exam.type === "material";
   });
+  // const isCortisol = allExams.filter((exam) => {
+  //   return exam.nick === "cort"
+  // })
+  // console.log(isCortisol[0])
 
   return (
     <Document>
@@ -215,6 +219,22 @@ const ExamsPDF = ({allExams, status, sus}) => {
                   ))
                 : <Text></Text>}
             </View>
+
+            {/* <View style={styles.specialArea}>
+              {isCortisol
+                ?  
+                    <View>
+                      <Text style={styles.titleExam}>{isCortisol[0].name}</Text>
+                      <Text style={styles.badyExam}>{isCortisol[0].instruction} </Text>
+                      <Text >{!isMaterialPD 
+                             ? '- Retirar a senha de Cortisol ao chegar no laboratório' 
+                              : ''}
+                      </Text>
+                    </View>                  
+                : <Text></Text>}
+            </View> */}
+
+
           </View>
         ) : (
           <text></text>

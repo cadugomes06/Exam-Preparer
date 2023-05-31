@@ -10,6 +10,7 @@ import { UserStorage } from './context/UserContext';
 import ProtectedRoute from './routes/ProtectedRoute';
 import ChangePassword from './pages/changePassword/ChangePassword';
 import { InfoExams } from './routes/InfoExams';
+import UserConfig from './routes/userConfig/userConfig';
 
 const App = () =>  {
 
@@ -23,6 +24,7 @@ const App = () =>  {
 
          <Route path="/" element={<ProtectedRoute />}>
            <Route path="/" element={<Home />} />
+           <Route path="/userconfig" element={ <UserConfig />} />
            <Route path="/exames" element={ <InfoExams />} />
            <Route path="/termos" element={<Termos />} />
            <Route path="/tiss" element={<Tiss />} />

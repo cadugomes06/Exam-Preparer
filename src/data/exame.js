@@ -91,9 +91,9 @@ const exames = [
         name: "Catecolaminas",
         nick: "catec",
         jejum: 8,
-        diet: ' -- Não é recomendado ingerir durante 5 dias antes da coleta --\n banana, laranja, abacaxi, queijo, café, chá, chocolate, caramelos, marmeladas, doces, sorvetes, nozes e bebidas alcoólicas.',
+        diet: ' -- Não é recomendado ingerir durante 5 dias antes da coleta --\n \nbanana, laranja, abacaxi, queijo, café, chá, chocolate, caramelos, marmeladas, doces, sorvetes e nozes',
         type: 'special',
-        instruction: '• Bebida alcoólica: A abstinência é desejável nos 5 dias que antecedem o exame teste.\n • Não fumar nas 4 horas que antecederem a coleta.'
+        instruction: ' • Bebida alcoólica: A abstinência é desejável nos 5 dias que antecedem o exame teste.\n • Não fumar nas 4 horas que antecederem a coleta.'
     },
     {
         name: "PSA",
@@ -117,7 +117,7 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'material',
-        material: '• Colher a primeira urina da manhã\n • Usar sempre o recipiente estéril fornecido pelo laboratório e abrir apenas na hora da coleta.\n • Lavar as mãos e região genital com água e sabão.\n • Iniciar a micção, desprezando o primeiro jato de urina.\n • Entregar ao laboratório em até 3 horas após a coleta.\n Obs: Período menstrual - Colher a urina 4 dias após o término\n • Aguardar 7 dias após o uso de antibióticos.',
+        instruction: '• Colher a primeira urina da manhã\n • Usar sempre o recipiente estéril fornecido pelo laboratório e abrir apenas na hora da coleta.\n • Lavar as mãos e região genital com água e sabão.\n • Iniciar a micção, desprezando o primeiro jato de urina.\n • Entregar ao laboratório em até 3 horas após a coleta.\n Obs: Período menstrual - Colher a urina 4 dias após o término\n • Aguardar 7 dias após o uso de antibióticos.',
     },
     {
         name: "Urina de 24h",
@@ -190,6 +190,22 @@ const exames = [
         diet: '',
         type: 'material',
         instruction: '• Suspender medicamentos de uso oral, transdérmico ou injetável a critério clínico.\n • Realizar a coleta antes de escovar os dentes, comer ou beber;.\n • Obs: Coletar na Matriz - Rua Conde de Araruama n°365 - Centro.'
+    },
+    {
+        name: "Cotisol salivar (da tarde)",
+        nick: "cors2",
+        jejum: 0,
+        diet: '',
+        type: 'special',
+        instruction: '• Jejum aconselhável de 4 horas.\n • Bebida alcoólica: A abstinência é desejável nas 72 horas que antecedem o teste. \n• Local: Rua Conde de Araruma n°365 - Centro (Matriz).'
+    },
+    {
+        name: "Cotisol da tarde",
+        nick: "cor16",
+        jejum: 0,
+        diet: '',
+        type: 'special',
+        instruction: '• Jejum de 4 horas.\n • Colher as 16:00 horas\n • Local: Rua Conde de Araruma n°365 - Centro (Matriz).'
     },
 ]
 

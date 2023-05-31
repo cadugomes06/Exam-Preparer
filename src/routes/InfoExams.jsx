@@ -54,7 +54,7 @@ export const InfoExams = () => {
                 className={sectionON === 0 ? styles.ativo : ""}
               >
                 <h4>Unimed</h4>
-                <li>Apenas com pedido autorizado!</li>
+                <li>Apenas com pedido Transcrito!</li>
                 <br />
                 <h4>Petrobrás</h4>
                 <li>Hemograma</li>
@@ -324,9 +324,9 @@ export const InfoExams = () => {
                 className={sectionON === 6 ? styles.ativo : ""}
               >
                 <h4>Cinética de Ferro</h4>
-                <li>Ferro</li>
-                <li>Transferrina</li>
-                <li>Saturação de transferrina</li>
+                <li><strong>FE</strong><br /> - Ferro</li>
+                <li><strong>TRA</strong><br /> - Transferrina</li>
+                <li><strong>CFF</strong><br /> - Saturação de transferrina</li>
               </div>
             </div>
           </div>

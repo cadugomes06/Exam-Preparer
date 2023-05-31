@@ -80,7 +80,7 @@ const Contatos = () => {
                 <strong>2002</strong> T.I
               </li>
               <li>
-                <strong>2003</strong> RH/ Genrentes
+                <strong>2003</strong> RH/ Gerentes
               </li>
               <li>
                 <strong>2004</strong> Faturamento

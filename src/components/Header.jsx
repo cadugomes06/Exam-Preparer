@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 import logoHemo from "../assets/logo-hemo.png";
 import userIcon from "../assets/user.svg";
 import { UserContext } from "../context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [submenu, setSubmenu] = useState(false);
@@ -39,7 +39,7 @@ const Header = () => {
         <div className={styles.infoUserIcon}>
           <ul>
             <li onClick={handleSignOutAccount}>Sair</li>
-            <li disabled>Configurações</li>
+            <li disabled><Link to="/userconfig">Configurações</Link></li>
           </ul>
         </div>
       ) : (

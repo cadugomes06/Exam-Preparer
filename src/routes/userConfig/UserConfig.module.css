@@ -1,0 +1,29 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    background-size: contain repeat(no-repeat);
+}
+.termosContainer {
+    width: 800px;
+    height: calc(100vh - 100px);
+    margin-top: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(50px);
+    background: rgba(184, 184, 184, 0.15);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    -webkit-backdrop-filter: blur(25px);
+    overflow-y: auto;
+}
+.titleTermos {
+    text-align: center;
+    padding-top: 20px;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    color: rgb(1, 49, 49);
+    font-weight: 900;
+    font-size: 1rem;
+    margin-bottom: 4rem;
+}
+

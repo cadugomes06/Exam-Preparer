@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   sectionOne: {
     marginTop: 20,
     marginLeft: 10,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   sectionTitle: {
     width: 200,
@@ -63,10 +63,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 4,
     alignItems: "center",
-    justifyContent: "center",
-    width: 250,
+    justifyContent: 'flex-start',
+    width: 200,
     height: 30,
-    marginBottom: 10,
+    marginBottom: 5,
+    paddingLeft: 50
   },
   title: {
     fontSize: 14,
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
   },
   sectionTwo: {
     marginLeft: 10,
-    marginBottom: 20,
+    marginBottom: 10,
     marginTop: 10,
   },
   badyExam: {
@@ -168,7 +169,7 @@ const ExamsPDF = ({allExams, status, sus}) => {
         <View style={styles.sectionOne}>
           <view style={styles.sectionTitle}>
             <Image style={styles.icon} src={icon2} />
-            <Text style={styles.title}>Jejum</Text>
+            <Text style={styles.title}>Jejum Matinal</Text>
           </view>
 
           <Text style={styles.subtitle}>

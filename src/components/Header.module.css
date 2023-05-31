@@ -72,6 +72,14 @@
     color: teal;
     transition: 0.3s;
 }
+.infoUserIcon a {
+    text-decoration: none;
+    color: white;
+}
+.infoUserIcon a:hover {
+    color: teal;
+    transition: 0.3s;
+}
 
 @media (max-width: 550px) {
     .headerWrapper {

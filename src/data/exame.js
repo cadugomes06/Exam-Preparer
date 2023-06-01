@@ -101,7 +101,7 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'special',
-        instruction: ' • Após toque retal, aguardar 2 dias\n • Após ultrassom transretal, 1 dia.\n • Após exercícios pesados, andar de bicicleta, andar de moto e à cavalo, aguardar 1 dia.\n • Após biópsia ou massagem de próstata,    aguardar 4 semanas \n • Após ejaculção (relação sexual), aguardar 2 dias.'
+        instruction: ' • Após toque retal, aguardar 2 dias\n • Após ultrassom transretal, 1 dia.\n • Após exercícios pesados, andar de bicicleta, andar de moto e à cavalo, aguardar 1 dia.\n • Após biópsia ou massagem de próstata, guardar 4 semanas \n • Após ejaculção (relação sexual), aguardar 2 dias.'
     },
     {
         name: "Glicose pós prandial",
@@ -192,7 +192,7 @@ const exames = [
         instruction: '• Suspender medicamentos de uso oral, transdérmico ou injetável a critério clínico.\n • Realizar a coleta antes de escovar os dentes, comer ou beber;.\n • Obs: Coletar na Matriz - Rua Conde de Araruama n°365 - Centro.'
     },
     {
-        name: "Cotisol salivar (da tarde)",
+        name: "Cortisol salivar (tarde)",
         nick: "cors2",
         jejum: 0,
         diet: '',

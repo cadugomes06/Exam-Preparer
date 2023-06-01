@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   sectionOne: {
     marginTop: 20,
     marginLeft: 10,
-    marginBottom: 10,
+    marginBottom: 5,
   },
   sectionTitle: {
     width: 200,
@@ -78,19 +78,19 @@ const styles = StyleSheet.create({
   },
   sectionTwo: {
     marginLeft: 10,
-    marginBottom: 10,
+    marginBottom: 5,
     marginTop: 10,
   },
   badyExam: {
     fontSize: 10,
-    marginBottom: 10,
+    marginBottom: 6,
     marginLeft: 10,
   },
   titleExam: {
     fontWeight: "bold",
     fontSize: 11,
     marginLeft: 10,
-    marginBottom: 4,
+    marginBottom: 2,
     fontFamily: "Medium",
   },
   footerWrapper: {
@@ -152,15 +152,14 @@ const ExamsPDF = ({allExams, status, sus}) => {
     return exam.diet != '';
   });
   const specialExams = allExams.filter((exam) => {
-    return exam.type === "special" && exam.instruction != "";
+    return exam.type === "special" && exam.instruction != "" && exam.nick != 'cort';
   });
   const isMaterial = allExams.filter((exam) => {
     return exam.type === "material";
   });
-  // const isCortisol = allExams.filter((exam) => {
-  //   return exam.nick === "cort"
-  // })
-  // console.log(isCortisol[0])
+  const isCortisol = allExams.filter((exam) => {
+    return exam.nick === "cort"
+  })
 
   return (
     <Document>
@@ -176,10 +175,10 @@ const ExamsPDF = ({allExams, status, sus}) => {
             <Text style={styles.title}>Jejum Matinal</Text>
           </view>
 
-          <Text style={styles.subtitle}>
+          <Text style={styles.badyExam}>
             {isJejum.length > 0
               ? `• Entre 8 a 12 horas de jejum \n • não realizar atividade física \n • Manter hidratação habitual`
-              : "• Não possui jejum para esses exames."}
+              : "• Não possui jejum para esse(s) exame(s)."}
           </Text>
         </View>
 
@@ -202,7 +201,7 @@ const ExamsPDF = ({allExams, status, sus}) => {
           <Text></Text>
         )}
 
-        {specialExams.length > 0 ? (
+        {specialExams.length > 0 || isCortisol.length > 0 ? (
           <View style={styles.sectionTwo}>
             <view style={styles.sectionTitle}>
               <Image style={styles.icon} src={icon1} />
@@ -220,20 +219,18 @@ const ExamsPDF = ({allExams, status, sus}) => {
                 : <Text></Text>}
             </View>
 
-            {/* <View style={styles.specialArea}>
-              {isCortisol
-                ?  
+             <View style={styles.specialArea}>
+              {isCortisol.length > 0 
+                   ?  
                     <View>
                       <Text style={styles.titleExam}>{isCortisol[0].name}</Text>
-                      <Text style={styles.badyExam}>{isCortisol[0].instruction} </Text>
-                      <Text >{!isMaterialPD 
-                             ? '- Retirar a senha de Cortisol ao chegar no laboratório' 
-                              : ''}
+                      <Text style={styles.badyExam} >{!isMaterialPD 
+                             ? '• Chegar ao laboratório no máximo até às 7:20 horas. \n • Realizar o repouso obrigatório antes do exame. \n • Realizar a coleta às 8:00 horas. \n • Retirar a senha de Cortisol ao chegar no laboratório'  
+                              :  '• Chegar ao laboratório no máximo até às 7:20 horas. \n • Realizar o repouso obrigatório antes do exame. \n • Realizar a coleta às 8:00 horas.'}
                       </Text>
                     </View>                  
                 : <Text></Text>}
-            </View> */}
-
+            </View> 
 
           </View>
         ) : (

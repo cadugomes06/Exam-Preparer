@@ -1,4 +1,4 @@
-/* .wrapper {
+.wrapper {
     position: relative;
     display: flex;
     align-items: center;
@@ -9,7 +9,7 @@
 
 }
 .termosContainer {
-    width: 800px;
+    width: 600px;
     height: calc(100vh - 100px);
     margin-top: 20px;
     border-radius: 8px;
@@ -26,6 +26,70 @@
     color: rgb(72, 175, 175);
     font-weight: 900;
     font-size: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
- */
+
+.formContainer {
+    width: 100%;
+    height: 450px;
+    /* background: #eee; */
+    display: flex;
+    padding: 1rem 0 0 4rem;
+}
+.formContainer form {
+    display: flex;
+    flex-direction: column;
+}
+.formContainer label {
+    color: rgb(189, 189, 189);
+    font-size: 0.875rem;
+    cursor: pointer;
+    margin-bottom: 0.1rem;
+    margin-top: 0.4rem;
+}
+.formContainer h4 {
+    color: rgb(90, 197, 197);
+    margin-top: 2rem;
+    margin-bottom: .4rem;
+}
+
+.formContainer input, select {
+    width: 300px;
+    height: 32px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    padding-left: .5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 1px 1px 6px 1px rgba(82, 82, 82, 0.6);
+    color: teal;
+    cursor: pointer;
+}
+
+.btnForm {
+    margin: 1.5rem 0;
+    background: #eee;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    box-shadow: 1px 1px 6px 1px rgba(40, 169, 192, 0.1);
+    text-transform: uppercase;
+    color: rgb(0, 46, 46);
+    background:  rgb(90, 197, 197);
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    font-size: 0.875rem;
+}
+
+.btnForm:is(:focus, :hover){
+    outline-style: solid;
+    outline-offset: 3px;
+    transition: .2s;
+    outline-color:  rgb(90, 197, 197);
+    color: white;
+}
+
+

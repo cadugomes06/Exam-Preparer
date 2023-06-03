@@ -7,6 +7,8 @@ import styles from "./Home.module.css";
 import garbage from "../assets/garbage.svg";
 import loupe from "../assets/loupe.svg";
 import pdf from "../assets/pdf.svg";
+import closeIcon from '../assets/close.svg'
+import eyeIcon from '../assets/eye.svg'
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ExamsPDF from "../reports/examsPDF";
@@ -19,6 +21,8 @@ const Home = () => {
   const [examsSelectBox, setExamsSelectBox] = useState([]); //Exames selecionados boxOptions
   const [checkPD, setCheckPD] = useState(false); 
   const [checkSUS, setCheckSUS] = useState(false); 
+  const [examInfo, setExamInfo] = useState({}); 
+  const [modalExam, setModalExam ] = useState(false)
 
   const allExames = exames;
   useEffect(() => {
@@ -83,6 +87,24 @@ const Home = () => {
   function cleanAndFocusField() {
     inputRef.current.focus();
     inputRef.current.value = "";
+  }
+
+ useEffect(() => {
+   if (examInfo[0]) {
+     setModalExam(true)
+   }
+ }, [examInfo])
+
+  function setOpenExamDetail(name) {
+    const examName = name.toLocaleLowerCase()
+    const examObject = allExames.filter((exam) => {
+      return exam.name.toLocaleLowerCase() == examName
+    })
+    setExamInfo(examObject)
+  }
+
+  function handleCloseModalInfo() {
+    setModalExam(false)
   }
 
   return (
@@ -166,50 +188,6 @@ const Home = () => {
           ""
         )}
 
-        {/* Modal para enviar por e-mail
-        <div className={modal ? styles.modalWrapper :styles.modalWrapperClose}>
-
-          <div className={styles.modalContainer}>
-            <div className={styles.titleModal}>
-              <h3>Enviar preparo por<br />E-MAIL</h3>
-            </div>
-
-            <div className={styles.closeModal}
-                 onClick={() => handleClickClosemodal()}>
-                  X
-            </div>
-
-            <form >
-              <div className={styles.formContainer}>
-                <label form="email">E-mail</label>
-                <input
-                  type="email"
-                  name="email"
-                  id=""
-                  placeholder="exemplo@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-
-                <label form="file"></label>
-                <input type="file"
-                       name="file" 
-                       value={file}
-                       id=""
-                       onChange={(e) => setFile(e.target.value)} />
-
-                <button
-                  type="submit"
-                  value="Enviar"
-                  className={styles.btnModal}
-                >
-                  Enviar{" "}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>*/}
-
         {/*opcoes de exames clicaveis*/}
         {boxOptions ? (
           <div className={styles.examContainer} id="boxOptions">
@@ -238,7 +216,11 @@ const Home = () => {
                   <ul key={exam.name} className={styles.resultExames}>
                     <li>
                       {exam.name}
-
+    
+                      <div className={styles.openExam}
+                             onClick={() => setOpenExamDetail(exam.name)}>
+                               <img src={eyeIcon} alt="" />
+                        </div>
                       <div
                         className={styles.lixo}
                         onClick={() => deleteExamFromList(index)}
@@ -255,6 +237,33 @@ const Home = () => {
               })
             : ""}
         </div>
+
+        {/*Modal com exames */}
+        {modalExam ? (
+              <section className={styles.modalWrapper}>
+              <div className={styles.modalContainer}>
+                 <div className={styles.titleModal}>
+                   <h3>Informações</h3>
+                 </div>
+
+                 <div className={styles.closeModal}
+                      onClick={() => handleCloseModalInfo()}>
+                      <img src={closeIcon} alt="" />
+                  </div>
+   
+                <ul className={styles.modalListExam}>
+                  <li>Nome: <p>{examInfo[0].name}</p></li>
+                  <li>Nick: <p>{examInfo[0].nick}</p></li>
+                  <li>Jejum: {examInfo[0].jejum > 0 ? <p>{examInfo[0].jejum} a 12 horas</p> : 'Não possui Jejum'}</li>
+                  <li>Dieta: {examInfo[0].diet != '' ? <p>{examInfo[0].diet}</p> : 'Não possui Dieta'}</li>
+                  <li>Tipo: <p>{examInfo[0].type}</p></li>
+                  <li>Instrução: {examInfo[0].instruction != '' ? <p>{examInfo[0].instruction}</p> : 'Não possui instrução'}</li>
+                </ul>
+   
+              </div>
+           </section>
+        ): ''}
+    
 
         {examsSelectBox ? (
           <div className={styles.containerInfoExams}>

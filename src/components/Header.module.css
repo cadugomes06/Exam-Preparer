@@ -24,6 +24,15 @@
     position: absolute;
     right: 90px;
 }
+.headerUser p {
+    color: teal;
+    position: absolute;
+    width: 150px;
+    left: -120px;
+    top: 4px;
+    max-width: 14ch;
+    text-align: center;
+}
 .headerUser img {
     width: 38px;
     height: 32px;

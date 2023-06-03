@@ -157,7 +157,7 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'material',
-        instruction: '• Fazer coleta pela manhã antes do cliente defecar ou tomar banho (não fazer assepsia). Não usar nenhum medicamento no local.\n • Apoiar a tira de fita adesiva no fundo de um tubo de ensaio de vidro, com a parte adesiva para fora.\n • Encostar delicadamente na região anal, realizando um movimento lateral com o tubo, de modo a atingir toda a região do ânus.\n • Colher 2 (duas) amostragens. Colar as fitas adesivas em lâminas e colocá-las em tubetes de transporte devidamente identificados.\n • Enviar rapidamente ao laboratório. </p>'
+        instruction: '• Fazer coleta pela manhã antes do cliente defecar ou tomar banho (não fazer assepsia). Não usar nenhum medicamento no local.\n • Apoiar a tira de fita adesiva no fundo de um tubo de ensaio de vidro, com a parte adesiva para fora.\n • Encostar delicadamente na região anal, realizando um movimento lateral com o tubo, de modo a atingir toda a região do ânus.\n • Colher 2 (duas) amostragens. Colar as fitas adesivas em lâminas e colocá-las em tubetes de transporte devidamente identificados.\n • Enviar rapidamente ao laboratório.'
     },
     {
         name: "Escarro",

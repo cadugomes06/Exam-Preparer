@@ -14,12 +14,16 @@ const Header = () => {
   function handleSignOutAccount() {
     setUser(null);
     navigate("/login");
-    window.localStorage.clear()
+    window.localStorage.removeItem('UserAccount')
   }
 
   function handleToggleSubmenu() {
     setSubmenu(!submenu);
   }
+
+   
+  const userStorage = window.localStorage.getItem('UserUnitData')
+  const userData = JSON.parse(userStorage)
 
   return (
     <div className={styles.headerWrapper}>
@@ -28,6 +32,7 @@ const Header = () => {
       </div>
 
       <div className={styles.headerUser}>
+      <p>{userData ? `Bem-vindo, ${userData.name}!` : ''}</p>
         <img
           src={userIcon}
           alt="icone-usuario"

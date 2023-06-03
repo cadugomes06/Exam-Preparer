@@ -161,6 +161,9 @@ const ExamsPDF = ({allExams, status, sus}) => {
     return exam.nick === "cort"
   })
 
+  const userStorage = window.localStorage.getItem('UserUnitData')
+  const userData = JSON.parse(userStorage)
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -225,7 +228,7 @@ const ExamsPDF = ({allExams, status, sus}) => {
                     <View>
                       <Text style={styles.titleExam}>{isCortisol[0].name}</Text>
                       <Text style={styles.badyExam} >{!isMaterialPD 
-                             ? '• Chegar ao laboratório no máximo até às 7:20 horas. \n • Realizar o repouso obrigatório antes do exame. \n • Realizar a coleta às 8:00 horas. \n • Retirar a senha de Cortisol ao chegar no laboratório'  
+                             ? '• Chegar ao laboratório no máximo até as 7:20 horas \n • Realizar o repouso obrigatório antes do exame. \n • Realizar a coleta às 8:00 horas. \n • Retirar a senha de Cortisol ao chegar no laboratório'  
                               :  '• Chegar ao laboratório no máximo até às 7:20 horas. \n • Realizar o repouso obrigatório antes do exame. \n • Realizar a coleta às 8:00 horas.'}
                       </Text>
                     </View>                  
@@ -260,13 +263,24 @@ const ExamsPDF = ({allExams, status, sus}) => {
         )}
 
         {/*Material Pendente  */}
-        {isMaterialPD ? (
+        {isMaterialPD && !userData? (
           <View>
              <Text style={styles.titleExam}>Material Pendente</Text>
              <Text style={styles.badyExam}>- Retirar a senha de Material Pendente ao chegar no laboratório para agilizar o seu atendimento.</Text>
              <Text style={styles.badyExam}>- Senha exclusiva para exames já cadastrados anteriormente.</Text>
           </View>
-        ): <text></text>} 
+        )
+        : <View>
+            <Text style={styles.titleExam}>Material Pendente</Text>
+            <Text style={styles.badyExam}>- Retirar a senha de Material Pendente ao chegar no laboratório para agilizar o seu atendimento.</Text>
+            <Text style={styles.badyExam}>- Senha exclusiva para exames já cadastrados anteriormente.</Text>
+            <Text style={styles.badyExam}>
+              {`- Horário de coleta (${userData.unit}): Segunda à Sexta-feira, 
+              de ${userData.open}h às ${userData.close}h. Sábado de
+               ${userData.openSaturday}h às ${userData.closeSaturday}h.`}
+              </Text>
+         </View>
+         } 
 
 
       {isSUS ? (

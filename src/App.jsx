@@ -10,7 +10,7 @@ import { UserStorage } from './context/UserContext';
 import ProtectedRoute from './routes/ProtectedRoute';
 import ChangePassword from './pages/changePassword/ChangePassword';
 import { InfoExams } from './routes/InfoExams';
-import UserConfig from './routes/userConfig/userConfig';
+import UserConfig from './routes/userConfig/UserConfig';
 
 const App = () =>  {
 

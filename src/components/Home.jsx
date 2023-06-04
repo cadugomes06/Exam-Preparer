@@ -252,11 +252,11 @@ const Home = () => {
                   </div>
    
                 <ul className={styles.modalListExam}>
-                  <li>Nome: <p>{examInfo[0].name}</p></li>
-                  <li>Nick: <p>{examInfo[0].nick}</p></li>
+                  <li>Exame: <p>{examInfo[0].name}</p></li>
+                  <li>Mnemônico: <p>{examInfo[0].nick}</p></li>
                   <li>Jejum: {examInfo[0].jejum > 0 ? <p>{examInfo[0].jejum} a 12 horas</p> : 'Não possui Jejum'}</li>
                   <li>Dieta: {examInfo[0].diet != '' ? <p>{examInfo[0].diet}</p> : 'Não possui Dieta'}</li>
-                  <li>Tipo: <p>{examInfo[0].type}</p></li>
+                  <li>Tipo: {examInfo[0].type === 'special' ? <p>Sangue</p> : <p>Material</p>}</li>
                   <li>Instrução: {examInfo[0].instruction != '' ? <p>{examInfo[0].instruction}</p> : 'Não possui instrução'}</li>
                 </ul>
    
@@ -269,7 +269,7 @@ const Home = () => {
           <div className={styles.containerInfoExams}>
             <p>
               {examsSelectBox.some((exam) => exam.jejum >= 8)
-                ? `Jejum de 8 a 12 horas para esses exames!`
+                ? 'Jejum de 8 a 12 horas para esses exames!'
                 : ""}
             </p>
             <p>

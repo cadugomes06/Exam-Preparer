@@ -72,12 +72,12 @@ const exames = [
         instruction: '• Realizado apenas para renovação de CNH.\n • Pagamento somente no cartão de crédito, podendo dividir em até 3x R$60,00.\n • Obrigatório levar CNH original e cópia.\n • De segunda a sexta-feira, de 13:00 às 15:30.\n • Local: Rua Conde de Araruama 365º (matriz).'
     },
     {
-        name: "DNA (teste de paternidade)",
+        name: "DNA (paternidade)",
         nick: "dna",
         jejum: 0,
         diet: '',
         type: 'special',
-        instruction: '• RG\n • CNH \n • Certidão de Nascimento(para menores de 18 anos)\n • Declaração de Nascimento (quando não houver Certidão de Nascimento)\n • Termo de Tutela e/ou Termo de Guarda (em casos de outros responsáveis legais)\n • Passaportes \n • C.T.P.S \n • Certidão de óbito (casos de Suporto pai falecido)\n • Carteira de identidade Profissionais (ex.: COREN, CRF, OAB)'
+        instruction: '• Será necessário os seguintes documentos: \n • RG\n • CNH \n • Certidão de Nascimento(para menores de 18 anos)\n • Declaração de Nascimento (quando não houver Certidão de Nascimento)\n • Termo de Tutela e/ou Termo de Guarda (em casos de outros responsáveis legais)\n • Passaportes \n • C.T.P.S \n • Certidão de óbito (casos de Suporto pai falecido)\n • Carteira de identidade Profissionais (ex.: COREN, CRF, OAB)'
     },
     {
         name: "Espermograma",
@@ -206,6 +206,46 @@ const exames = [
         diet: '',
         type: 'special',
         instruction: '• Jejum de 4 horas.\n • Colher as 16:00 horas\n • Local: Rua Conde de Araruma n°365 - Centro (Matriz).'
+    },
+    {
+        name: "PSO (sangue oculto)",
+        nick: "pso",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• Medicamentos que podem causar resultados alterados devem ser suspensos 2 dias antes, como: Aspirina, AAS, anti-inflamatórios não esteróides, anticoagulantes, colchicina, reserpina, vitamina C, iodo, sulfato ferroso e contraste radiológico.\n • Abster-se de bebidas alcoólicas por 3 dias \n • Não colher no período menstrual. \n • Coletar uma pequena quantidade de fezes.\n • Entregar ao laboratório em até 3 horas em temperatura ambiente ou manter refrigerada e entregar em até 24 horas.'
+    },
+    {
+        name: "CLOS (toxinas A e B)",
+        nick: "clos",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• Medicação: Usar laxativos somente quando houver orientação médica.\n • Evitar o uso de antiácidos e de contraste oral (utilizado em exames radiológicos) no mínimo 72 horas antes da coleta das fezes ou conforme orientação médica. \n • Coletar uma pequena quantidade de fezes.\n • Entregar ao laboratório em até 3 horas em temperatura ambiente ou manter refrigerada e entregar em até 24 horas.'
+    },
+    {
+        name: "Ácido úrico",
+        nick: "aur",
+        jejum: 8,
+        diet: '',
+        type: 'special',
+        instruction: ''
+    },
+    {
+        name: "Glicose pós dextrosol(2h)",
+        nick: "totg",
+        jejum: 8,
+        diet: '',
+        type: 'special',
+        instruction: '• Será necessário permanecer 2 horas no laboratório para a realização do exame.\n • Após a primeira coleta, o paciente irá ingerir o dextrosol e aguardar a próxima coleta no horário indicado pelo médico. \n • O repouso entre as coletas deverá ser realizada no laboratório. \n • Para coleta no sábado deverá chegar até 8:00h e informar a recepção, pois a coleta encerra mais cedo.'
+    },
+    {
+        name: "Curva Glicêmica(3h)",
+        nick: "curva",
+        jejum: 8,
+        diet: '',
+        type: 'special',
+        instruction: '• Será necessário permanecer 3 horas no laboratório para a realização do exame.\n • Após a primeira coleta, o paciente irá ingerir o dextrosol e aguardar as próximas coletas, nos horários indicado pelo médico. \n • O repouso entre as coletas deverá ser realizada no laboratório. \n • Para coleta no sábado deverá chegar até 7:20h e informar a recepção, pois a coleta encerra mais cedo.'
     },
 ]
 

@@ -32,7 +32,6 @@
 .formContainer {
     width: 100%;
     height: 450px;
-    /* background: #eee; */
     display: flex;
     padding: 1rem 0 0 4rem;
 }
@@ -92,4 +91,27 @@
     color: white;
 }
 
+@media (max-width: 500px) {
+    .termosContainer {
+        width: 320px;
+    }
+    .titleTermos {
+        padding-top: 40px;
+        font-size: .9rem;
+    }
+    .formContainer {
+        padding-left: .5rem;
+    }
+    .formContainer input, select {
+        width: 250px;
+        font-size: .9rem;
+    }
+    .btnForm {
+        width: 250px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    
+}
 

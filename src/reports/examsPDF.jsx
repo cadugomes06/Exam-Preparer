@@ -173,10 +173,10 @@ const ExamsPDF = ({allExams, status, sus}) => {
         </View>
 
         <View style={styles.sectionOne}>
-          <view style={styles.sectionTitle}>
+          <View style={styles.sectionTitle}>
             <Image style={styles.icon} src={icon2} />
             <Text style={styles.title}>Jejum Matinal</Text>
-          </view>
+          </View>
 
           <Text style={styles.badyExam}>
             {isJejum.length > 0
@@ -187,10 +187,10 @@ const ExamsPDF = ({allExams, status, sus}) => {
 
         {isDiet.length > 0 ? (
           <View style={styles.sectionTwo}>
-            <view style={styles.sectionTitle}>
+            <View style={styles.sectionTitle}>
               <Image style={styles.icon} src={icon3} />
               <Text style={styles.title}>Dieta</Text>
-            </view>
+            </View>
 
             {isDiet 
               ? isDiet.map((exam, index) => (
@@ -206,10 +206,10 @@ const ExamsPDF = ({allExams, status, sus}) => {
 
         {specialExams.length > 0 || isCortisol.length > 0 ? (
           <View style={styles.sectionTwo}>
-            <view style={styles.sectionTitle}>
+            <View style={styles.sectionTitle}>
               <Image style={styles.icon} src={icon1} />
               <Text style={styles.title}>Preparos Especiais</Text>
-            </view>
+            </View>
 
             <View style={styles.specialArea}>
               {specialExams.length > 0
@@ -242,10 +242,10 @@ const ExamsPDF = ({allExams, status, sus}) => {
 
         {isMaterial.length > 0 ? (
           <View style={styles.sectionTwo}>
-            <view style={styles.sectionTitle}>
+            <View style={styles.sectionTitle}>
               <Image style={styles.icon} src={icon5} />
               <Text style={styles.title}>Materiais</Text>
-            </view>
+            </View>
 
             <View style={styles.specialArea}>
               {isMaterial.length > 0
@@ -275,9 +275,7 @@ const ExamsPDF = ({allExams, status, sus}) => {
             <Text style={styles.badyExam}>- Retirar a senha de Material Pendente ao chegar no laboratório para agilizar o seu atendimento.</Text>
             <Text style={styles.badyExam}>- Senha exclusiva para exames já cadastrados anteriormente.</Text>
             <Text style={styles.badyExam}>
-              {`- Horário de coleta (${userData.unit}): Segunda à Sexta-feira, 
-              de ${userData.open}h às ${userData.close}h. Sábado de
-               ${userData.openSaturday}h às ${userData.closeSaturday}h.`}
+              {`- Horário de coleta (${userData.unit}): Segunda à Sexta-feira, de ${userData.open}h às ${userData.close}h. Sábado de ${userData.openSaturday}h às ${userData.closeSaturday}h.`}
               </Text>
          </View>
          } 

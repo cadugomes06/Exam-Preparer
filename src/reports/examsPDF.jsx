@@ -160,9 +160,9 @@ const ExamsPDF = ({allExams, status, sus}) => {
   const isCortisol = allExams.filter((exam) => {
     return exam.nick === "cort"
   })
-
   const userStorage = window.localStorage.getItem('UserUnitData')
   const userData = JSON.parse(userStorage)
+
 
   return (
     <Document>
@@ -263,22 +263,20 @@ const ExamsPDF = ({allExams, status, sus}) => {
         )}
 
         {/*Material Pendente  */}
-        {isMaterialPD && !userData? (
+        {isMaterialPD  ? (
           <View>
              <Text style={styles.titleExam}>Material Pendente</Text>
              <Text style={styles.badyExam}>- Retirar a senha de Material Pendente ao chegar no laboratório para agilizar o seu atendimento.</Text>
              <Text style={styles.badyExam}>- Senha exclusiva para exames já cadastrados anteriormente.</Text>
-          </View>
-        )
-        : <View>
-            <Text style={styles.titleExam}>Material Pendente</Text>
-            <Text style={styles.badyExam}>- Retirar a senha de Material Pendente ao chegar no laboratório para agilizar o seu atendimento.</Text>
-            <Text style={styles.badyExam}>- Senha exclusiva para exames já cadastrados anteriormente.</Text>
+             {userData ? 
             <Text style={styles.badyExam}>
               {`- Horário de coleta (${userData.unit}): Segunda à Sexta-feira, de ${userData.open}h às ${userData.close}h. Sábado de ${userData.openSaturday}h às ${userData.closeSaturday}h.`}
               </Text>
-         </View>
-         } 
+              : <Text></Text> }
+          </View>
+        )
+        : <Text></Text> }
+         
 
 
       {isSUS ? (

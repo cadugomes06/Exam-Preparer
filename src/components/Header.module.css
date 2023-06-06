@@ -28,9 +28,9 @@
     color: teal;
     position: absolute;
     width: 150px;
-    left: -120px;
+    left: -105px;
     top: 4px;
-    max-width: 14ch;
+    max-width: 11ch;
     text-align: center;
 }
 .headerUser img {

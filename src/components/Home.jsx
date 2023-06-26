@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Header from "./Header";
 import Menu from "./Menu";
 import exames from "../data/exame";
@@ -25,6 +25,7 @@ const Home = () => {
   const [modalExam, setModalExam ] = useState(false)
 
   const allExames = exames;
+  
   useEffect(() => {
     const examSelect = allExames.filter((exam) => {
       return (
@@ -36,7 +37,7 @@ const Home = () => {
     if (search.length >= 1) {
       openModalBoxOptions();
     }
-  }, [search]);
+  }, [search, allExames]);
 
   function openModalBoxOptions() {
     setBoxOptions(true);
@@ -141,7 +142,7 @@ const Home = () => {
                 }
                 fileName="exameEmPDF"
               >
-                {({ loading, error }) =>
+                {({ loading }) =>
                   loading ? (
                     ''
                   ) : (
@@ -282,12 +283,12 @@ const Home = () => {
                 <ul>
                   <li>Imprima esses formulários</li>
                   <li>
-                    <a href={formAcido} target="_blank">
+                    <a href={formAcido} target="_blank" rel='noreferrer'>
                       Formulário para urina de 24h com ácido
                     </a>
                   </li>
                   <li>
-                    <a href={esclaAcido} target="_blank">
+                    <a href={esclaAcido} rel='noreferrer' target="_blank">
                       Instrução para urina de 24h com ácido
                     </a>
                   </li>

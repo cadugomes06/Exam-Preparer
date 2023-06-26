@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 import styles from './Tiss.module.css'
@@ -20,13 +19,13 @@ const Tiss = () => {
   
             <div className={styles.sectionTiss}>
               <ul>
-                <li><a href={assim} target='_blank'>Assim saúde</a></li>
-                <li><a href={caberj} target='_blank'>Caberj saúde</a></li>
-                <li><a href={cac} target='_blank'>Cac saúde</a></li>
-                <li><a href={gama} target='_blank'>Gama saúde</a></li>
-                <li><a href={golden} target='_blank'>Golden Cross saúde</a></li>
-                <li><a href={interNotre} target='_blank'>Notredame / Intermédica saúde</a></li>
-                <li><a href={sulAmerica} target='_blank'>Sul América saúde</a></li>
+                <li><a href={assim} target='_blank' rel='noreferrer'>Assim saúde</a></li>
+                <li><a href={caberj} target='_blank' rel='noreferrer'>Caberj saúde</a></li>
+                <li><a href={cac} target='_blank' rel='noreferrer'>Cac saúde</a></li>
+                <li><a href={gama} target='_blank' rel='noreferrer'>Gama saúde</a></li>
+                <li><a href={golden} target='_blank' rel='noreferrer'>Golden Cross saúde</a></li>
+                <li><a href={interNotre} target='_blank' rel='noreferrer'>Notredame / Intermédica saúde</a></li>
+                <li><a href={sulAmerica} target='_blank' rel='noreferrer'>Sul América saúde</a></li>
               </ul>
             </div>
   

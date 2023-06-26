@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
 import styles from "./Links.module.css";
@@ -21,7 +20,7 @@ const Links = () => {
               <li>
                 <a
                   href="https://www.laudoonline.com.br/hemolabes/"
-                  target="_blank"
+                  target="_blank" rel='noreferrer'
                 >
                   Resultado online
                 </a>
@@ -29,7 +28,7 @@ const Links = () => {
               <li>
                 <a
                   href="http://appunimedvsf.com.br:8081/Account/Login?ReturnUrl=%2F"
-                  target="_blank"
+                  target="_blank" rel='noreferrer'
                 >
                   Autorizador Unimed
                 </a>
@@ -37,7 +36,7 @@ const Links = () => {
               <li>
                 <a
                   href="https://www.orizonbrasil.com.br/acesso-restrito.html"
-                  target="_blank"
+                  target="_blank" rel='noreferrer'
                 >
                   Autorizador Orizon
                 </a>
@@ -45,20 +44,20 @@ const Links = () => {
               <li>
                 <a
                   href="https://portaltiss.saudepetrobras.com.br"
-                  target="_blank"
+                  target="_blank" rel='noreferrer'
                 >
                   Autorizador AMS Petrobrás
                 </a>
               </li>
               <li>
-                <a href="https://credenciado.amil.com.br/login" target="_blank">
+                <a href="https://credenciado.amil.com.br/login" target="_blank" rel='noreferrer'>
                   Autorizador Amil
                 </a>
               </li>
               <li>
                 <a
                   href="https://autorizadorintermedica.startiss.com.br/Login.aspx"
-                  target="_blank"
+                  target="_blank" rel='noreferrer'
                 >
                   Autorizador Intermédica/Notredame
                 </a>
@@ -66,7 +65,7 @@ const Links = () => {
               <li>
                 <a
                   href="https://saude.sulamericaseguros.com.br/prestador/login/"
-                  target="_blank"
+                  target="_blank" rel='noreferrer'
                 >
                   Autorizador Sul América
                 </a>
@@ -74,26 +73,26 @@ const Links = () => {
               <li>
                 <a
                   href="http://1907prd-painel.cloudmv.com.br/mvautorizadorguias/"
-                  target="_blank"
+                  target="_blank" rel='noreferrer'
                 >
                   Autorizador Cedae - CAC
                 </a>
               </li>
               <li>
-                <a href="https://rac.hat.totvs.com.br" target="_blank">
+                <a href="https://rac.hat.totvs.com.br" target="_blank" rel='noreferrer'>
                   Autorizador Caberj/Integral
                 </a>
               </li>
               <li>
                 <a
-                  href="http://portal.goldentiss.com.br/portaltiss/tiss/info/home.golden#"
+                  href="http://portal.goldentiss.com.br/portaltiss/tiss/info/home.golden#" rel='noreferrer'
                   target="_blank"
                 >
                   Autorizador Golden Cross
                 </a>
               </li>
               <li>
-                <a href="https://autorizador.assim.com.br/" target="_blank">
+                <a href="https://autorizador.assim.com.br/" target="_blank" rel='noreferrer'>
                   Autorizador Assim
                 </a>
               </li>

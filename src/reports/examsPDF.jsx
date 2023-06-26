@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Page,
   Text,
@@ -48,10 +47,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginBottom: 5,
   },
-  sectionTitle: {
-    width: 200,
-    height: 40,
-  },
   subtitle: {
     fontSize: 10,
     marginLeft: 10,
@@ -67,7 +62,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 30,
     marginBottom: 5,
-    paddingLeft: 50
+    paddingLeft: 50,
   },
   title: {
     fontSize: 14,

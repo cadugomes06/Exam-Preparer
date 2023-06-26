@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./InfoExams.module.css";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
@@ -15,8 +15,6 @@ export const InfoExams = () => {
     "Função Reumática",
     "Cinética de Ferro",
   ];
-
-  const allInfoExams = document.querySelectorAll('[name="infoExam"]');
 
   function setIndiceOfExame(index) {
     setSectionOn(index);

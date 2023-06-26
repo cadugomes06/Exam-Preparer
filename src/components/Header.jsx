@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./Header.module.css";
 import logoHemo from "../assets/logo-hemo.png";
 import userIcon from "../assets/user.svg";
@@ -36,7 +36,7 @@ const Header = () => {
         <img
           src={userIcon}
           alt="icone-usuario"
-          onClick={(e) => handleToggleSubmenu()}
+          onClick={() => handleToggleSubmenu()}
         />
       </div>
 

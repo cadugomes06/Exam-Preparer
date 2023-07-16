@@ -1,7 +1,7 @@
 const exames = [
     {
         name: "Cortisol",
-        nick: "cort",
+        nick: "CORT",
         jejum: 8,
         diet: '',
         type: 'special',
@@ -9,7 +9,7 @@ const exames = [
     },
     {
         name: "Serotonina",
-        nick: "ser",
+        nick: "SER",
         jejum: 8,
         diet: " -- Não é recomendado ingerir 24 horas antes da coleta -- \n • Café, chá, chocolate, mate, refrigerante, abacate, abacaxi\n • Ameixa, banana, berinjela, picles, kiwi, manga, nozes, tomate\n • Alimentos aromatizados com baunilha.",
         type: 'special',
@@ -17,7 +17,7 @@ const exames = [
     },
     {
         name: "Ferro",
-        nick: "fe",
+        nick: "FE",
         jejum: 8,
         diet: '',
         type: 'special',
@@ -25,7 +25,7 @@ const exames = [
     },
     {
         name: "Hepatograma",
-        nick: "hep",
+        nick: "HEP",
         jejum: 8,
         diet: '',
         type: 'special',
@@ -33,7 +33,7 @@ const exames = [
     },
     {
         name: "Glicose",
-        nick: "gli",
+        nick: "GLI",
         jejum: 8,
         diet: '',
         type: 'special',
@@ -41,7 +41,7 @@ const exames = [
     },
     {
         name: "Insulina",
-        nick: "ins",
+        nick: "INS",
         jejum: 8,
         diet: '',
         type: 'special',
@@ -49,7 +49,7 @@ const exames = [
     },
     {
         name: "Rotina de urina",
-        nick: "eas",
+        nick: "EAS",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -57,7 +57,7 @@ const exames = [
     },
     {
         name: "Urina (Coletor infantil)",
-        nick: "eas",
+        nick: "EAS",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -65,7 +65,7 @@ const exames = [
     },
     {
         name: "Toxicológico",
-        nick: "toxicologico",
+        nick: "TOXI",
         jejum: 0,
         diet: '',
         type: 'special',
@@ -73,7 +73,7 @@ const exames = [
     },
     {
         name: "DNA (paternidade)",
-        nick: "dna",
+        nick: "DNA",
         jejum: 0,
         diet: '',
         type: 'special',
@@ -81,7 +81,7 @@ const exames = [
     },
     {
         name: "Espermograma",
-        nick: "esp",
+        nick: "ESP",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -89,15 +89,31 @@ const exames = [
     },
     {
         name: "Catecolaminas",
-        nick: "catec",
+        nick: "CATEC",
         jejum: 8,
         diet: ' -- Não é recomendado ingerir durante 5 dias antes da coleta --\n \nbanana, laranja, abacaxi, queijo, café, chá, chocolate, caramelos, marmeladas, doces, sorvetes e nozes',
         type: 'special',
         instruction: ' • Bebida alcoólica: A abstinência é desejável nos 5 dias que antecedem o exame teste.\n • Não fumar nas 4 horas que antecederem a coleta.'
     },
     {
+        name: "Catecolaminas Urina 24h",
+        nick: "CTL24",
+        jejum: 8,
+        diet: ' -- Não é recomendado ingerir durante 2 dias antes da coleta --\n \n chocolate, baunilha, bananas, frutas cítricas e café.',
+        type: 'material',
+        instruction: ' • Coletar no frasco com conservante, limpo, contendo 10 mL de HCl 25% para cada 2 litros de urina (adultos e crianças). \n • Desprezar a primeira miccção da manhã, anotar o horário de início, a partir da próxima miccção. \n • Armazenar em frasco apropriado toda a urina até o mesmo horário em que foi desprezada a primeira urina, no dia seguinte, este será o horário do término da coleta. \n • A amostra deverá ser armazenada tampada e refrigerada entre as coletas. \n • Após o término, o material deverá ser entregue em até 3 horas ao laboratório.'
+    },
+    {
+        name: "Cadmio Urina 24h",
+        nick: "CAD24",
+        jejum: 8,
+        diet: ' -- Não é recomendado ingerir durante 1 dias antes da coleta --\n \n consumo de peixes, farinhas refinadas, chás e cafés',
+        type: 'material',
+        instruction: '• Desprezar a primeira miccção da manhã, anotar o horário de início, a partir da próxima miccção. \n • Armazenar em frasco apropriado toda a urina até o mesmo horário em que foi desprezada a primeira urina, no dia seguinte, este será o horário do término da coleta. \n • A amostra deverá ser armazenada tampada e refrigerada. \n • Após o término da coleta, o material deverá ser entregue em até 3 horas ao laboratório.\n • Evitar uso de cigarro no dia da coleta.'
+    },
+    {
         name: "PSA",
-        nick: "psa",
+        nick: "PSA",
         jejum: 0,
         diet: '',
         type: 'special',
@@ -105,7 +121,7 @@ const exames = [
     },
     {
         name: "Glicose pós prandial",
-        nick: "glipp",
+        nick: "GLIPP",
         jejum: 0,
         diet: '',
         type: 'special',
@@ -113,7 +129,7 @@ const exames = [
     },
     {
         name: "Cultura de urina",
-        nick: "culur",
+        nick: "CULUR",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -121,7 +137,7 @@ const exames = [
     },
     {
         name: "Urina de 24h",
-        nick: "uri24",
+        nick: "URI24",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -129,7 +145,7 @@ const exames = [
     },
     {
         name: "Urina de 24h (c/ácido) ",
-        nick: "acido",
+        nick: "ACIDO",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -137,7 +153,7 @@ const exames = [
     },
     {
         name: "Parisotológico (EPF)",
-        nick: "epf",
+        nick: "EPF",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -145,7 +161,7 @@ const exames = [
     },
     {
         name: "Parisotológico (MIF)",
-        nick: "mif",
+        nick: "MIF",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -153,7 +169,7 @@ const exames = [
     },
     {
         name: "Oxiúrus",
-        nick: "poxi",
+        nick: "POXI",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -161,7 +177,7 @@ const exames = [
     },
     {
         name: "Escarro",
-        nick: "baar",
+        nick: "BAAR",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -169,7 +185,7 @@ const exames = [
     },
     {
         name: "Cortisol salivar",
-        nick: "corts",
+        nick: "CORTS",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -177,7 +193,7 @@ const exames = [
     },
     {
         name: "Testosterona salivar",
-        nick: "testl",
+        nick: "TESTL",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -185,7 +201,7 @@ const exames = [
     },
     {
         name: "IGA salivar",
-        nick: "igal",
+        nick: "IGAL",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -193,23 +209,31 @@ const exames = [
     },
     {
         name: "Cortisol salivar (tarde)",
-        nick: "cors2",
+        nick: "CORS2",
         jejum: 0,
         diet: '',
         type: 'special',
         instruction: '• Jejum aconselhável de 4 horas.\n • Bebida alcoólica: A abstinência é desejável nas 72 horas que antecedem o teste. \n• Local: Rua Conde de Araruma n°365 - Centro (Matriz).'
     },
     {
-        name: "Cotisol da tarde",
-        nick: "cor16",
+        name: "Cortisol da tarde",
+        nick: "CORT16",
         jejum: 0,
         diet: '',
         type: 'special',
-        instruction: '• Jejum de 4 horas.\n • Colher as 16:00 horas\n • Local: Rua Conde de Araruma n°365 - Centro (Matriz).'
+        instruction: '• Jejum de 4 horas.\n • Colher as 16:00 horas\n • Chegar 15 minutos antes do horário da coleta. \n • Local: Rua Conde de Araruma n°365 - Centro (Matriz).'
+    },
+    {
+        name: "Cortisol livre",
+        nick: "CORTL",
+        jejum: 0,
+        diet: '',
+        type: 'material',
+        instruction: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta e manter o frasco fechado. \n • Ingestão normal de líquidos, sem exagero (porque diminui a sensibilidade do método). \n • Não fazer esforço físico durante a coleta.\n • Sendo diabético, controlar rigorosamente a dieta e medicamentos, para diminuir a ingestão de líquidos.'
     },
     {
         name: "PSO (sangue oculto)",
-        nick: "pso",
+        nick: "PSO",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -217,7 +241,7 @@ const exames = [
     },
     {
         name: "CLOS (toxinas A e B)",
-        nick: "clos",
+        nick: "CLOS",
         jejum: 0,
         diet: '',
         type: 'material',
@@ -225,7 +249,7 @@ const exames = [
     },
     {
         name: "Ácido úrico",
-        nick: "aur",
+        nick: "AUR",
         jejum: 8,
         diet: '',
         type: 'special',
@@ -233,7 +257,7 @@ const exames = [
     },
     {
         name: "Glicose pós dextrosol(2h)",
-        nick: "totg",
+        nick: "TOTG",
         jejum: 8,
         diet: '',
         type: 'special',
@@ -241,7 +265,7 @@ const exames = [
     },
     {
         name: "Curva Glicêmica(3h)",
-        nick: "curva",
+        nick: "CURVA",
         jejum: 8,
         diet: '',
         type: 'special',

@@ -10,6 +10,7 @@ import {
 } from "@react-pdf/renderer";
 import logo2 from "../assets/logo-hemo2.png";
 import imgSUS from '../assets/sus.png'
+import warningIcon from '../assets/warning.png'
 
 import icon1 from "../assets/icon1.png";
 import icon5 from "../assets/icon5.png";
@@ -134,6 +135,21 @@ const styles = StyleSheet.create({
     fontFamily: "SemiBold",
     marginBottom: 10
   },
+  sectionTitleMaterialPD: {
+    width: '100%',
+    flexDirection: 'row',
+    display: 'flex',
+    alignItems: 'center',
+    alignContent: 'center',
+    marginLeft: 10,
+    marginTop: 8,
+    marginBottom: 4
+  },
+  titleMaterialPD: {
+    fontSize: 11,
+    fontFamily: 'SemiBold',
+    marginLeft: 4,
+  }
 });
 
 const ExamsPDF = ({allExams, status, sus}) => {
@@ -263,7 +279,10 @@ const ExamsPDF = ({allExams, status, sus}) => {
         {/*Material Pendente  */}
         {isMaterialPD  ? (
           <View>
-             <Text style={styles.titleExam}>Material Pendente</Text>
+            <View style={styles.sectionTitleMaterialPD}>
+            <Image style={styles.icon} src={warningIcon} />           
+             <Text style={styles.titleMaterialPD}>Material Pendente</Text>
+            </View>
              <Text style={styles.badyExam}>- Retirar a senha de Material Pendente ao chegar no laboratório para agilizar o seu atendimento.</Text>
              <Text style={styles.badyExam}>- Senha exclusiva para exames já cadastrados anteriormente.</Text>
              {userData ? 

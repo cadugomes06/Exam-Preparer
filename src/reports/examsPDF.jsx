@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Page,
   Text,
@@ -136,24 +137,25 @@ const styles = StyleSheet.create({
 });
 
 const ExamsPDF = ({allExams, status, sus}) => {
-  
+
+  const getExams = allExams  
   const isMaterialPD = status
   const isSUS = sus
   
-  const isJejum = allExams.filter((exam) => {
+  const isJejum = getExams.filter((exam) => {
     return exam.jejum >= 8;
   });
-  const isDiet = allExams.filter((exam) => {
+  const isDiet = getExams.filter((exam) => {
     return exam.diet != '';
   });
-  const specialExams = allExams.filter((exam) => {
-    return exam.type === "special" && exam.instruction != "" && exam.nick != 'cort';
+  const specialExams = getExams.filter((exam) => {
+    return exam.type === "special" && exam.instruction != "" && exam.nick != 'CORT';
   });
-  const isMaterial = allExams.filter((exam) => {
+  const isMaterial = getExams.filter((exam) => {
     return exam.type === "material";
   });
-  const isCortisol = allExams.filter((exam) => {
-    return exam.nick === "cort"
+  const isCortisol = getExams.filter((exam) => {
+    return exam.nick === "CORT" | 'cort'
   })
   const userStorage = window.localStorage.getItem('UserUnitData')
   const userData = JSON.parse(userStorage)
@@ -189,9 +191,10 @@ const ExamsPDF = ({allExams, status, sus}) => {
 
             {isDiet 
               ? isDiet.map((exam, index) => (
-                  <Text style={styles.subtitle} key={index}>
-                    {exam.diet} 
-                  </Text>
+                  <View key={index}>
+                  <Text style={styles.titleExam}>{exam.name}</Text>
+                  <Text style={styles.subtitle} key={index}>{exam.diet}</Text>
+                  </View>
                 ))
               : <Text></Text>}
           </View>

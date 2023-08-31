@@ -279,7 +279,7 @@ const Home = () => {
                 : ""}
             </p>
             <div>
-              {examsSelectBox.some((exam) => exam.nick === "acido") ? (
+              {examsSelectBox.some((exam) => exam.nick == "ACIDO" || exam.nick == 'CTL24') ? (
                 <ul>
                   <li>Imprima esses formulários</li>
                   <li>

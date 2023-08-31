@@ -11,7 +11,7 @@ const exames = [
         name: "Serotonina",
         nick: "SER",
         jejum: 8,
-        diet: " -- Não é recomendado ingerir 24 horas antes da coleta -- \n • Café, chá, chocolate, mate, refrigerante, abacate, abacaxi\n • Ameixa, banana, berinjela, picles, kiwi, manga, nozes, tomate\n • Alimentos aromatizados com baunilha.",
+        diet: " - Não é recomendado ingerir 24 horas antes da coleta: \n • Café, chá, chocolate, mate, refrigerante, abacate, abacaxi\n • Ameixa, banana, berinjela, picles, kiwi, manga, nozes, tomate\n • Alimentos aromatizados com baunilha.",
         type: 'special',
         instruction: ''
     },
@@ -91,7 +91,7 @@ const exames = [
         name: "Catecolaminas",
         nick: "CATEC",
         jejum: 8,
-        diet: ' -- Não é recomendado ingerir durante 5 dias antes da coleta --\n \nbanana, laranja, abacaxi, queijo, café, chá, chocolate, caramelos, marmeladas, doces, sorvetes e nozes',
+        diet: ' - Não é recomendado ingerir durante 5 dias antes da coleta: \n • banana, laranja, abacaxi, queijo, café, chá, chocolate, caramelos, marmeladas, doces, sorvetes e nozes',
         type: 'special',
         instruction: ' • Bebida alcoólica: A abstinência é desejável nos 5 dias que antecedem o exame teste.\n • Não fumar nas 4 horas que antecederem a coleta.'
     },
@@ -99,7 +99,7 @@ const exames = [
         name: "Catecolaminas Urina 24h",
         nick: "CTL24",
         jejum: 8,
-        diet: ' -- Não é recomendado ingerir durante 2 dias antes da coleta --\n \n chocolate, baunilha, bananas, frutas cítricas e café.',
+        diet: ' - Não é recomendado ingerir durante 2 dias antes da coleta: \n • Chocolate, baunilha, bananas, frutas cítricas e café.',
         type: 'material',
         instruction: ' • Coletar no frasco com conservante, limpo, contendo 10 mL de HCl 25% para cada 2 litros de urina (adultos e crianças). \n • Desprezar a primeira miccção da manhã, anotar o horário de início, a partir da próxima miccção. \n • Armazenar em frasco apropriado toda a urina até o mesmo horário em que foi desprezada a primeira urina, no dia seguinte, este será o horário do término da coleta. \n • A amostra deverá ser armazenada tampada e refrigerada entre as coletas. \n • Após o término, o material deverá ser entregue em até 3 horas ao laboratório.'
     },

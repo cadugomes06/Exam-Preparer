@@ -117,7 +117,7 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'special',
-        instruction: ' • Após toque retal, aguardar 2 dias\n • Após ultrassom transretal, 1 dia.\n • Após exercícios pesados, andar de bicicleta, andar de moto e à cavalo, aguardar 1 dia.\n • Após biópsia ou massagem de próstata, guardar 4 semanas \n • Após ejaculção (relação sexual), aguardar 2 dias.'
+        instruction: ' • Após toque retal, aguardar 2 dias\n • Após ultrassom transretal, 1 dia.\n • Após exercícios pesados, andar de bicicleta, andar de moto e à cavalo, aguardar 1 dia.\n • Após biópsia ou massagem de próstata, guardar 4 semanas \n • Após ejaculação (relação sexual), aguardar 2 dias.'
     },
     {
         name: "Glicose pós prandial",

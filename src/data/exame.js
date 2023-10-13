@@ -1,4 +1,12 @@
 const exames = [
+      {
+        name: "Cálcio",
+        nick: "CA",
+        jejum: 8,
+        diet: '',
+        type: 'special',
+        instruction: ''
+    },
      {
         name: "Imunofixação de proteínas",
         nick: "IEF",

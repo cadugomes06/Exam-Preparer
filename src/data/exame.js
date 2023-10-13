@@ -1,4 +1,12 @@
 const exames = [
+     {
+        name: "Imunofixação de proteínas",
+        nick: "IEF",
+        jejum: 8,
+        diet: '',
+        type: 'special',
+        instruction: ''
+    },
     {
         name: "Cortisol",
         nick: "CORT",

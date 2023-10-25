@@ -168,7 +168,7 @@ const exames = [
         instruction: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta.',
     },
     {
-        name: "Parisotológico (EPF)",
+        name: "Parasitológico (EPF)",
         nick: "EPF",
         jejum: 0,
         diet: '',
@@ -176,7 +176,7 @@ const exames = [
         instruction: '• Coletar uma pequena quantidade de fezes.\n • Entregar ao laboratório em até 3 horas em temperatura ambiente ou manter refrigerada e entregar em até 24 horas.'
     },
     {
-        name: "Parisotológico (MIF)",
+        name: "Parasitológico (MIF)",
         nick: "MIF",
         jejum: 0,
         diet: '',

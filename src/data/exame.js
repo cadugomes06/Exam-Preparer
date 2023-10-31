@@ -93,7 +93,7 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'special',
-        instruction: '• Será necessário os seguintes documentos: \n • RG\n • CNH \n • Certidão de Nascimento(para menores de 18 anos)\n • Declaração de Nascimento (quando não houver Certidão de Nascimento)\n • Termo de Tutela e/ou Termo de Guarda (em casos de outros responsáveis legais)\n • Passaportes \n • C.T.P.S \n • Certidão de óbito (casos de Suporto pai falecido)\n • Carteira de identidade Profissionais (ex.: COREN, CRF, OAB)'
+        instruction: '• Será necessário os seguintes documentos: \n • RG\n • CNH \n • Certidão de Nascimento(para menores de 18 anos)\n • Declaração de Nascimento (quando não houver Certidão de Nascimento)\n • Termo de Tutela e/ou Termo de Guarda (em casos de outros responsáveis legais)\n • Passaportes \n • C.T.P.S \n • Certidão de óbito (casos de Suporto pai falecido)\n • Carteira de identidade Profissionais (ex.: COREN, CRF, OAB) \n• Local: Rua Conde de Araruama, n°365, Centro'
     },
     {
         name: "Espermograma",

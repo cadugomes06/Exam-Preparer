@@ -2,7 +2,7 @@ import Header from '../components/Header'
 import Menu from '../components/Menu'
 import styles from './Termos.module.css'
 import { xFragil, sexa, termoEscla, comparecimento, comprometimento, cario,
-formAcido, esclaAcido, anuencia, qrcode, marcacaoSus, contatosHemo, fichaCovid} from '../documents/index';
+formAcido, esclaAcido, anuencia, qrcode, marcacaoSus, contatosHemo, fichaCovid, termoArray} from '../documents/index';
 
 const Termos = () => {
   return (
@@ -26,6 +26,7 @@ const Termos = () => {
               <li><a href={sexa} target='_blank'  rel='noreferrer'>Sexagem Fetal</a></li>
               <li><a href={cario} target='_blank'  rel='noreferrer'>Cariótipo </a></li>
               <li><a href={xFragil} target='_blank'  rel='noreferrer'>X-Frágil </a></li>
+              <li><a href={termoArray} target='_blank'  rel='noreferrer'>Termo de consentimento para CGH ARRAY </a></li>
               <li><a href={formAcido} target='_blank'  rel='noreferrer'>Formulário urina 24h com ácido </a></li>
               <li><a href={esclaAcido} target='_blank'  rel='noreferrer'>Instrução urina 24 horas </a></li>
               <li><a href={qrcode} target='_blank'  rel='noreferrer'>QRcode Unimed </a></li>

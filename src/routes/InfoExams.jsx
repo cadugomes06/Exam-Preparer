@@ -47,6 +47,7 @@ export const InfoExams = () => {
             </div>
 
             <div className={styles.sectionInfo}>
+
               <div
                 name="infoExam"
                 className={sectionON === 0 ? styles.ativo : ""}
@@ -54,28 +55,9 @@ export const InfoExams = () => {
                 <h4>Unimed</h4>
                 <li>Apenas com pedido Transcrito!</li>
                 <br />
-                <h4>Petrobrás</h4>
-                <li>Hemograma</li>
-                <li>Proteinas Totais</li>
-                <li>Vitamina A</li>
-                <li>Lipidograma</li>
-                <li>TGO, TGP, GGT, BILTF</li>
-                <li>Glicemia | Hemoglobina glicada | Insulina</li>
-                <li>Teste oral de tolerância á glicose</li>
-                <li>Peptídeo C</li>
-                <li> TSH | T3 | T4L | T4</li>
-                <li>Tireoglobulina</li>
-                <li>Uréia | Creatinina | Ácido úrico</li>
-                <li>Sódio | Cálcio | Potássio | Fósforo | Magnésio</li>
-                <li>
-                  Ferro | Ferritina | Transferrina | Capacidade de ligação do
-                  ferro
-                </li>
-                <li>EAS</li>
 
-                <h5>Específicos para pacientes de cirurgia bariátrica:</h5>
-                <li>Vitamina B12</li>
-                <li>Ácido fólico</li>
+                <h4>Petrobrás</h4>
+                <li>Com o pedido médico. Possui cobertura em todos os exames que também são liberados para os médicos.</li>
               </div>
 
               <div

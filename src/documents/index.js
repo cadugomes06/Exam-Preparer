@@ -21,11 +21,13 @@ import qrcode from '../documents/termos/QRcode-unimed.pdf';
 import marcacaoSus from '../documents/termos/marcacao-sus.pdf';
 import contatosHemo from '../documents/termos/contatos-hemo.pdf';
 import fichaCovid from '../documents/termos/ficha-covid.pdf';
+import termoArray from '../documents/termos/termo-array.pdf'
 
 
 export {
     assim, caberj, cac, gama, golden, interNotre, sulAmerica,
     xFragil, sexa, particular, termoEscla, comparecimento,
     comprometimento, cario, apbio, formAcido, esclaAcido,
-    anuencia, qrcode, marcacaoSus, contatosHemo, fichaCovid
+    anuencia, qrcode, marcacaoSus, contatosHemo, fichaCovid,
+    termoArray
 }

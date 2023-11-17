@@ -152,7 +152,7 @@ const exames = [
         instruction: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta.',
     },
     {
-        name: "Parisotológico (EPF)",
+        name: "Parasitológico (EPF)",
         nick: "EPF",
         jejum: 0,
         diet: '',
@@ -188,7 +188,7 @@ const exames = [
         nick: "CORTS",
         jejum: 0,
         diet: '',
-        type: 'material',
+        type: 'special',
         instruction: '• A coleta deve ser feita até duas horas após o horário habitual do paciente acordar ou conforme solicitação médica.\n • Não há necessidade de jejum após dieta leve.\n • Não pode fazer tratamento dentário nas 24 horas que antecedem ao exame.\n • Antes da coleta, é necessário ficar três horas sem escovar os dentes.\n • É necessário informar todos os medicamentos em uso.\n • Obs: Coletar na Matriz - Rua Conde de Araruama n°365 - Centro.'
     },
     {
@@ -270,6 +270,23 @@ const exames = [
         diet: '',
         type: 'special',
         instruction: '• Será necessário permanecer 3 horas no laboratório para a realização do exame.\n • Após a primeira coleta, o paciente irá ingerir o dextrosol e aguardar as próximas coletas, nos horários indicado pelo médico. \n • O repouso entre as coletas deverá ser realizada no laboratório. \n • Para coleta no sábado deverá chegar até 7:20h e informar a recepção, pois a coleta encerra mais cedo.'
+    },
+        {    
+        name: "Fator V Leiden",
+        nick: "FTVL",
+        jejum: 0,
+        diet: '',
+        type: 'special',
+        dynamicInstruction: [
+            {
+                plan: 'bradesco-amil',
+                instruction: '• A autorização deve ser prévia.\n • O exame deve ser cadastrado em uma guia separada. \n • Junto com pedido médico deve vir um relatório médico com: histórico, quadro clínico, histórico genético familiar, peso, altura e descrição de anomalias existentes.\n • Enviar toda documentação (pedido, relatório, carteirinha) para o e-mail do faturamento solicitando a autorização.\n • E-mail: faturamento@hemolabes.com \n • Assim que o convênio autorizar, o faturamento irá entrar em contato.'
+            },
+            {
+                plan: 'unimed',
+                instruction: '• A autorização deve ser prévia.\n • O exame deve ser cadastrado em uma guia separada. \n • Junto com pedido médico deve vir um relatório médico com: histórico, quadro clínico, histórico genético familiar, peso, altura e descrição de anomalias existentes.\n • Fazer a autorização na administração da Unimed ou pelo portal do convênio(fale conosco). \n • Apresentar o pedido médico e autorização no laboratório para realizar o exame.'
+            }
+        ]
     },
 ]
 

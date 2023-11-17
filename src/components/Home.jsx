@@ -7,8 +7,8 @@ import styles from "./Home.module.css";
 import garbage from "../assets/garbage.svg";
 import loupe from "../assets/loupe.svg";
 import pdf from "../assets/pdf.svg";
-import closeIcon from '../assets/close.svg'
-import eyeIcon from '../assets/eye.svg'
+import closeIcon from '../assets/close.svg';
+import eyeIcon from '../assets/eye.svg';
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ExamsPDF from "../reports/examsPDF";
@@ -23,6 +23,7 @@ const Home = () => {
   const [checkSUS, setCheckSUS] = useState(false); 
   const [examInfo, setExamInfo] = useState({}); 
   const [modalExam, setModalExam ] = useState(false)
+  const [planFTVL, setPlanFTVL] = useState('')
 
   const allExames = exames;
   
@@ -38,6 +39,7 @@ const Home = () => {
       openModalBoxOptions();
     }
   }, [search, allExames]);
+
 
   function openModalBoxOptions() {
     setBoxOptions(true);
@@ -103,9 +105,12 @@ const Home = () => {
     })
     setExamInfo(examObject)
   }
-
   function handleCloseModalInfo() {
     setModalExam(false)
+  }
+
+  const selectPlanForExam = (value) => {
+    setPlanFTVL(value)
   }
 
   return (
@@ -138,6 +143,7 @@ const Home = () => {
                     allExams={examsSelectBox}
                     status={checkPD}
                     sus={checkSUS}
+                    planFTVL={planFTVL}
                   />
                 }
                 fileName="exameEmPDF"
@@ -216,8 +222,7 @@ const Home = () => {
                 return (
                   <ul key={exam.name} className={styles.resultExames}>
                     <li>
-                      {exam.name}
-    
+                      {exam.name}    
                       <div className={styles.openExam}
                              onClick={() => setOpenExamDetail(exam.name)}>
                                <img src={eyeIcon} alt="" />
@@ -233,6 +238,30 @@ const Home = () => {
                         />
                       </div>
                     </li>
+
+                    {exam.nick == 'FTVL' ? 
+                      (
+                       <div className={styles.dynamicPlans}>
+                          <button 
+                             className="button-plan" 
+                             onClick={() => selectPlanForExam('bradesco-amil')}
+                             >
+                            Bradesco
+                          </button>
+                          <button 
+                             className="button-plan" 
+                             onClick={() => selectPlanForExam('bradesco-amil')}
+                             >
+                            Amil
+                          </button>
+                          <button 
+                             className="button-plan" 
+                             onClick={() => selectPlanForExam('unimed')}
+                             >
+                            Unimed
+                          </button>
+                       </div>
+                         ) : '' }
                   </ul>
                 );
               })

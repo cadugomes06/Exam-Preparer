@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-  
+  //'AIzaSyDCjIjWpJocLdoL63lCEx2vWhTKtrQzlns'
+
   const firebaseConfig = {
-    apiKey: 'AIzaSyDCjIjWpJocLdoL63lCEx2vWhTKtrQzlns',
+    apiKey: import.meta.env.VITE_SECRET_API_KEY,
     authDomain: "exam-preparer01.firebaseapp.com",
     projectId: "exam-preparer01",
     storageBucket: "exam-preparer01.appspot.com",

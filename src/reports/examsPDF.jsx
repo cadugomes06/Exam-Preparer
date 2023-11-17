@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const ExamsPDF = ({allExams, status, sus}) => {
+const ExamsPDF = ({allExams, status, sus, planFTVL}) => {
 
   const getExams = allExams  
   const isMaterialPD = status
@@ -165,7 +165,8 @@ const ExamsPDF = ({allExams, status, sus}) => {
     return exam.diet != '';
   });
   const specialExams = getExams.filter((exam) => {
-    return exam.type === "special" && exam.instruction != "" && exam.nick != 'CORT';
+    return exam.type === "special" && exam.instruction != "" && exam.nick != 'CORT'
+    && exam.nick != 'FTVL';
   });
   const isMaterial = getExams.filter((exam) => {
     return exam.type === "material";
@@ -173,6 +174,10 @@ const ExamsPDF = ({allExams, status, sus}) => {
   const isCortisol = getExams.filter((exam) => {
     return exam.nick === "CORT" | 'cort'
   })
+
+  const filterDynamicExam = getExams.find((exam) => exam.nick == 'FTVL')
+
+  
   const userStorage = window.localStorage.getItem('UserUnitData')
   const userData = JSON.parse(userStorage)
 

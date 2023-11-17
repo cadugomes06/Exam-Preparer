@@ -1,4 +1,20 @@
 const exames = [
+      {
+        name: "Cálcio",
+        nick: "CA",
+        jejum: 8,
+        diet: '',
+        type: 'special',
+        instruction: ''
+    },
+     {
+        name: "Imunofixação de proteínas",
+        nick: "IEF",
+        jejum: 8,
+        diet: '',
+        type: 'special',
+        instruction: ''
+    },
     {
         name: "Cortisol",
         nick: "CORT",
@@ -77,7 +93,7 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'special',
-        instruction: '• Será necessário os seguintes documentos: \n • RG\n • CNH \n • Certidão de Nascimento(para menores de 18 anos)\n • Declaração de Nascimento (quando não houver Certidão de Nascimento)\n • Termo de Tutela e/ou Termo de Guarda (em casos de outros responsáveis legais)\n • Passaportes \n • C.T.P.S \n • Certidão de óbito (casos de Suporto pai falecido)\n • Carteira de identidade Profissionais (ex.: COREN, CRF, OAB)'
+        instruction: '• Será necessário os seguintes documentos: \n • RG\n • CNH \n • Certidão de Nascimento(para menores de 18 anos)\n • Declaração de Nascimento (quando não houver Certidão de Nascimento)\n • Termo de Tutela e/ou Termo de Guarda (em casos de outros responsáveis legais)\n • Passaportes \n • C.T.P.S \n • Certidão de óbito (casos de Suporto pai falecido)\n • Carteira de identidade Profissionais (ex.: COREN, CRF, OAB) \n• Local: Rua Conde de Araruama, n°365, Centro'
     },
     {
         name: "Espermograma",
@@ -117,7 +133,7 @@ const exames = [
         jejum: 0,
         diet: '',
         type: 'special',
-        instruction: ' • Após toque retal, aguardar 2 dias\n • Após ultrassom transretal, 1 dia.\n • Após exercícios pesados, andar de bicicleta, andar de moto e à cavalo, aguardar 1 dia.\n • Após biópsia ou massagem de próstata, guardar 4 semanas \n • Após ejaculção (relação sexual), aguardar 2 dias.'
+        instruction: ' • Após toque retal, aguardar 2 dias\n • Após ultrassom transretal, 1 dia.\n • Após exercícios pesados, andar de bicicleta, andar de moto e à cavalo, aguardar 1 dia.\n • Após biópsia ou massagem de próstata, guardar 4 semanas \n • Após ejaculação (relação sexual), aguardar 2 dias.'
     },
     {
         name: "Glicose pós prandial",
@@ -160,7 +176,7 @@ const exames = [
         instruction: '• Coletar uma pequena quantidade de fezes.\n • Entregar ao laboratório em até 3 horas em temperatura ambiente ou manter refrigerada e entregar em até 24 horas.'
     },
     {
-        name: "Parisotológico (MIF)",
+        name: "Parasitológico (MIF)",
         nick: "MIF",
         jejum: 0,
         diet: '',

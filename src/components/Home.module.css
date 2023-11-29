@@ -224,7 +224,7 @@
     border: 1px solid ;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.4);
     position: relative;
-    z-index: 1000;
+    z-index: 10;
 }
 .resultExames li {
     list-style: none;

@@ -176,6 +176,7 @@ const ExamsPDF = ({allExams, status, sus, planFTVL}) => {
   })
 
   const filterDynamicExam = getExams.find((exam) => exam.nick == 'FTVL')
+  console.log(filterDynamicExam, planFTVL)
 
   
   const userStorage = window.localStorage.getItem('UserUnitData')

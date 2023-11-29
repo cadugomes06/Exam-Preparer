@@ -69,7 +69,7 @@ const UserConfig = () => {
               <option value='sus'> Velho Campos (SUS) </option>
             </select>
 
-            <h4>Horário de segunda a sexta</h4>
+            <h4>Horário da coleta de segunda a sexta</h4>
             <label htmlFor='open'>Entrada</label>
             <input type="time"
                    name="" 
@@ -85,7 +85,7 @@ const UserConfig = () => {
                    onChange={(e) => setClose(e.target.value)}
                    />
 
-            <h4>Horário no Sábado</h4>
+            <h4>Horário da coleta no Sábado</h4>
             <label htmlFor='openS'>Entrada</label>
             <input type="time"
                    name=""

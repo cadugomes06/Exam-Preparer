@@ -287,23 +287,23 @@ const exames = [
         type: 'special',
         instruction: '• Será necessário permanecer 3 horas no laboratório para a realização do exame.\n • Após a primeira coleta, o paciente irá ingerir o dextrosol e aguardar as próximas coletas, nos horários indicado pelo médico. \n • O repouso entre as coletas deverá ser realizada no laboratório. \n • Para coleta no sábado deverá chegar até 7:20h e informar a recepção, pois a coleta encerra mais cedo.'
     },
-        {    
-        name: "Fator V Leiden",
-        nick: "FTVL",
-        jejum: 0,
-        diet: '',
-        type: 'special',
-        dynamicInstruction: [
-            {
-                plan: 'bradesco-amil',
-                instruction: '• A autorização deve ser prévia.\n • O exame deve ser cadastrado em uma guia separada. \n • Junto com pedido médico deve vir um relatório médico com: histórico, quadro clínico, histórico genético familiar, peso, altura e descrição de anomalias existentes.\n • Enviar toda documentação (pedido, relatório, carteirinha) para o e-mail do faturamento solicitando a autorização.\n • E-mail: faturamento@hemolabes.com \n • Assim que o convênio autorizar, o faturamento irá entrar em contato.'
-            },
-            {
-                plan: 'unimed',
-                instruction: '• A autorização deve ser prévia.\n • O exame deve ser cadastrado em uma guia separada. \n • Junto com pedido médico deve vir um relatório médico com: histórico, quadro clínico, histórico genético familiar, peso, altura e descrição de anomalias existentes.\n • Fazer a autorização na administração da Unimed ou pelo portal do convênio(fale conosco). \n • Apresentar o pedido médico e autorização no laboratório para realizar o exame.'
-            }
-        ]
-    },
+    //     {    
+    //     name: "Fator V Leiden",
+    //     nick: "FTVL",
+    //     jejum: 0,
+    //     diet: '',
+    //     type: 'special',
+    //     dynamicInstruction: [
+    //         {
+    //             plan: 'bradesco-amil',
+    //             instruction: '• A autorização deve ser prévia.\n • O exame deve ser cadastrado em uma guia separada. \n • Junto com pedido médico deve vir um relatório médico com: histórico, quadro clínico, histórico genético familiar, peso, altura e descrição de anomalias existentes.\n • Enviar toda documentação (pedido, relatório, carteirinha) para o e-mail do faturamento solicitando a autorização.\n • E-mail: faturamento@hemolabes.com \n • Assim que o convênio autorizar, o faturamento irá entrar em contato.'
+    //         },
+    //         {
+    //             plan: 'unimed',
+    //             instruction: '• A autorização deve ser prévia.\n • O exame deve ser cadastrado em uma guia separada. \n • Junto com pedido médico deve vir um relatório médico com: histórico, quadro clínico, histórico genético familiar, peso, altura e descrição de anomalias existentes.\n • Fazer a autorização na administração da Unimed ou pelo portal do convênio(fale conosco). \n • Apresentar o pedido médico e autorização no laboratório para realizar o exame.'
+    //         }
+    //     ]
+    // },
 ]
 
 export default exames

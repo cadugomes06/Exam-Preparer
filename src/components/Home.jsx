@@ -9,9 +9,11 @@ import loupe from "../assets/loupe.svg";
 import pdf from "../assets/pdf.svg";
 import closeIcon from '../assets/close.svg';
 import eyeIcon from '../assets/eye.svg';
+import edit from '../assets/edit.svg';
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ExamsPDF from "../reports/examsPDF";
+import ModalObs from "./ModalObs";
 
 const Home = () => {
   const inputRef = useRef();
@@ -22,8 +24,8 @@ const Home = () => {
   const [checkPD, setCheckPD] = useState(false); 
   const [checkSUS, setCheckSUS] = useState(false); 
   const [examInfo, setExamInfo] = useState({}); 
-  const [modalExam, setModalExam ] = useState(false)
-  const [planFTVL, setPlanFTVL] = useState('')
+  const [modalExam, setModalExam ] = useState(false);
+  const [modalObs, setModalObs ] = useState(false);
 
   const allExames = exames;
   
@@ -109,16 +111,24 @@ const Home = () => {
     setModalExam(false)
   }
 
-  const selectPlanForExam = (value) => {
-    setPlanFTVL(value)
+  const openModalObs = () => {
+    setModalObs(true)
+  }
+
+  const closeModalObs = () => {
+    setModalObs(false)
   }
 
   return (
     <>
+
       <Header />
       <Menu />
+      {modalObs ? <ModalObs isOpen={modalObs} onClose={closeModalObs} /> : null}
+
 
       <section className={styles.wrapperHome}>
+
         <div className={styles.titleH1}>
           <h1>Encontre seus exames!</h1>
         </div>
@@ -143,7 +153,6 @@ const Home = () => {
                     allExams={examsSelectBox}
                     status={checkPD}
                     sus={checkSUS}
-                    planFTVL={planFTVL}
                   />
                 }
                 fileName="exameEmPDF"
@@ -169,26 +178,32 @@ const Home = () => {
           <>
             <div className={styles.materialPD}>
               <div>
-                <p>Material PD</p>
+                <label htmlFor="materialpd">Material PD</label>
                 <input
                   type="checkbox"
                   name="pd"
-                  id=""
+                  id="materialpd"
                   checked={checkPD}
                   onChange={(e) => setCheckPD(e.target.checked)}
                 />
               </div>
               <div>
-                <p>Marcação do sus</p>
+                <label htmlFor="marcaSUS">Marcação do sus</label>
                 <input
                   type="checkbox"
                   name=""
-                  id=""
+                  id="marcaSUS"
                   checked={checkSUS}
                   onChange={(e) => setCheckSUS(e.target.checked)}
                 />
               </div>
 
+              <div className={styles.buttonObs} >
+                <button onClick={openModalObs}>
+                  Adicionar Obervação
+                </button>
+                <img src={edit} alt="icone-editar" />
+              </div>
             </div>
           </>
         ) : (
@@ -237,31 +252,7 @@ const Home = () => {
                           className={styles.iconLixo}
                         />
                       </div>
-                    </li>
-
-                    {exam.nick == 'FTVL' ? 
-                      (
-                       <div className={styles.dynamicPlans}>
-                          <button 
-                             className="button-plan" 
-                             onClick={() => selectPlanForExam('bradesco-amil')}
-                             >
-                            Bradesco
-                          </button>
-                          <button 
-                             className="button-plan" 
-                             onClick={() => selectPlanForExam('bradesco-amil')}
-                             >
-                            Amil
-                          </button>
-                          <button 
-                             className="button-plan" 
-                             onClick={() => selectPlanForExam('unimed')}
-                             >
-                            Unimed
-                          </button>
-                       </div>
-                         ) : '' }
+                    </li>                    
                   </ul>
                 );
               })

@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const ExamsPDF = ({allExams, status, sus, planFTVL}) => {
+const ExamsPDF = ({allExams, status, sus}) => {
 
   const getExams = allExams  
   const isMaterialPD = status
@@ -174,10 +174,6 @@ const ExamsPDF = ({allExams, status, sus, planFTVL}) => {
   const isCortisol = getExams.filter((exam) => {
     return exam.nick === "CORT" | 'cort'
   })
-
-  const filterDynamicExam = getExams.find((exam) => exam.nick == 'FTVL')
-  console.log(filterDynamicExam, planFTVL)
-
   
   const userStorage = window.localStorage.getItem('UserUnitData')
   const userData = JSON.parse(userStorage)

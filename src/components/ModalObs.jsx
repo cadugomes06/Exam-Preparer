@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styles from './ModalObs.module.css';
 import closeIcon from '../assets/close.svg'
 
-const ModalObs = ({ isOpen, onClose }) => {
+const ModalObs = ({ isOpen, onClose, onChange }) => { 
 
   return (
 isOpen && <div className={styles.containerModal}>
@@ -17,7 +17,11 @@ isOpen && <div className={styles.containerModal}>
                 </div>
 
                 <div className={styles.wrapperTextarea}>
-                <textarea maxLength='200' placeholder='Este campo irá aparecer no final do seu documento PDF'></textarea>
+                  <textarea 
+                     maxLength='200' 
+                     placeholder='Este campo irá aparecer no final do seu documento PDF'
+                     onChange={onChange}>
+                  </textarea>
                 </div>
             </div>
         </section>
@@ -27,7 +31,8 @@ isOpen && <div className={styles.containerModal}>
 
 ModalObs.propTypes = {
     isOpen: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired
+    onClose: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired
   };
   
 

@@ -26,6 +26,7 @@ const Home = () => {
   const [examInfo, setExamInfo] = useState({}); 
   const [modalExam, setModalExam ] = useState(false);
   const [modalObs, setModalObs ] = useState(false);
+  const [observationText, setObservationText] = useState('')
 
   const allExames = exames;
   
@@ -119,12 +120,21 @@ const Home = () => {
     setModalObs(false)
   }
 
+  // useEffect(() => {
+  //   console.log(observationText)
+  // }, [observationText])
+
   return (
     <>
 
       <Header />
       <Menu />
-      {modalObs ? <ModalObs isOpen={modalObs} onClose={closeModalObs} /> : null}
+
+      {modalObs ? <ModalObs 
+                     isOpen={modalObs} 
+                     onClose={closeModalObs} 
+                     onChange={({target}) => setObservationText(target.value) }
+                     /> : null}
 
 
       <section className={styles.wrapperHome}>
@@ -153,6 +163,7 @@ const Home = () => {
                     allExams={examsSelectBox}
                     status={checkPD}
                     sus={checkSUS}
+                    observationText={observationText}
                   />
                 }
                 fileName="exameEmPDF"

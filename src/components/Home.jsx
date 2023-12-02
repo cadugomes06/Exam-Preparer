@@ -10,6 +10,7 @@ import pdf from "../assets/pdf.svg";
 import closeIcon from '../assets/close.svg';
 import eyeIcon from '../assets/eye.svg';
 import edit from '../assets/edit.svg';
+import warning from '../assets/warning.svg';
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ExamsPDF from "../reports/examsPDF";
@@ -120,20 +121,17 @@ const Home = () => {
     setModalObs(false)
   }
 
-  // useEffect(() => {
-  //   console.log(observationText)
-  // }, [observationText])
-
   return (
     <>
-
       <Header />
       <Menu />
 
       {modalObs ? <ModalObs 
                      isOpen={modalObs} 
                      onClose={closeModalObs} 
-                     onChange={({target}) => setObservationText(target.value) }
+                     onChange={({target}) => setObservationText(target.value)}
+                     text={observationText}
+                     cleanUpText={() => setObservationText('')}
                      /> : null}
 
 
@@ -211,9 +209,16 @@ const Home = () => {
 
               <div className={styles.buttonObs} >
                 <button onClick={openModalObs}>
-                  Adicionar Obervação
+                  {observationText.length > 0 ?
+                   <p>1 Observação ATIVA </p>
+                    : 'Adicionar Obervação' }
                 </button>
-                <img src={edit} alt="icone-editar" />
+                 {observationText.length > 0 
+                 ? 
+                 <img src={warning} alt="icone-de-atenção" /> 
+                 :
+                 <img src={edit} alt="icone-editar" />
+                 }
               </div>
             </div>
           </>

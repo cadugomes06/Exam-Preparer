@@ -44,6 +44,10 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
   },
+  iconObs: {
+    width: 16,
+    height: 16,
+  },
   sectionOne: {
     marginTop: 20,
     marginLeft: 10,
@@ -102,6 +106,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     border: 2,
     borderColor: "#e3e3e3",
+    marginTop: 15
   },
   wrapperSUS: {
     width: "100%",
@@ -142,7 +147,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     marginLeft: 10,
-    marginTop: 8,
+    marginTop: 15,
     marginBottom: 4
   },
   titleMaterialPD: {
@@ -152,7 +157,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const ExamsPDF = ({allExams, status, sus}) => {
+const ExamsPDF = ({allExams, status, sus, observationText}) => {
 
   const getExams = allExams  
   const isMaterialPD = status
@@ -177,6 +182,7 @@ const ExamsPDF = ({allExams, status, sus}) => {
   
   const userStorage = window.localStorage.getItem('UserUnitData')
   const userData = JSON.parse(userStorage)
+
 
 
   return (
@@ -278,6 +284,23 @@ const ExamsPDF = ({allExams, status, sus}) => {
           <Text></Text>
         )}
 
+          {observationText.length > 0 ? (
+              <View style={styles.sectionTwo}>
+                     <View style={styles.sectionTitle}>
+                       <Image style={styles.iconObs} src={warningIcon} />    
+                       <Text style={styles.title}>Observação</Text>
+                     </View>
+
+                     <View>
+                       <Text style={styles.subtitle}> - {observationText}</Text>
+                     </View>                
+               : <Text></Text>
+             </View>
+        ) : (
+          <Text></Text>
+        )}
+         
+
         {/*Material Pendente  */}
         {isMaterialPD  ? (
           <View>
@@ -295,7 +318,6 @@ const ExamsPDF = ({allExams, status, sus}) => {
           </View>
         )
         : <Text></Text> }
-         
 
 
       {isSUS ? (

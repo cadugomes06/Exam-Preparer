@@ -27,7 +27,7 @@ const Links = () => {
               </li>
               <li>
                 <a
-                  href="http://appunimedvsf.com.br:8081/Account/Login?ReturnUrl=%2F"
+                  href="https://autorizador.unimedcostadosol.com.br/Account/Login"
                   target="_blank" rel='noreferrer'
                 >
                   Autorizador Unimed

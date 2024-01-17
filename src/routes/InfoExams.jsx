@@ -57,7 +57,7 @@ export const InfoExams = () => {
                 <br />
 
                 <h4>Petrobrás</h4>
-                <li>Com o pedido médico. Possui cobertura em todos os exames que também são liberados para os médicos.</li>
+                <li>Com o pedido médico. </li>
               </div>
 
               <div
@@ -199,11 +199,14 @@ export const InfoExams = () => {
                 <li>
                   <strong>INS4</strong> - Curva insulínica com 4 amostras.
                 </li>
-                <li>
-                  <strong>INS3</strong> - Pós dextrosol de insulina.
+                 <li>
+                  <strong>INS3</strong> - Curva insulínica com 3 amostras.
                 </li>
                 <li>
-                  <strong>INS2</strong> - Pós prandial.
+                  <strong>INSU3</strong> - Pós dextrosol de insulina.
+                </li>
+                <li>
+                  <strong>INSU2</strong> - Pós prandial.
                 </li>
               </div>
 

@@ -6,7 +6,7 @@ import golden from '../documents/tiss/goldenAnexo.pdf';
 import interNotre from '../documents/tiss/inter-notreAnexo.pdf';
 import sulAmerica from '../documents/tiss/sulAmericaAnexo.pdf';
 
-import anuencia from '../documents/termos/anuencia.pdf';
+import anuencia from '../documents/termos/termo-anuencia.pdf';
 import esclaAcido from '../documents/termos/esclarecimentoAcido.pdf';
 import formAcido from '../documents/termos/formularioAcido.pdf';
 import apbio from '../documents/termos/termo-biopsia.pdf';

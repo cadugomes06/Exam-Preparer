@@ -28,6 +28,7 @@ Font.register({ family: "Regular", src: MycustomFont2 });
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
+    position: 'relative'
   },
   header: {
     width: "100%",
@@ -40,6 +41,33 @@ const styles = StyleSheet.create({
     width: 100,
     height: 140,
   },
+
+  versionSection : {
+    position: 'absolute',
+    top: 5,
+    right: 5,
+  },
+  versionText : {
+    fontSize: 6,
+    fontFamily: 'SemiBold',
+    fontWeight: 200,
+  },
+
+  titleSection : {
+    marginTop: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    backgroundColor: '#eee',
+    textTransform: 'uppercase'
+  },
+  titleText : {
+    fontSize: 12,
+    fontFamily: "SemiBold",
+    fontWeight: 200,
+  },
+
   icon: {
     width: 12,
     height: 12,
@@ -49,9 +77,9 @@ const styles = StyleSheet.create({
     height: 16,
   },
   sectionOne: {
-    marginTop: 20,
+    marginTop: 10,
     marginLeft: 10,
-    marginBottom: 5,
+    marginBottom: 0,
   },
   subtitle: {
     fontSize: 10,
@@ -71,7 +99,7 @@ const styles = StyleSheet.create({
     paddingLeft: 50,
   },
   title: {
-    fontSize: 14,
+    fontSize: 12,
     display: "flex",
     alignItems: "center",
     fontFamily: "SemiBold",
@@ -191,6 +219,14 @@ const ExamsPDF = ({allExams, status, sus, observationText}) => {
 
         <View style={styles.header}>
           <Image style={styles.image} src={logo2} />
+        </View>
+
+        <View style={styles.versionSection}>
+          <Text style={styles.versionText}>versão 2.0 - ultima modificação em 19/03/2024</Text>
+        </View>
+
+        <View style={styles.titleSection}>
+            <Text style={styles.titleText}>Instruções para coleta</Text>
         </View>
 
         <View style={styles.sectionOne}>

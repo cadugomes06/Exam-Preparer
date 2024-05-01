@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   },
   wrapperSUS: {
     width: "100%",
-    height: 80,
+    height: 120,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -362,11 +362,13 @@ const ExamsPDF = ({allExams, status, sus, observationText}) => {
 
           <View style={styles.sectionsSUS}>
              <Text style={styles.fontSemibold}> Agendamento</Text>
-            <Text style={styles.fontRegular}>• toda sexta-feira a partir das 10:00 horas.</Text>
-            <Text style={styles.fontRegular}>• telefones: (22)2762-5213 (22)2772-0050</Text>
-            <Text style={styles.fontRegular}>• (22)98851-7091 (22)2762-0088</Text>
+            <Text style={styles.fontRegular}>• De Segunda-feira à Sexta-feira <Text style={styles.fontSemibold}>(7:00h às 17:00h)</Text></Text>
+            <Text style={styles.fontRegular}>• O exame será agendado para a semana seguinte, </Text>
+            <Text style={styles.fontRegular}>no mesmo dia em que a ligação foi realizada.</Text>
+            <Text style={styles.fontRegular}>• Telefones: (22)2762-5213 (22)2772-0050</Text>
+            <Text style={styles.fontRegular}> (22)2772-1820 (22)2762-0088</Text>
           </View>
-
+,
           <View style={styles.sectionsSUS}>
              <Text style={styles.fontSemibold}> Unidade com atendimento na hora</Text>
             <Text style={styles.fontRegular}>• De segunda a sexta-feira as 6:30h.</Text>

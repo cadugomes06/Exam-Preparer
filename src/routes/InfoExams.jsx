@@ -274,6 +274,10 @@ export const InfoExams = () => {
                 <li>
                   <strong>AHBCM</strong>
                 </li>
+                <h5>Hepatite B <strong>(SUS)</strong>:</h5>
+                <li>
+                  <strong>HCVS</strong>
+                </li>
                 <h5>Hepatite C:</h5>
                 <li>
                   <strong>AHCV</strong>

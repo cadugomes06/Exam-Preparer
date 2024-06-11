@@ -222,7 +222,7 @@ const ExamsPDF = ({allExams, status, sus, observationText}) => {
         </View>
 
         <View style={styles.versionSection}>
-          <Text style={styles.versionText}>versão 2.0 - ultima modificação em 19/03/2024</Text>
+          <Text style={styles.versionText}>versão 2.0.2 - ultima modificação em 11/06/2024</Text>
         </View>
 
         <View style={styles.titleSection}>

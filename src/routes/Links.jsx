@@ -70,16 +70,16 @@ const Links = () => {
                   Autorizador Sul América
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="http://1907prd-painel.cloudmv.com.br/mvautorizadorguias/"
                   target="_blank" rel='noreferrer'
                 >
                   Autorizador Cedae - CAC
                 </a>
-              </li>
+              </li> */}
               <li>
-                <a href="https://rac.hat.totvs.com.br" target="_blank" rel='noreferrer'>
+                <a href="https://hat.totvs.com.br/" target="_blank" rel='noreferrer'>
                   Autorizador Caberj/Integral
                 </a>
               </li>

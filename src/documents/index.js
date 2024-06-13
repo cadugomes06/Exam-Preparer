@@ -18,7 +18,7 @@ import particular from '../documents/termos/termo-exame-particular.pdf';
 import sexa from '../documents/termos/termo-sexagemfetal.pdf';
 import xFragil from '../documents/termos/x-fragil.pdf';
 import qrcode from '../documents/termos/QRcode-unimed.pdf';
-import marcacaoSus from '../documents/termos/marcacao-sus.pdf';
+import marcacaoSus from '../documents/termos/marcacao-sus2.pdf';
 import contatosHemo from '../documents/termos/contatos-hemo.pdf';
 import fichaCovid from '../documents/termos/ficha-covid.pdf';
 import termoArray from '../documents/termos/termo-array.pdf'

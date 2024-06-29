@@ -21,7 +21,7 @@ const exames = [
         jejum: 8,
         diet: '',
         type: 'special',
-        instruction: '• Chegar ao laboratório no máximo até às 7:20 horas. \n • Realizar o repouso obrigatório antes do exame. \n • Realizar a coleta às 8:00 horas.'
+        instruction: '• Chegar ao laboratório entre 7h00 e 8h00. \n • Realizar o repouso obrigatório de pelo menos 30 minutos antes do exame. \n • Retirar a senha de Cortisol ao chegar no laboratório (última opção).'
     },
     {
         name: "Serotonina",

@@ -18,10 +18,10 @@ const exames = [
     {
         name: "Cortisol",
         nick: "CORT",
-        jejum: 8,
+        jejum: 4,
         diet: '',
         type: 'special',
-        instruction: '• Chegar ao laboratório entre 7h00 e 8h00. \n • Realizar o repouso obrigatório de pelo menos 30 minutos antes do exame. \n • Retirar a senha de Cortisol ao chegar no laboratório (última opção).'
+        instruction: '• Chegar ao laboratório entre 7h00 e 8h00. \n • Realizar o repouso obrigatório de pelo menos 30 minutos antes do exame. \n • Retirar a senha de Cortisol ao chegar no laboratório.'
     },
     {
         name: "Serotonina",
@@ -166,6 +166,14 @@ const exames = [
         diet: '',
         type: 'material',
         instruction: '• Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção, armazenando em um frasco de água mineral sem gás. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.\n • Entregar todo o volume no laboratório num prazo máximo de 3 horas após a última coleta.\n • OBS: Refrigerar durante a coleta.',
+    },
+    {
+        name: "Ácido Oxálico, Urina 24hrs",
+        nick: "OXA24",
+        jejum: 0,
+        diet: 'Fazer restrição de qualquer alimento que possua Vitamina C (Acerola, Manga, Morango, Brócolis, Laranja, Limão e etc...), durante 48 horas.',
+        type: 'material',
+        instruction: '• Usar HCl 50% para 20ml/L de urina. Desprezara a primeira urina da manhã ao se levantar e marcar a hora. Colher todas as urinas dai por diante, durante o dia e a noite, se houver.\n • Colher a primeira urina do dia seguinte na mesma hora em que desprezou a urina do dia anterior.\n • Colher todo o volume de cada micção. \n • Não perder nenhuma micção, isto acarreta erro no resultado dos exames.',
     },
     {
         name: "Parasitológico (EPF)",

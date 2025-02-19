@@ -190,10 +190,13 @@ const ExamsPDF = ({allExams, status, sus, observationText}) => {
   const getExams = allExams  
   const isMaterialPD = status
   const isSUS = sus
-  
-  const isJejum = getExams.filter((exam) => {
-    return exam.jejum >= 8;
-  });
+
+
+  // const isJejum = getExams.filter((exam) => {
+  //   return exam.jejum >= 8;
+  // });  
+  const maxJejum = getExams.reduce((max, exam) => Math.max(max, exam.jejum), 0)
+
   const isDiet = getExams.filter((exam) => {
     return exam.diet != '';
   });
@@ -222,7 +225,7 @@ const ExamsPDF = ({allExams, status, sus, observationText}) => {
         </View>
 
         <View style={styles.versionSection}>
-          <Text style={styles.versionText}>versão 2.0.2 - ultima modificação em 11/06/2024</Text>
+          <Text style={styles.versionText}>versão 2.0.3 - ultima modificação em 18/02/2025</Text>
         </View>
 
         <View style={styles.titleSection}>
@@ -235,10 +238,21 @@ const ExamsPDF = ({allExams, status, sus, observationText}) => {
             <Text style={styles.title}>Jejum Matinal</Text>
           </View>
 
-          <Text style={styles.badyExam}>
-            {isJejum.length > 0
+          {/* <Text style={styles.badyExam}>
+              {isJejum.length > 0
               ? `• Entre 8 a 12 horas de jejum \n • não realizar atividade física \n • Manter hidratação habitual`
-              : "• Não possui jejum para esse(s) exame(s)."}
+              : "• Não possui jejum para esse(s) exame(s)."
+              }
+          </Text> */}
+
+          <Text style={styles.badyExam}>
+              {
+               maxJejum >= 8
+                  ?  `• Entre 8 a 12 horas de jejum \n • não realizar atividade física \n • Manter hidratação habitual`
+              : maxJejum > 0 && maxJejum < 8 
+                  ? `• Jejum aconselhável de 4 horas.`
+                  : "• Não possui jejum para esse(s) exame(s)."
+              }
           </Text>
         </View>
 
